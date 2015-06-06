@@ -1,0 +1,59 @@
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+ibiswriter -intstyle ise -vccaux 2.5 -truncate 20 firwrapper.ncd firwrapper.ibs 
+netgen -intstyle ise -s 3  -pcf firwrapper.pcf -sdf_anno true -sdf_path "netgen/par" -insert_glbl true -insert_pp_buffers true -w -dir netgen/par -ofmt verilog -sim firwrapper.ncd firwrapper_timesim.v 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.xst" -ofn "D:/OneDrive/Documenten/TUe/2IN35/A3b/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 

@@ -1,0 +1,1042 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.32 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.33 secs
+ 
+--> Reading design: fir.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "fir.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "fir"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : fir
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\OneDrive\Documenten\TUe\2IN35\A2b\firstage.v" into library work
+Parsing module <firstage>.
+Analyzing Verilog file "D:\OneDrive\Documenten\TUe\2IN35\A2b\fir.v" into library work
+Parsing module <fir>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <fir>.
+
+Elaborating module <firstage(DWIDTH=16,DDWIDTH=32)>.
+WARNING:HDLCompiler:413 - "D:\OneDrive\Documenten\TUe\2IN35\A2b\firstage.v" Line 28: Result of 32-bit expression is truncated to fit in 16-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <fir>.
+    Related source file is "D:\OneDrive\Documenten\TUe\2IN35\A2b\fir.v".
+        NR_STAGES = 32
+        DWIDTH = 16
+        CWIDTH = 512
+        DDWIDTH = 32
+    Set property "KEEP_HIERARCHY = YES".
+INFO:Xst:3210 - "D:\OneDrive\Documenten\TUe\2IN35\A2b\fir.v" line 24: Output port <a_out> of the instance <stage[31].comp> is unconnected or connected to loadless signal.
+    Found 16-bit register for signal <a_in_reg>.
+    Found 16-bit register for signal <b_out>.
+    Found 512-bit register for signal <h_in_reg>.
+    Summary:
+	inferred 544 D-type flip-flop(s).
+Unit <fir> synthesized.
+
+Synthesizing Unit <firstage>.
+    Related source file is "D:\OneDrive\Documenten\TUe\2IN35\A2b\firstage.v".
+        DWIDTH = 16
+        DDWIDTH = 32
+    Found 16-bit register for signal <x>.
+    Found 16-bit register for signal <y>.
+    Found 16-bit register for signal <x1>.
+    Found 32-bit adder for signal <n0019> created at line 28.
+    Found 16x16-bit multiplier for signal <n0025> created at line 28.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+Unit <firstage> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 32
+ 16x16-bit multiplier                                  : 32
+# Adders/Subtractors                                   : 32
+ 32-bit adder                                          : 32
+# Registers                                            : 99
+ 16-bit register                                       : 98
+ 512-bit register                                      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <y_15> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_14> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_13> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_12> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_11> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_10> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_9> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_8> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_7> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_6> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_5> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_4> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_3> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_2> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <y_1> of sequential type is unconnected in block <stage[31].comp>.
+
+Synthesizing (advanced) Unit <firstage>.
+	Multiplier <Mmult_n0025> in block <firstage> and adder/subtractor <Madd_n0019_Madd> in block <firstage> are combined into a MAC<Maddsub_n0025>.
+	The following registers are also absorbed by the MAC: <y> in block <firstage>.
+Unit <firstage> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# MACs                                                 : 32
+ 16x16-to-16-bit MAC                                   : 32
+# Registers                                            : 1568
+ Flip-Flops                                            : 1568
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <fir> ...
+
+Optimizing unit <firstage> ...
+WARNING:Xst:2677 - Node <x_15> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_14> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_13> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_12> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_11> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_10> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_9> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_8> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_7> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_6> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_5> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_4> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_3> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_2> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_1> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x_0> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_15> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_14> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_13> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_12> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_11> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_10> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_9> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_8> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_7> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_6> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_5> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_4> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_3> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_2> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_1> of sequential type is unconnected in block <stage[31].comp>.
+WARNING:Xst:2677 - Node <x1_0> of sequential type is unconnected in block <stage[31].comp>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block fir, actual ratio is 5.
+
+Final Macro Processing ...
+
+Processing Unit <stage[0].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[0].comp> processed.
+
+Processing Unit <stage[10].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[10].comp> processed.
+
+Processing Unit <stage[11].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[11].comp> processed.
+
+Processing Unit <stage[12].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[12].comp> processed.
+
+Processing Unit <stage[13].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[13].comp> processed.
+
+Processing Unit <stage[14].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[14].comp> processed.
+
+Processing Unit <stage[15].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[15].comp> processed.
+
+Processing Unit <stage[16].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[16].comp> processed.
+
+Processing Unit <stage[17].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[17].comp> processed.
+
+Processing Unit <stage[18].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[18].comp> processed.
+
+Processing Unit <stage[19].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[19].comp> processed.
+
+Processing Unit <stage[1].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[1].comp> processed.
+
+Processing Unit <stage[20].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[20].comp> processed.
+
+Processing Unit <stage[21].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[21].comp> processed.
+
+Processing Unit <stage[22].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[22].comp> processed.
+
+Processing Unit <stage[23].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[23].comp> processed.
+
+Processing Unit <stage[24].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[24].comp> processed.
+
+Processing Unit <stage[25].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[25].comp> processed.
+
+Processing Unit <stage[26].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[26].comp> processed.
+
+Processing Unit <stage[27].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[27].comp> processed.
+
+Processing Unit <stage[28].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[28].comp> processed.
+
+Processing Unit <stage[29].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[29].comp> processed.
+
+Processing Unit <stage[2].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[2].comp> processed.
+
+Processing Unit <stage[30].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[30].comp> processed.
+
+Processing Unit <stage[3].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[3].comp> processed.
+
+Processing Unit <stage[4].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[4].comp> processed.
+
+Processing Unit <stage[5].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[5].comp> processed.
+
+Processing Unit <stage[6].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[6].comp> processed.
+
+Processing Unit <stage[7].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[7].comp> processed.
+
+Processing Unit <stage[8].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[8].comp> processed.
+
+Processing Unit <stage[9].comp> :
+	Found 2-bit shift register for signal <x1_15>.
+	Found 2-bit shift register for signal <x1_14>.
+	Found 2-bit shift register for signal <x1_13>.
+	Found 2-bit shift register for signal <x1_12>.
+	Found 2-bit shift register for signal <x1_11>.
+	Found 2-bit shift register for signal <x1_10>.
+	Found 2-bit shift register for signal <x1_9>.
+	Found 2-bit shift register for signal <x1_8>.
+	Found 2-bit shift register for signal <x1_7>.
+	Found 2-bit shift register for signal <x1_6>.
+	Found 2-bit shift register for signal <x1_5>.
+	Found 2-bit shift register for signal <x1_4>.
+	Found 2-bit shift register for signal <x1_3>.
+	Found 2-bit shift register for signal <x1_2>.
+	Found 2-bit shift register for signal <x1_1>.
+	Found 2-bit shift register for signal <x1_0>.
+Unit <stage[9].comp> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 544
+ Flip-Flops                                            : 544
+# Shift Registers                                      : 496
+ 2-bit shift register                                  : 496
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : fir.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 65
+#      GND                         : 33
+#      VCC                         : 32
+# FlipFlops/Latches                : 1040
+#      FDE                         : 1040
+# Shift Registers                  : 496
+#      SRLC16E                     : 496
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 545
+#      IBUF                        : 529
+#      OBUF                        : 16
+# DSPs                             : 32
+#      DSP48A1                     : 32
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1040  out of  54576     1%  
+ Number of Slice LUTs:                  496  out of  27288     1%  
+    Number used as Memory:              496  out of   6408     7%  
+       Number used as SRL:              496
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1536
+   Number with an unused Flip Flop:     496  out of   1536    32%  
+   Number with an unused LUT:          1040  out of   1536    67%  
+   Number of fully used LUT-FF pairs:     0  out of   1536     0%  
+   Number of unique control sets:        32
+
+IO Utilization: 
+ Number of IOs:                         546
+ Number of bonded IOBs:                 546  out of    218   250% (*) 
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                     32  out of     58    55%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1568  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 5.413ns (Maximum Frequency: 184.732MHz)
+   Minimum input arrival time before clock: 3.887ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.413ns (frequency: 184.732MHz)
+  Total number of paths / destination ports: 3648 / 3648
+-------------------------------------------------------------------------
+Delay:               5.413ns (Levels of Logic = 1)
+  Source:            h_in_reg_0 (FF)
+  Destination:       stage[31].comp/Maddsub_n0025 (DSP)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: h_in_reg_0 to stage[31].comp/Maddsub_n0025
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.447   0.650  h_in_reg_0 (h_in_reg_0)
+     begin scope: 'stage[31].comp:h_in<0>'
+     DSP48A1:A15               4.316          Maddsub_n0025
+    ----------------------------------------
+    Total                      5.413ns (4.763ns logic, 0.650ns route)
+                                       (88.0% logic, 12.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2096 / 2096
+-------------------------------------------------------------------------
+Offset:              3.887ns (Levels of Logic = 1)
+  Source:            enabled (PAD)
+  Destination:       a_in_reg_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: enabled to a_in_reg_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1568   1.222   2.343  enabled_IBUF (enabled_IBUF)
+     FDE:CE                    0.322          a_in_reg_15
+    ----------------------------------------
+    Total                      3.887ns (1.544ns logic, 2.343ns route)
+                                       (39.7% logic, 60.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            b_out_reg_0 (FF)
+  Destination:       b_out<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: b_out_reg_0 to b_out<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.447   0.579  b_out_reg_0 (b_out_reg_0)
+     OBUF:I->O                 2.571          b_out_0_OBUF (b_out<0>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.413|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.03 secs
+ 
+--> 
+
+Total memory usage is 239576 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   49 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

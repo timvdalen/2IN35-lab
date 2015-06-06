@@ -1,0 +1,3 @@
+verilog work "firstage.v"
+verilog work "fir.v"
+verilog work "firwrapper.v"

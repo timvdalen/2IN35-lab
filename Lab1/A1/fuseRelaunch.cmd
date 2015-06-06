@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/OneDrive/Documents/TUe/2IN35/firtest_isim_beh.exe" -prj "D:/OneDrive/Documents/TUe/2IN35/firtest_beh.prj" "work.firtest" "work.glbl" 

@@ -1,0 +1,2526 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -a -s 3
+-n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr
+firwrapper.pcf
+
+Design file:              firwrapper.ncd
+Physical constraint file: firwrapper.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2700 - Timing constraints ignored because advanced analysis with 
+   offsets was specified.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: Default period analysis for net "clk_BUFGP" 
+
+ 8690487872531283000000000 paths analyzed, 2560 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Minimum period is  52.780ns.
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/b_out_reg_0 (SLICE_X41Y40.AX), 5517213694175747000000000 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     52.780ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_0 (FF)
+  Data Path Delay:      52.691ns (Levels of Logic = 41)
+  Clock Path Skew:      -0.054ns (0.448 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M4        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y7.A2       net (fanout=4)        1.195   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<4>
+    SLICE_X48Y7.COUT     Topcya                0.379   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<4>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+    SLICE_X48Y8.CIN      net (fanout=1)        0.082   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+    SLICE_X48Y8.BMUX     Tcinb                 0.292   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<11>
+    SLICE_X46Y9.B3       net (fanout=1)        0.563   firfilter/stage[0].comp/Mmult_n0014_Madd_9
+    SLICE_X46Y9.CMUX     Topbc                 0.514   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<9>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<11>
+    SLICE_X40Y10.C3      net (fanout=4)        1.092   firfilter/stage[0].comp/n0014<10>
+    SLICE_X40Y10.COUT    Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<14>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+    SLICE_X40Y11.CIN     net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+    SLICE_X40Y11.CMUX    Tcinc                 0.272   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<19>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<19>
+    SLICE_X54Y12.A6      net (fanout=1)        1.261   firfilter/stage[0].comp/Mmult_n0015_Madd_18
+    SLICE_X54Y12.AMUX    Topaa                 0.377   firfilter/a<1><15>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_18_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<18>
+    SLICE_X44Y13.A6      net (fanout=2)        0.863   firfilter/b<1><13>
+    SLICE_X44Y13.BMUX    Topab                 0.439   firfilter/stage[1].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<18>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<21>
+    SLICE_X38Y11.B5      net (fanout=2)        0.904   firfilter/b<2><12>
+    SLICE_X38Y11.CMUX    Topbc                 0.526   firfilter/stage[2].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<21>
+    SLICE_X36Y10.C4      net (fanout=2)        0.728   firfilter/b<3><11>
+    SLICE_X36Y10.DMUX    Topcd                 0.411   firfilter/stage[3].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<21>
+    SLICE_X26Y10.D5      net (fanout=2)        0.791   firfilter/b<4><10>
+    SLICE_X26Y10.COUT    Topcyd                0.261   firfilter/stage[4].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X26Y11.CIN     net (fanout=1)        0.003   firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X26Y11.BMUX    Tcinb                 0.292   firfilter/stage[4].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<25>
+    SLICE_X20Y15.B5      net (fanout=2)        0.837   firfilter/b<5><8>
+    SLICE_X20Y15.CMUX    Topbc                 0.514   firfilter/stage[5].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<25>
+    SLICE_X16Y17.C4      net (fanout=2)        0.880   firfilter/b<6><7>
+    SLICE_X16Y17.DMUX    Topcd                 0.411   firfilter/stage[6].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<25>
+    SLICE_X12Y20.D5      net (fanout=2)        0.856   firfilter/b<7><6>
+    SLICE_X12Y20.COUT    Topcyd                0.260   firfilter/stage[7].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<25>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<25>
+    SLICE_X12Y21.CIN     net (fanout=1)        0.003   firfilter/stage[7].comp/Madd_b_out_cy<25>
+    SLICE_X12Y21.BMUX    Tcinb                 0.260   firfilter/stage[7].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<29>
+    SLICE_X14Y28.B5      net (fanout=2)        1.001   firfilter/b<8><4>
+    SLICE_X14Y28.BMUX    Topbb                 0.376   firfilter/stage[8].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<29>
+    SLICE_X16Y34.B3      net (fanout=2)        0.950   firfilter/b<9><4>
+    SLICE_X16Y34.CMUX    Topbc                 0.514   firfilter/stage[9].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<29>
+    SLICE_X14Y41.C3      net (fanout=2)        0.982   firfilter/b<10><3>
+    SLICE_X14Y41.CMUX    Topcc                 0.413   firfilter/stage[10].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<29>
+    SLICE_X12Y48.C1      net (fanout=2)        1.097   firfilter/b<11><3>
+    SLICE_X12Y48.CMUX    Topcc                 0.392   firfilter/stage[11].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<29>
+    SLICE_X12Y56.C3      net (fanout=2)        1.218   firfilter/b<12><3>
+    SLICE_X12Y56.CMUX    Topcc                 0.392   firfilter/stage[12].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<29>
+    SLICE_X12Y66.C3      net (fanout=2)        1.241   firfilter/b<13><3>
+    SLICE_X12Y66.CMUX    Topcc                 0.392   firfilter/stage[13].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<29>
+    SLICE_X12Y76.C3      net (fanout=2)        1.208   firfilter/b<14><3>
+    SLICE_X12Y76.DMUX    Topcd                 0.411   firfilter/stage[14].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<29>
+    SLICE_X12Y85.D4      net (fanout=2)        1.038   firfilter/b<15><2>
+    SLICE_X12Y85.DMUX    Topdd                 0.374   firfilter/stage[15].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<29>
+    SLICE_X16Y94.D4      net (fanout=2)        1.070   firfilter/b<16><2>
+    SLICE_X16Y94.DMUX    Topdd                 0.374   firfilter/stage[16].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<29>
+    SLICE_X22Y100.D4     net (fanout=2)        1.038   firfilter/b<17><2>
+    SLICE_X22Y100.DMUX   Topdd                 0.393   firfilter/stage[17].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<29>
+    SLICE_X28Y101.D4     net (fanout=2)        0.699   firfilter/b<18><2>
+    SLICE_X28Y101.DMUX   Topdd                 0.374   firfilter/stage[18].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<29>
+    SLICE_X30Y101.DX     net (fanout=2)        1.030   firfilter/b<19><2>
+    SLICE_X30Y101.COUT   Tdxcy                 0.087   firfilter/stage[19].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<29>
+    SLICE_X30Y102.CIN    net (fanout=1)        0.003   firfilter/stage[19].comp/Madd_b_out_cy<29>
+    SLICE_X30Y102.AMUX   Tcina                 0.202   firfilter/b<20><0>
+                                                       firfilter/stage[19].comp/Madd_b_out_xor<31>
+    SLICE_X32Y101.A6     net (fanout=2)        0.498   firfilter/b<20><1>
+    SLICE_X32Y101.AMUX   Topaa                 0.377   firfilter/b<21><0>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[20].comp/Madd_b_out_xor<31>
+    SLICE_X40Y95.A6      net (fanout=2)        0.958   firfilter/b<21><1>
+    SLICE_X40Y95.AMUX    Topaa                 0.377   firfilter/b<22><0>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[21].comp/Madd_b_out_xor<31>
+    SLICE_X44Y93.A6      net (fanout=2)        0.650   firfilter/b<22><1>
+    SLICE_X44Y93.AMUX    Topaa                 0.370   firfilter/b<23><0>
+                                                       firfilter/stage[22].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[22].comp/Madd_b_out_xor<31>
+    SLICE_X46Y84.A4      net (fanout=2)        1.082   firfilter/b<23><1>
+    SLICE_X46Y84.AMUX    Topaa                 0.377   firfilter/b<24><0>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[23].comp/Madd_b_out_xor<31>
+    SLICE_X44Y78.AX      net (fanout=2)        1.333   firfilter/b<24><1>
+    SLICE_X44Y78.BMUX    Taxb                  0.255   firfilter/b<25><0>
+                                                       firfilter/stage[24].comp/Madd_b_out_xor<31>
+    SLICE_X46Y72.B6      net (fanout=1)        0.742   firfilter/b<25><0>
+    SLICE_X46Y72.BMUX    Topbb                 0.368   firfilter/b<26><0>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[25].comp/Madd_b_out_xor<31>
+    SLICE_X42Y65.B5      net (fanout=1)        0.848   firfilter/b<26><0>
+    SLICE_X42Y65.BMUX    Topbb                 0.368   firfilter/b<27><0>
+                                                       firfilter/stage[26].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[26].comp/Madd_b_out_xor<31>
+    SLICE_X44Y59.B5      net (fanout=1)        0.848   firfilter/b<27><0>
+    SLICE_X44Y59.BMUX    Topbb                 0.376   firfilter/b<28><0>
+                                                       firfilter/stage[27].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[27].comp/Madd_b_out_xor<31>
+    SLICE_X44Y51.B4      net (fanout=1)        1.158   firfilter/b<28><0>
+    SLICE_X44Y51.BMUX    Topbb                 0.376   firfilter/b<29><0>
+                                                       firfilter/stage[28].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[28].comp/Madd_b_out_xor<31>
+    SLICE_X46Y46.B3      net (fanout=1)        0.784   firfilter/b<29><0>
+    SLICE_X46Y46.BMUX    Topbb                 0.368   firfilter/b<30><0>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[29].comp/Madd_b_out_xor<31>
+    SLICE_X44Y41.B3      net (fanout=1)        0.824   firfilter/b<30><0>
+    SLICE_X44Y41.BMUX    Topbb                 0.376   firfilter/b<31><0>
+                                                       firfilter/stage[30].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[30].comp/Madd_b_out_xor<31>
+    SLICE_X42Y39.B5      net (fanout=1)        0.616   firfilter/b<31><0>
+    SLICE_X42Y39.BMUX    Topbb                 0.368   firfilter/b<32><0>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[31].comp/Madd_b_out_xor<31>
+    SLICE_X41Y40.AX      net (fanout=1)        0.629   firfilter/b<32><0>
+    SLICE_X41Y40.CLK     Tdick                 0.063   b_out_0_OBUF
+                                                       firfilter/b_out_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                     52.691ns (18.371ns logic, 34.320ns route)
+                                                       (34.9% logic, 65.1% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     52.777ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_0 (FF)
+  Data Path Delay:      52.688ns (Levels of Logic = 41)
+  Clock Path Skew:      -0.054ns (0.448 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M4        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y7.A2       net (fanout=4)        1.195   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<4>
+    SLICE_X48Y7.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<4>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+    SLICE_X46Y8.C1       net (fanout=1)        0.720   firfilter/stage[0].comp/Mmult_n0014_Madd_6
+    SLICE_X46Y8.COUT     Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<6>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+    SLICE_X46Y9.CIN      net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+    SLICE_X46Y9.CMUX     Tcinc                 0.272   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<11>
+    SLICE_X40Y10.C3      net (fanout=4)        1.092   firfilter/stage[0].comp/n0014<10>
+    SLICE_X40Y10.COUT    Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<14>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+    SLICE_X40Y11.CIN     net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+    SLICE_X40Y11.CMUX    Tcinc                 0.272   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<19>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<19>
+    SLICE_X54Y12.A6      net (fanout=1)        1.261   firfilter/stage[0].comp/Mmult_n0015_Madd_18
+    SLICE_X54Y12.AMUX    Topaa                 0.377   firfilter/a<1><15>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_18_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<18>
+    SLICE_X44Y13.A6      net (fanout=2)        0.863   firfilter/b<1><13>
+    SLICE_X44Y13.BMUX    Topab                 0.439   firfilter/stage[1].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<18>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<21>
+    SLICE_X38Y11.B5      net (fanout=2)        0.904   firfilter/b<2><12>
+    SLICE_X38Y11.CMUX    Topbc                 0.526   firfilter/stage[2].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<21>
+    SLICE_X36Y10.C4      net (fanout=2)        0.728   firfilter/b<3><11>
+    SLICE_X36Y10.DMUX    Topcd                 0.411   firfilter/stage[3].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<21>
+    SLICE_X26Y10.D5      net (fanout=2)        0.791   firfilter/b<4><10>
+    SLICE_X26Y10.COUT    Topcyd                0.261   firfilter/stage[4].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X26Y11.CIN     net (fanout=1)        0.003   firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X26Y11.BMUX    Tcinb                 0.292   firfilter/stage[4].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<25>
+    SLICE_X20Y15.B5      net (fanout=2)        0.837   firfilter/b<5><8>
+    SLICE_X20Y15.CMUX    Topbc                 0.514   firfilter/stage[5].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<25>
+    SLICE_X16Y17.C4      net (fanout=2)        0.880   firfilter/b<6><7>
+    SLICE_X16Y17.DMUX    Topcd                 0.411   firfilter/stage[6].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<25>
+    SLICE_X12Y20.D5      net (fanout=2)        0.856   firfilter/b<7><6>
+    SLICE_X12Y20.COUT    Topcyd                0.260   firfilter/stage[7].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<25>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<25>
+    SLICE_X12Y21.CIN     net (fanout=1)        0.003   firfilter/stage[7].comp/Madd_b_out_cy<25>
+    SLICE_X12Y21.BMUX    Tcinb                 0.260   firfilter/stage[7].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<29>
+    SLICE_X14Y28.B5      net (fanout=2)        1.001   firfilter/b<8><4>
+    SLICE_X14Y28.BMUX    Topbb                 0.376   firfilter/stage[8].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<29>
+    SLICE_X16Y34.B3      net (fanout=2)        0.950   firfilter/b<9><4>
+    SLICE_X16Y34.CMUX    Topbc                 0.514   firfilter/stage[9].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<29>
+    SLICE_X14Y41.C3      net (fanout=2)        0.982   firfilter/b<10><3>
+    SLICE_X14Y41.CMUX    Topcc                 0.413   firfilter/stage[10].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<29>
+    SLICE_X12Y48.C1      net (fanout=2)        1.097   firfilter/b<11><3>
+    SLICE_X12Y48.CMUX    Topcc                 0.392   firfilter/stage[11].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<29>
+    SLICE_X12Y56.C3      net (fanout=2)        1.218   firfilter/b<12><3>
+    SLICE_X12Y56.CMUX    Topcc                 0.392   firfilter/stage[12].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<29>
+    SLICE_X12Y66.C3      net (fanout=2)        1.241   firfilter/b<13><3>
+    SLICE_X12Y66.CMUX    Topcc                 0.392   firfilter/stage[13].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<29>
+    SLICE_X12Y76.C3      net (fanout=2)        1.208   firfilter/b<14><3>
+    SLICE_X12Y76.DMUX    Topcd                 0.411   firfilter/stage[14].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<29>
+    SLICE_X12Y85.D4      net (fanout=2)        1.038   firfilter/b<15><2>
+    SLICE_X12Y85.DMUX    Topdd                 0.374   firfilter/stage[15].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<29>
+    SLICE_X16Y94.D4      net (fanout=2)        1.070   firfilter/b<16><2>
+    SLICE_X16Y94.DMUX    Topdd                 0.374   firfilter/stage[16].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<29>
+    SLICE_X22Y100.D4     net (fanout=2)        1.038   firfilter/b<17><2>
+    SLICE_X22Y100.DMUX   Topdd                 0.393   firfilter/stage[17].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<29>
+    SLICE_X28Y101.D4     net (fanout=2)        0.699   firfilter/b<18><2>
+    SLICE_X28Y101.DMUX   Topdd                 0.374   firfilter/stage[18].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<29>
+    SLICE_X30Y101.DX     net (fanout=2)        1.030   firfilter/b<19><2>
+    SLICE_X30Y101.COUT   Tdxcy                 0.087   firfilter/stage[19].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<29>
+    SLICE_X30Y102.CIN    net (fanout=1)        0.003   firfilter/stage[19].comp/Madd_b_out_cy<29>
+    SLICE_X30Y102.AMUX   Tcina                 0.202   firfilter/b<20><0>
+                                                       firfilter/stage[19].comp/Madd_b_out_xor<31>
+    SLICE_X32Y101.A6     net (fanout=2)        0.498   firfilter/b<20><1>
+    SLICE_X32Y101.AMUX   Topaa                 0.377   firfilter/b<21><0>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[20].comp/Madd_b_out_xor<31>
+    SLICE_X40Y95.A6      net (fanout=2)        0.958   firfilter/b<21><1>
+    SLICE_X40Y95.AMUX    Topaa                 0.377   firfilter/b<22><0>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[21].comp/Madd_b_out_xor<31>
+    SLICE_X44Y93.A6      net (fanout=2)        0.650   firfilter/b<22><1>
+    SLICE_X44Y93.AMUX    Topaa                 0.370   firfilter/b<23><0>
+                                                       firfilter/stage[22].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[22].comp/Madd_b_out_xor<31>
+    SLICE_X46Y84.A4      net (fanout=2)        1.082   firfilter/b<23><1>
+    SLICE_X46Y84.AMUX    Topaa                 0.377   firfilter/b<24><0>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[23].comp/Madd_b_out_xor<31>
+    SLICE_X44Y78.AX      net (fanout=2)        1.333   firfilter/b<24><1>
+    SLICE_X44Y78.BMUX    Taxb                  0.255   firfilter/b<25><0>
+                                                       firfilter/stage[24].comp/Madd_b_out_xor<31>
+    SLICE_X46Y72.B6      net (fanout=1)        0.742   firfilter/b<25><0>
+    SLICE_X46Y72.BMUX    Topbb                 0.368   firfilter/b<26><0>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[25].comp/Madd_b_out_xor<31>
+    SLICE_X42Y65.B5      net (fanout=1)        0.848   firfilter/b<26><0>
+    SLICE_X42Y65.BMUX    Topbb                 0.368   firfilter/b<27><0>
+                                                       firfilter/stage[26].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[26].comp/Madd_b_out_xor<31>
+    SLICE_X44Y59.B5      net (fanout=1)        0.848   firfilter/b<27><0>
+    SLICE_X44Y59.BMUX    Topbb                 0.376   firfilter/b<28><0>
+                                                       firfilter/stage[27].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[27].comp/Madd_b_out_xor<31>
+    SLICE_X44Y51.B4      net (fanout=1)        1.158   firfilter/b<28><0>
+    SLICE_X44Y51.BMUX    Topbb                 0.376   firfilter/b<29><0>
+                                                       firfilter/stage[28].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[28].comp/Madd_b_out_xor<31>
+    SLICE_X46Y46.B3      net (fanout=1)        0.784   firfilter/b<29><0>
+    SLICE_X46Y46.BMUX    Topbb                 0.368   firfilter/b<30><0>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[29].comp/Madd_b_out_xor<31>
+    SLICE_X44Y41.B3      net (fanout=1)        0.824   firfilter/b<30><0>
+    SLICE_X44Y41.BMUX    Topbb                 0.376   firfilter/b<31><0>
+                                                       firfilter/stage[30].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[30].comp/Madd_b_out_xor<31>
+    SLICE_X42Y39.B5      net (fanout=1)        0.616   firfilter/b<31><0>
+    SLICE_X42Y39.BMUX    Topbb                 0.368   firfilter/b<32><0>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[31].comp/Madd_b_out_xor<31>
+    SLICE_X41Y40.AX      net (fanout=1)        0.629   firfilter/b<32><0>
+    SLICE_X41Y40.CLK     Tdick                 0.063   b_out_0_OBUF
+                                                       firfilter/b_out_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                     52.688ns (18.290ns logic, 34.398ns route)
+                                                       (34.7% logic, 65.3% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     52.774ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_0 (FF)
+  Data Path Delay:      52.685ns (Levels of Logic = 41)
+  Clock Path Skew:      -0.054ns (0.448 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M4        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y7.A2       net (fanout=4)        1.195   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<4>
+    SLICE_X48Y7.COUT     Topcya                0.379   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<4>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+    SLICE_X48Y8.CIN      net (fanout=1)        0.082   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<7>
+    SLICE_X48Y8.BMUX     Tcinb                 0.292   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<11>
+    SLICE_X46Y9.B3       net (fanout=1)        0.563   firfilter/stage[0].comp/Mmult_n0014_Madd_9
+    SLICE_X46Y9.CMUX     Topbc                 0.514   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<9>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<11>
+    SLICE_X40Y10.C3      net (fanout=4)        1.092   firfilter/stage[0].comp/n0014<10>
+    SLICE_X40Y10.COUT    Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<14>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+    SLICE_X40Y11.CIN     net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<15>
+    SLICE_X40Y11.CMUX    Tcinc                 0.272   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<19>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<19>
+    SLICE_X54Y12.A6      net (fanout=1)        1.261   firfilter/stage[0].comp/Mmult_n0015_Madd_18
+    SLICE_X54Y12.AMUX    Topaa                 0.377   firfilter/a<1><15>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_18_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<18>
+    SLICE_X44Y13.A6      net (fanout=2)        0.863   firfilter/b<1><13>
+    SLICE_X44Y13.BMUX    Topab                 0.439   firfilter/stage[1].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<18>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<21>
+    SLICE_X38Y11.B5      net (fanout=2)        0.904   firfilter/b<2><12>
+    SLICE_X38Y11.CMUX    Topbc                 0.526   firfilter/stage[2].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<21>
+    SLICE_X36Y10.C4      net (fanout=2)        0.728   firfilter/b<3><11>
+    SLICE_X36Y10.DMUX    Topcd                 0.411   firfilter/stage[3].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<21>
+    SLICE_X26Y10.D5      net (fanout=2)        0.791   firfilter/b<4><10>
+    SLICE_X26Y10.COUT    Topcyd                0.261   firfilter/stage[4].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X26Y11.CIN     net (fanout=1)        0.003   firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X26Y11.BMUX    Tcinb                 0.292   firfilter/stage[4].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<25>
+    SLICE_X20Y15.B5      net (fanout=2)        0.837   firfilter/b<5><8>
+    SLICE_X20Y15.CMUX    Topbc                 0.514   firfilter/stage[5].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<25>
+    SLICE_X16Y17.C4      net (fanout=2)        0.880   firfilter/b<6><7>
+    SLICE_X16Y17.DMUX    Topcd                 0.411   firfilter/stage[6].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<25>
+    SLICE_X12Y20.D5      net (fanout=2)        0.856   firfilter/b<7><6>
+    SLICE_X12Y20.COUT    Topcyd                0.260   firfilter/stage[7].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<25>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<25>
+    SLICE_X12Y21.CIN     net (fanout=1)        0.003   firfilter/stage[7].comp/Madd_b_out_cy<25>
+    SLICE_X12Y21.BMUX    Tcinb                 0.260   firfilter/stage[7].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<29>
+    SLICE_X14Y28.B5      net (fanout=2)        1.001   firfilter/b<8><4>
+    SLICE_X14Y28.BMUX    Topbb                 0.376   firfilter/stage[8].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<29>
+    SLICE_X16Y34.B3      net (fanout=2)        0.950   firfilter/b<9><4>
+    SLICE_X16Y34.CMUX    Topbc                 0.514   firfilter/stage[9].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<29>
+    SLICE_X14Y41.C3      net (fanout=2)        0.982   firfilter/b<10><3>
+    SLICE_X14Y41.CMUX    Topcc                 0.413   firfilter/stage[10].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<29>
+    SLICE_X12Y48.C1      net (fanout=2)        1.097   firfilter/b<11><3>
+    SLICE_X12Y48.CMUX    Topcc                 0.392   firfilter/stage[11].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<29>
+    SLICE_X12Y56.C3      net (fanout=2)        1.218   firfilter/b<12><3>
+    SLICE_X12Y56.CMUX    Topcc                 0.392   firfilter/stage[12].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<29>
+    SLICE_X12Y66.C3      net (fanout=2)        1.241   firfilter/b<13><3>
+    SLICE_X12Y66.CMUX    Topcc                 0.392   firfilter/stage[13].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<29>
+    SLICE_X12Y76.C3      net (fanout=2)        1.208   firfilter/b<14><3>
+    SLICE_X12Y76.DMUX    Topcd                 0.411   firfilter/stage[14].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<28>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<29>
+    SLICE_X12Y85.D4      net (fanout=2)        1.038   firfilter/b<15><2>
+    SLICE_X12Y85.DMUX    Topdd                 0.374   firfilter/stage[15].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<29>
+    SLICE_X16Y94.D4      net (fanout=2)        1.070   firfilter/b<16><2>
+    SLICE_X16Y94.DMUX    Topdd                 0.374   firfilter/stage[16].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<29>
+    SLICE_X22Y100.D4     net (fanout=2)        1.038   firfilter/b<17><2>
+    SLICE_X22Y100.DMUX   Topdd                 0.393   firfilter/stage[17].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<29>
+    SLICE_X28Y101.D4     net (fanout=2)        0.699   firfilter/b<18><2>
+    SLICE_X28Y101.DMUX   Topdd                 0.374   firfilter/stage[18].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<29>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<29>
+    SLICE_X30Y101.DX     net (fanout=2)        1.030   firfilter/b<19><2>
+    SLICE_X30Y101.COUT   Tdxcy                 0.087   firfilter/stage[19].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<29>
+    SLICE_X30Y102.CIN    net (fanout=1)        0.003   firfilter/stage[19].comp/Madd_b_out_cy<29>
+    SLICE_X30Y102.AMUX   Tcina                 0.202   firfilter/b<20><0>
+                                                       firfilter/stage[19].comp/Madd_b_out_xor<31>
+    SLICE_X32Y101.A6     net (fanout=2)        0.498   firfilter/b<20><1>
+    SLICE_X32Y101.AMUX   Topaa                 0.377   firfilter/b<21><0>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[20].comp/Madd_b_out_xor<31>
+    SLICE_X40Y95.A6      net (fanout=2)        0.958   firfilter/b<21><1>
+    SLICE_X40Y95.AMUX    Topaa                 0.377   firfilter/b<22><0>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[21].comp/Madd_b_out_xor<31>
+    SLICE_X44Y93.A6      net (fanout=2)        0.650   firfilter/b<22><1>
+    SLICE_X44Y93.AMUX    Topaa                 0.370   firfilter/b<23><0>
+                                                       firfilter/stage[22].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[22].comp/Madd_b_out_xor<31>
+    SLICE_X46Y84.A4      net (fanout=2)        1.082   firfilter/b<23><1>
+    SLICE_X46Y84.AMUX    Topaa                 0.377   firfilter/b<24><0>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[23].comp/Madd_b_out_xor<31>
+    SLICE_X44Y78.A5      net (fanout=2)        0.854   firfilter/b<24><1>
+    SLICE_X44Y78.AMUX    Topaa                 0.370   firfilter/b<25><0>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[24].comp/Madd_b_out_xor<31>
+    SLICE_X46Y72.A6      net (fanout=2)        0.880   firfilter/b<25><1>
+    SLICE_X46Y72.AMUX    Topaa                 0.377   firfilter/b<26><0>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[25].comp/Madd_b_out_xor<31>
+    SLICE_X42Y65.A4      net (fanout=2)        0.904   firfilter/b<26><1>
+    SLICE_X42Y65.AMUX    Topaa                 0.377   firfilter/b<27><0>
+                                                       firfilter/stage[26].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[26].comp/Madd_b_out_xor<31>
+    SLICE_X44Y59.A5      net (fanout=2)        0.931   firfilter/b<27><1>
+    SLICE_X44Y59.BMUX    Topab                 0.439   firfilter/b<28><0>
+                                                       firfilter/stage[27].comp/Madd_b_out_lut<30>
+                                                       firfilter/stage[27].comp/Madd_b_out_xor<31>
+    SLICE_X44Y51.B4      net (fanout=1)        1.158   firfilter/b<28><0>
+    SLICE_X44Y51.BMUX    Topbb                 0.376   firfilter/b<29><0>
+                                                       firfilter/stage[28].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[28].comp/Madd_b_out_xor<31>
+    SLICE_X46Y46.B3      net (fanout=1)        0.784   firfilter/b<29><0>
+    SLICE_X46Y46.BMUX    Topbb                 0.368   firfilter/b<30><0>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[29].comp/Madd_b_out_xor<31>
+    SLICE_X44Y41.B3      net (fanout=1)        0.824   firfilter/b<30><0>
+    SLICE_X44Y41.BMUX    Topbb                 0.376   firfilter/b<31><0>
+                                                       firfilter/stage[30].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[30].comp/Madd_b_out_xor<31>
+    SLICE_X42Y39.B5      net (fanout=1)        0.616   firfilter/b<31><0>
+    SLICE_X42Y39.BMUX    Topbb                 0.368   firfilter/b<32><0>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<31>
+                                                       firfilter/stage[31].comp/Madd_b_out_xor<31>
+    SLICE_X41Y40.AX      net (fanout=1)        0.629   firfilter/b<32><0>
+    SLICE_X41Y40.CLK     Tdick                 0.063   b_out_0_OBUF
+                                                       firfilter/b_out_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                     52.685ns (18.567ns logic, 34.118ns route)
+                                                       (35.2% logic, 64.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/b_out_reg_9 (SLICE_X32Y37.AX), 254558272567184000000 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     52.409ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_9 (FF)
+  Data Path Delay:      52.325ns (Levels of Logic = 41)
+  Clock Path Skew:      -0.049ns (0.453 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M0        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y6.A5       net (fanout=3)        1.027   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<0>
+    SLICE_X48Y6.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<0>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+    SLICE_X46Y7.C1       net (fanout=1)        0.679   firfilter/stage[0].comp/Mmult_n0014_Madd_2
+    SLICE_X46Y7.CMUX     Topcc                 0.392   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<2>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X40Y8.A4       net (fanout=4)        0.814   firfilter/stage[0].comp/n0014<2>
+    SLICE_X40Y8.AMUX     Topaa                 0.377   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<4>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X44Y4.A6       net (fanout=1)        0.854   firfilter/stage[0].comp/Mmult_n0015_Madd_4
+    SLICE_X44Y4.AMUX     Topaa                 0.370   firfilter/b<1><27>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_4_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<4>
+    SLICE_X44Y9.C5       net (fanout=2)        0.613   firfilter/b<1><27>
+    SLICE_X44Y9.CMUX     Topcc                 0.413   firfilter/stage[1].comp/Madd_b_out_cy<5>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<4>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<5>
+    SLICE_X38Y7.C3       net (fanout=2)        0.870   firfilter/b<2><27>
+    SLICE_X38Y7.COUT     Topcyc                0.277   firfilter/stage[2].comp/Madd_b_out_cy<5>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<4>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<5>
+    SLICE_X38Y8.CIN      net (fanout=1)        0.082   firfilter/stage[2].comp/Madd_b_out_cy<5>
+    SLICE_X38Y8.BMUX     Tcinb                 0.292   firfilter/stage[2].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<9>
+    SLICE_X36Y7.B4       net (fanout=2)        0.685   firfilter/b<3><24>
+    SLICE_X36Y7.BMUX     Topbb                 0.368   firfilter/stage[3].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<9>
+    SLICE_X26Y7.B5       net (fanout=2)        0.782   firfilter/b<4><24>
+    SLICE_X26Y7.BMUX     Topbb                 0.376   firfilter/stage[4].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<9>
+    SLICE_X20Y11.B5      net (fanout=2)        0.857   firfilter/b<5><24>
+    SLICE_X20Y11.BMUX    Topbb                 0.368   firfilter/stage[5].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<9>
+    SLICE_X16Y13.B5      net (fanout=2)        0.723   firfilter/b<6><24>
+    SLICE_X16Y13.BMUX    Topbb                 0.368   firfilter/stage[6].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<9>
+    SLICE_X12Y16.B5      net (fanout=2)        0.843   firfilter/b<7><24>
+    SLICE_X12Y16.BMUX    Topbb                 0.368   firfilter/stage[7].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<9>
+    SLICE_X14Y23.B3      net (fanout=2)        1.019   firfilter/b<8><24>
+    SLICE_X14Y23.BMUX    Topbb                 0.376   firfilter/stage[8].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<9>
+    SLICE_X16Y29.B6      net (fanout=2)        0.797   firfilter/b<9><24>
+    SLICE_X16Y29.BMUX    Topbb                 0.368   firfilter/stage[9].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<9>
+    SLICE_X14Y36.B5      net (fanout=2)        1.001   firfilter/b<10><24>
+    SLICE_X14Y36.BMUX    Topbb                 0.376   firfilter/stage[10].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<9>
+    SLICE_X12Y43.B3      net (fanout=2)        0.979   firfilter/b<11><24>
+    SLICE_X12Y43.BMUX    Topbb                 0.368   firfilter/stage[11].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<9>
+    SLICE_X12Y51.B3      net (fanout=2)        1.189   firfilter/b<12><24>
+    SLICE_X12Y51.BMUX    Topbb                 0.368   firfilter/stage[12].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<9>
+    SLICE_X12Y61.B3      net (fanout=2)        1.240   firfilter/b<13><24>
+    SLICE_X12Y61.BMUX    Topbb                 0.368   firfilter/stage[13].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<9>
+    SLICE_X12Y71.B3      net (fanout=2)        1.020   firfilter/b<14><24>
+    SLICE_X12Y71.BMUX    Topbb                 0.368   firfilter/stage[14].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<9>
+    SLICE_X12Y80.B4      net (fanout=2)        0.926   firfilter/b<15><24>
+    SLICE_X12Y80.BMUX    Topbb                 0.368   firfilter/stage[15].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<9>
+    SLICE_X16Y89.B4      net (fanout=2)        1.129   firfilter/b<16><24>
+    SLICE_X16Y89.BMUX    Topbb                 0.368   firfilter/stage[16].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<9>
+    SLICE_X22Y95.B5      net (fanout=2)        1.116   firfilter/b<17><24>
+    SLICE_X22Y95.BMUX    Topbb                 0.376   firfilter/stage[17].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<9>
+    SLICE_X28Y96.B3      net (fanout=2)        0.795   firfilter/b<18><24>
+    SLICE_X28Y96.BMUX    Topbb                 0.368   firfilter/stage[18].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<9>
+    SLICE_X30Y96.BX      net (fanout=2)        0.836   firfilter/b<19><24>
+    SLICE_X30Y96.CMUX    Taxc                  0.310   firfilter/stage[19].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<9>
+    SLICE_X32Y95.C3      net (fanout=2)        0.557   firfilter/b<20><23>
+    SLICE_X32Y95.CMUX    Topcc                 0.392   firfilter/stage[20].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[20].comp/Madd_b_out_cy<9>
+    SLICE_X40Y89.C3      net (fanout=2)        1.008   firfilter/b<21><23>
+    SLICE_X40Y89.CMUX    Topcc                 0.392   firfilter/stage[21].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[21].comp/Madd_b_out_cy<9>
+    SLICE_X44Y87.C6      net (fanout=2)        0.650   firfilter/b<22><23>
+    SLICE_X44Y87.CMUX    Topcc                 0.413   firfilter/stage[22].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[22].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<9>
+    SLICE_X46Y78.C3      net (fanout=2)        1.205   firfilter/b<23><23>
+    SLICE_X46Y78.CMUX    Topcc                 0.392   firfilter/stage[23].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[23].comp/Madd_b_out_cy<9>
+    SLICE_X44Y72.C4      net (fanout=2)        0.894   firfilter/b<24><23>
+    SLICE_X44Y72.CMUX    Topcc                 0.413   firfilter/stage[24].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[24].comp/Madd_b_out_cy<9>
+    SLICE_X46Y66.C6      net (fanout=2)        0.797   firfilter/b<25><23>
+    SLICE_X46Y66.CMUX    Topcc                 0.392   firfilter/stage[25].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[25].comp/Madd_b_out_cy<9>
+    SLICE_X42Y59.C4      net (fanout=2)        1.041   firfilter/b<26><23>
+    SLICE_X42Y59.COUT    Topcyc                0.295   firfilter/stage[26].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[26].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<9>
+    SLICE_X42Y60.CIN     net (fanout=1)        0.003   firfilter/stage[26].comp/Madd_b_out_cy<9>
+    SLICE_X42Y60.AMUX    Tcina                 0.177   firfilter/stage[26].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<13>
+    SLICE_X44Y54.AX      net (fanout=2)        1.241   firfilter/b<27><21>
+    SLICE_X44Y54.CMUX    Taxc                  0.348   firfilter/stage[27].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[27].comp/Madd_b_out_cy<13>
+    SLICE_X44Y46.CX      net (fanout=2)        1.519   firfilter/b<28><19>
+    SLICE_X44Y46.COUT    Tcxcy                 0.093   firfilter/stage[28].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<13>
+    SLICE_X44Y47.CIN     net (fanout=1)        0.003   firfilter/stage[28].comp/Madd_b_out_cy<13>
+    SLICE_X44Y47.BMUX    Tcinb                 0.292   firfilter/stage[28].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<17>
+    SLICE_X46Y42.B3      net (fanout=2)        0.789   firfilter/b<29><16>
+    SLICE_X46Y42.COUT    Topcyb                0.375   firfilter/stage[29].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<15>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<17>
+    SLICE_X46Y43.CIN     net (fanout=1)        0.003   firfilter/stage[29].comp/Madd_b_out_cy<17>
+    SLICE_X46Y43.AMUX    Tcina                 0.177   firfilter/stage[29].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<21>
+    SLICE_X44Y38.A1      net (fanout=2)        1.087   firfilter/b<30><13>
+    SLICE_X44Y38.CMUX    Topac                 0.537   firfilter/stage[30].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[30].comp/Madd_b_out_lut<18>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<21>
+    SLICE_X42Y36.C4      net (fanout=2)        0.753   firfilter/b<31><11>
+    SLICE_X42Y36.COUT    Topcyc                0.295   firfilter/stage[31].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<21>
+    SLICE_X42Y37.CIN     net (fanout=1)        0.003   firfilter/stage[31].comp/Madd_b_out_cy<21>
+    SLICE_X42Y37.AMUX    Tcina                 0.177   firfilter/stage[31].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<25>
+    SLICE_X32Y37.AX      net (fanout=1)        1.243   firfilter/b<32><9>
+    SLICE_X32Y37.CLK     Tdick                 0.136   b_out_9_OBUF
+                                                       firfilter/b_out_reg_9
+    -------------------------------------------------  ---------------------------
+    Total                                     52.325ns (17.939ns logic, 34.386ns route)
+                                                       (34.3% logic, 65.7% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     52.400ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_9 (FF)
+  Data Path Delay:      52.316ns (Levels of Logic = 41)
+  Clock Path Skew:      -0.049ns (0.453 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M0        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y6.A5       net (fanout=3)        1.027   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<0>
+    SLICE_X48Y6.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<0>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+    SLICE_X46Y7.C1       net (fanout=1)        0.679   firfilter/stage[0].comp/Mmult_n0014_Madd_2
+    SLICE_X46Y7.COUT     Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<2>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.CIN      net (fanout=1)        0.082   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+    SLICE_X40Y8.D3       net (fanout=4)        0.878   firfilter/stage[0].comp/n0014<5>
+    SLICE_X40Y8.DMUX     Topdd                 0.374   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X44Y8.A4       net (fanout=1)        0.889   firfilter/stage[0].comp/Mmult_n0015_Madd_7
+    SLICE_X44Y8.AMUX     Topaa                 0.370   firfilter/b<1><24>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_7_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<7>
+    SLICE_X44Y10.B5      net (fanout=2)        0.541   firfilter/b<1><24>
+    SLICE_X44Y10.BMUX    Topbb                 0.376   firfilter/stage[1].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X38Y8.B5       net (fanout=2)        0.904   firfilter/b<2><24>
+    SLICE_X38Y8.BMUX     Topbb                 0.376   firfilter/stage[2].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<9>
+    SLICE_X36Y7.B4       net (fanout=2)        0.685   firfilter/b<3><24>
+    SLICE_X36Y7.BMUX     Topbb                 0.368   firfilter/stage[3].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<9>
+    SLICE_X26Y7.B5       net (fanout=2)        0.782   firfilter/b<4><24>
+    SLICE_X26Y7.BMUX     Topbb                 0.376   firfilter/stage[4].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<9>
+    SLICE_X20Y11.B5      net (fanout=2)        0.857   firfilter/b<5><24>
+    SLICE_X20Y11.BMUX    Topbb                 0.368   firfilter/stage[5].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<9>
+    SLICE_X16Y13.B5      net (fanout=2)        0.723   firfilter/b<6><24>
+    SLICE_X16Y13.BMUX    Topbb                 0.368   firfilter/stage[6].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<9>
+    SLICE_X12Y16.B5      net (fanout=2)        0.843   firfilter/b<7><24>
+    SLICE_X12Y16.BMUX    Topbb                 0.368   firfilter/stage[7].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<9>
+    SLICE_X14Y23.B3      net (fanout=2)        1.019   firfilter/b<8><24>
+    SLICE_X14Y23.BMUX    Topbb                 0.376   firfilter/stage[8].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<9>
+    SLICE_X16Y29.B6      net (fanout=2)        0.797   firfilter/b<9><24>
+    SLICE_X16Y29.BMUX    Topbb                 0.368   firfilter/stage[9].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<9>
+    SLICE_X14Y36.B5      net (fanout=2)        1.001   firfilter/b<10><24>
+    SLICE_X14Y36.BMUX    Topbb                 0.376   firfilter/stage[10].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<9>
+    SLICE_X12Y43.B3      net (fanout=2)        0.979   firfilter/b<11><24>
+    SLICE_X12Y43.BMUX    Topbb                 0.368   firfilter/stage[11].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<9>
+    SLICE_X12Y51.B3      net (fanout=2)        1.189   firfilter/b<12><24>
+    SLICE_X12Y51.BMUX    Topbb                 0.368   firfilter/stage[12].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<9>
+    SLICE_X12Y61.B3      net (fanout=2)        1.240   firfilter/b<13><24>
+    SLICE_X12Y61.BMUX    Topbb                 0.368   firfilter/stage[13].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<9>
+    SLICE_X12Y71.B3      net (fanout=2)        1.020   firfilter/b<14><24>
+    SLICE_X12Y71.BMUX    Topbb                 0.368   firfilter/stage[14].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<9>
+    SLICE_X12Y80.B4      net (fanout=2)        0.926   firfilter/b<15><24>
+    SLICE_X12Y80.BMUX    Topbb                 0.368   firfilter/stage[15].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<9>
+    SLICE_X16Y89.B4      net (fanout=2)        1.129   firfilter/b<16><24>
+    SLICE_X16Y89.BMUX    Topbb                 0.368   firfilter/stage[16].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<9>
+    SLICE_X22Y95.B5      net (fanout=2)        1.116   firfilter/b<17><24>
+    SLICE_X22Y95.BMUX    Topbb                 0.376   firfilter/stage[17].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<9>
+    SLICE_X28Y96.B3      net (fanout=2)        0.795   firfilter/b<18><24>
+    SLICE_X28Y96.BMUX    Topbb                 0.368   firfilter/stage[18].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<9>
+    SLICE_X30Y96.BX      net (fanout=2)        0.836   firfilter/b<19><24>
+    SLICE_X30Y96.CMUX    Taxc                  0.310   firfilter/stage[19].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<9>
+    SLICE_X32Y95.C3      net (fanout=2)        0.557   firfilter/b<20><23>
+    SLICE_X32Y95.CMUX    Topcc                 0.392   firfilter/stage[20].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[20].comp/Madd_b_out_cy<9>
+    SLICE_X40Y89.C3      net (fanout=2)        1.008   firfilter/b<21><23>
+    SLICE_X40Y89.CMUX    Topcc                 0.392   firfilter/stage[21].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[21].comp/Madd_b_out_cy<9>
+    SLICE_X44Y87.C6      net (fanout=2)        0.650   firfilter/b<22><23>
+    SLICE_X44Y87.CMUX    Topcc                 0.413   firfilter/stage[22].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[22].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<9>
+    SLICE_X46Y78.C3      net (fanout=2)        1.205   firfilter/b<23><23>
+    SLICE_X46Y78.CMUX    Topcc                 0.392   firfilter/stage[23].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[23].comp/Madd_b_out_cy<9>
+    SLICE_X44Y72.C4      net (fanout=2)        0.894   firfilter/b<24><23>
+    SLICE_X44Y72.CMUX    Topcc                 0.413   firfilter/stage[24].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[24].comp/Madd_b_out_cy<9>
+    SLICE_X46Y66.C6      net (fanout=2)        0.797   firfilter/b<25><23>
+    SLICE_X46Y66.CMUX    Topcc                 0.392   firfilter/stage[25].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[25].comp/Madd_b_out_cy<9>
+    SLICE_X42Y59.C4      net (fanout=2)        1.041   firfilter/b<26><23>
+    SLICE_X42Y59.COUT    Topcyc                0.295   firfilter/stage[26].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[26].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<9>
+    SLICE_X42Y60.CIN     net (fanout=1)        0.003   firfilter/stage[26].comp/Madd_b_out_cy<9>
+    SLICE_X42Y60.AMUX    Tcina                 0.177   firfilter/stage[26].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<13>
+    SLICE_X44Y54.AX      net (fanout=2)        1.241   firfilter/b<27><21>
+    SLICE_X44Y54.CMUX    Taxc                  0.348   firfilter/stage[27].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[27].comp/Madd_b_out_cy<13>
+    SLICE_X44Y46.CX      net (fanout=2)        1.519   firfilter/b<28><19>
+    SLICE_X44Y46.COUT    Tcxcy                 0.093   firfilter/stage[28].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<13>
+    SLICE_X44Y47.CIN     net (fanout=1)        0.003   firfilter/stage[28].comp/Madd_b_out_cy<13>
+    SLICE_X44Y47.BMUX    Tcinb                 0.292   firfilter/stage[28].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<17>
+    SLICE_X46Y42.B3      net (fanout=2)        0.789   firfilter/b<29><16>
+    SLICE_X46Y42.COUT    Topcyb                0.375   firfilter/stage[29].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<15>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<17>
+    SLICE_X46Y43.CIN     net (fanout=1)        0.003   firfilter/stage[29].comp/Madd_b_out_cy<17>
+    SLICE_X46Y43.AMUX    Tcina                 0.177   firfilter/stage[29].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<21>
+    SLICE_X44Y38.A1      net (fanout=2)        1.087   firfilter/b<30><13>
+    SLICE_X44Y38.CMUX    Topac                 0.537   firfilter/stage[30].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[30].comp/Madd_b_out_lut<18>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<21>
+    SLICE_X42Y36.C4      net (fanout=2)        0.753   firfilter/b<31><11>
+    SLICE_X42Y36.COUT    Topcyc                0.295   firfilter/stage[31].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<21>
+    SLICE_X42Y37.CIN     net (fanout=1)        0.003   firfilter/stage[31].comp/Madd_b_out_cy<21>
+    SLICE_X42Y37.AMUX    Tcina                 0.177   firfilter/stage[31].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<25>
+    SLICE_X32Y37.AX      net (fanout=1)        1.243   firfilter/b<32><9>
+    SLICE_X32Y37.CLK     Tdick                 0.136   b_out_9_OBUF
+                                                       firfilter/b_out_reg_9
+    -------------------------------------------------  ---------------------------
+    Total                                     52.316ns (17.869ns logic, 34.447ns route)
+                                                       (34.2% logic, 65.8% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     52.377ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_9 (FF)
+  Data Path Delay:      52.293ns (Levels of Logic = 41)
+  Clock Path Skew:      -0.049ns (0.453 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M0        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y6.A5       net (fanout=3)        1.027   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<0>
+    SLICE_X48Y6.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<0>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+    SLICE_X46Y7.C1       net (fanout=1)        0.679   firfilter/stage[0].comp/Mmult_n0014_Madd_2
+    SLICE_X46Y7.CMUX     Topcc                 0.392   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<2>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X40Y8.A4       net (fanout=4)        0.814   firfilter/stage[0].comp/n0014<2>
+    SLICE_X40Y8.AMUX     Topaa                 0.377   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<4>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X44Y4.A6       net (fanout=1)        0.854   firfilter/stage[0].comp/Mmult_n0015_Madd_4
+    SLICE_X44Y4.AMUX     Topaa                 0.370   firfilter/b<1><27>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_4_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<4>
+    SLICE_X44Y9.C5       net (fanout=2)        0.613   firfilter/b<1><27>
+    SLICE_X44Y9.CMUX     Topcc                 0.413   firfilter/stage[1].comp/Madd_b_out_cy<5>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<4>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<5>
+    SLICE_X38Y7.C3       net (fanout=2)        0.870   firfilter/b<2><27>
+    SLICE_X38Y7.COUT     Topcyc                0.277   firfilter/stage[2].comp/Madd_b_out_cy<5>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<4>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<5>
+    SLICE_X38Y8.CIN      net (fanout=1)        0.082   firfilter/stage[2].comp/Madd_b_out_cy<5>
+    SLICE_X38Y8.BMUX     Tcinb                 0.292   firfilter/stage[2].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<9>
+    SLICE_X36Y7.B4       net (fanout=2)        0.685   firfilter/b<3><24>
+    SLICE_X36Y7.BMUX     Topbb                 0.368   firfilter/stage[3].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<9>
+    SLICE_X26Y7.B5       net (fanout=2)        0.782   firfilter/b<4><24>
+    SLICE_X26Y7.BMUX     Topbb                 0.376   firfilter/stage[4].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<9>
+    SLICE_X20Y11.B5      net (fanout=2)        0.857   firfilter/b<5><24>
+    SLICE_X20Y11.BMUX    Topbb                 0.368   firfilter/stage[5].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<9>
+    SLICE_X16Y13.B5      net (fanout=2)        0.723   firfilter/b<6><24>
+    SLICE_X16Y13.BMUX    Topbb                 0.368   firfilter/stage[6].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<9>
+    SLICE_X12Y16.B5      net (fanout=2)        0.843   firfilter/b<7><24>
+    SLICE_X12Y16.BMUX    Topbb                 0.368   firfilter/stage[7].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<9>
+    SLICE_X14Y23.B3      net (fanout=2)        1.019   firfilter/b<8><24>
+    SLICE_X14Y23.BMUX    Topbb                 0.376   firfilter/stage[8].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<9>
+    SLICE_X16Y29.B6      net (fanout=2)        0.797   firfilter/b<9><24>
+    SLICE_X16Y29.BMUX    Topbb                 0.368   firfilter/stage[9].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<9>
+    SLICE_X14Y36.B5      net (fanout=2)        1.001   firfilter/b<10><24>
+    SLICE_X14Y36.BMUX    Topbb                 0.376   firfilter/stage[10].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<9>
+    SLICE_X12Y43.B3      net (fanout=2)        0.979   firfilter/b<11><24>
+    SLICE_X12Y43.BMUX    Topbb                 0.368   firfilter/stage[11].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<9>
+    SLICE_X12Y51.B3      net (fanout=2)        1.189   firfilter/b<12><24>
+    SLICE_X12Y51.BMUX    Topbb                 0.368   firfilter/stage[12].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<9>
+    SLICE_X12Y61.B3      net (fanout=2)        1.240   firfilter/b<13><24>
+    SLICE_X12Y61.BMUX    Topbb                 0.368   firfilter/stage[13].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<9>
+    SLICE_X12Y71.B3      net (fanout=2)        1.020   firfilter/b<14><24>
+    SLICE_X12Y71.BMUX    Topbb                 0.368   firfilter/stage[14].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<9>
+    SLICE_X12Y80.B4      net (fanout=2)        0.926   firfilter/b<15><24>
+    SLICE_X12Y80.BMUX    Topbb                 0.368   firfilter/stage[15].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<9>
+    SLICE_X16Y89.B4      net (fanout=2)        1.129   firfilter/b<16><24>
+    SLICE_X16Y89.BMUX    Topbb                 0.368   firfilter/stage[16].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<9>
+    SLICE_X22Y95.B5      net (fanout=2)        1.116   firfilter/b<17><24>
+    SLICE_X22Y95.CMUX    Topbc                 0.526   firfilter/stage[17].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<7>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<9>
+    SLICE_X28Y96.C3      net (fanout=2)        0.783   firfilter/b<18><23>
+    SLICE_X28Y96.CMUX    Topcc                 0.392   firfilter/stage[18].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<9>
+    SLICE_X30Y96.C6      net (fanout=2)        0.539   firfilter/b<19><23>
+    SLICE_X30Y96.CMUX    Topcc                 0.413   firfilter/stage[19].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[19].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<9>
+    SLICE_X32Y95.C3      net (fanout=2)        0.557   firfilter/b<20><23>
+    SLICE_X32Y95.CMUX    Topcc                 0.392   firfilter/stage[20].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[20].comp/Madd_b_out_cy<9>
+    SLICE_X40Y89.C3      net (fanout=2)        1.008   firfilter/b<21><23>
+    SLICE_X40Y89.CMUX    Topcc                 0.392   firfilter/stage[21].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[21].comp/Madd_b_out_cy<9>
+    SLICE_X44Y87.C6      net (fanout=2)        0.650   firfilter/b<22><23>
+    SLICE_X44Y87.CMUX    Topcc                 0.413   firfilter/stage[22].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[22].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<9>
+    SLICE_X46Y78.C3      net (fanout=2)        1.205   firfilter/b<23><23>
+    SLICE_X46Y78.CMUX    Topcc                 0.392   firfilter/stage[23].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[23].comp/Madd_b_out_cy<9>
+    SLICE_X44Y72.C4      net (fanout=2)        0.894   firfilter/b<24><23>
+    SLICE_X44Y72.CMUX    Topcc                 0.413   firfilter/stage[24].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[24].comp/Madd_b_out_cy<9>
+    SLICE_X46Y66.C6      net (fanout=2)        0.797   firfilter/b<25><23>
+    SLICE_X46Y66.CMUX    Topcc                 0.392   firfilter/stage[25].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[25].comp/Madd_b_out_cy<9>
+    SLICE_X42Y59.C4      net (fanout=2)        1.041   firfilter/b<26><23>
+    SLICE_X42Y59.COUT    Topcyc                0.295   firfilter/stage[26].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[26].comp/Madd_b_out_lut<8>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<9>
+    SLICE_X42Y60.CIN     net (fanout=1)        0.003   firfilter/stage[26].comp/Madd_b_out_cy<9>
+    SLICE_X42Y60.AMUX    Tcina                 0.177   firfilter/stage[26].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<13>
+    SLICE_X44Y54.AX      net (fanout=2)        1.241   firfilter/b<27><21>
+    SLICE_X44Y54.CMUX    Taxc                  0.348   firfilter/stage[27].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[27].comp/Madd_b_out_cy<13>
+    SLICE_X44Y46.CX      net (fanout=2)        1.519   firfilter/b<28><19>
+    SLICE_X44Y46.COUT    Tcxcy                 0.093   firfilter/stage[28].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<13>
+    SLICE_X44Y47.CIN     net (fanout=1)        0.003   firfilter/stage[28].comp/Madd_b_out_cy<13>
+    SLICE_X44Y47.BMUX    Tcinb                 0.292   firfilter/stage[28].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<17>
+    SLICE_X46Y42.B3      net (fanout=2)        0.789   firfilter/b<29><16>
+    SLICE_X46Y42.COUT    Topcyb                0.375   firfilter/stage[29].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<15>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<17>
+    SLICE_X46Y43.CIN     net (fanout=1)        0.003   firfilter/stage[29].comp/Madd_b_out_cy<17>
+    SLICE_X46Y43.AMUX    Tcina                 0.177   firfilter/stage[29].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<21>
+    SLICE_X44Y38.A1      net (fanout=2)        1.087   firfilter/b<30><13>
+    SLICE_X44Y38.CMUX    Topac                 0.537   firfilter/stage[30].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[30].comp/Madd_b_out_lut<18>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<21>
+    SLICE_X42Y36.C4      net (fanout=2)        0.753   firfilter/b<31><11>
+    SLICE_X42Y36.COUT    Topcyc                0.295   firfilter/stage[31].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<21>
+    SLICE_X42Y37.CIN     net (fanout=1)        0.003   firfilter/stage[31].comp/Madd_b_out_cy<21>
+    SLICE_X42Y37.AMUX    Tcina                 0.177   firfilter/stage[31].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<25>
+    SLICE_X32Y37.AX      net (fanout=1)        1.243   firfilter/b<32><9>
+    SLICE_X32Y37.CLK     Tdick                 0.136   b_out_9_OBUF
+                                                       firfilter/b_out_reg_9
+    -------------------------------------------------  ---------------------------
+    Total                                     52.293ns (18.216ns logic, 34.077ns route)
+                                                       (34.8% logic, 65.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/b_out_reg_4 (SLICE_X46Y38.BX), 88589871006876789000000 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     52.322ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_4 (FF)
+  Data Path Delay:      52.234ns (Levels of Logic = 43)
+  Clock Path Skew:      -0.053ns (0.449 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M0        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y6.A5       net (fanout=3)        1.027   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<0>
+    SLICE_X48Y6.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<0>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+    SLICE_X46Y7.C1       net (fanout=1)        0.679   firfilter/stage[0].comp/Mmult_n0014_Madd_2
+    SLICE_X46Y7.COUT     Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<2>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.CIN      net (fanout=1)        0.082   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+    SLICE_X40Y8.D3       net (fanout=4)        0.878   firfilter/stage[0].comp/n0014<5>
+    SLICE_X40Y8.COUT     Topcyd                0.260   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X40Y9.CIN      net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X40Y9.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<11>
+    SLICE_X52Y10.A3      net (fanout=1)        1.113   firfilter/stage[0].comp/Mmult_n0015_Madd_9
+    SLICE_X52Y10.AMUX    Topaa                 0.370   firfilter/b<1><22>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_9_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<9>
+    SLICE_X44Y10.D4      net (fanout=2)        0.771   firfilter/b<1><22>
+    SLICE_X44Y10.COUT    Topcyd                0.261   firfilter/stage[1].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X44Y11.CIN     net (fanout=1)        0.003   firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X44Y11.BMUX    Tcinb                 0.292   firfilter/stage[1].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<13>
+    SLICE_X38Y9.B5       net (fanout=2)        0.904   firfilter/b<2><20>
+    SLICE_X38Y9.COUT     Topcyb                0.380   firfilter/stage[2].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<11>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<13>
+    SLICE_X38Y10.CIN     net (fanout=1)        0.003   firfilter/stage[2].comp/Madd_b_out_cy<13>
+    SLICE_X38Y10.BMUX    Tcinb                 0.292   firfilter/stage[2].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<17>
+    SLICE_X36Y9.B4       net (fanout=2)        0.658   firfilter/b<3><16>
+    SLICE_X36Y9.DMUX     Topbd                 0.537   firfilter/stage[3].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<15>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<17>
+    SLICE_X26Y9.D5       net (fanout=2)        0.791   firfilter/b<4><14>
+    SLICE_X26Y9.COUT     Topcyd                0.261   firfilter/stage[4].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<17>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<17>
+    SLICE_X26Y10.CIN     net (fanout=1)        0.003   firfilter/stage[4].comp/Madd_b_out_cy<17>
+    SLICE_X26Y10.BMUX    Tcinb                 0.292   firfilter/stage[4].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X20Y14.B5      net (fanout=2)        0.837   firfilter/b<5><12>
+    SLICE_X20Y14.BMUX    Topbb                 0.368   firfilter/stage[5].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<21>
+    SLICE_X16Y16.B5      net (fanout=2)        0.723   firfilter/b<6><12>
+    SLICE_X16Y16.BMUX    Topbb                 0.368   firfilter/stage[6].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<21>
+    SLICE_X12Y19.B5      net (fanout=2)        0.843   firfilter/b<7><12>
+    SLICE_X12Y19.CMUX    Topbc                 0.514   firfilter/stage[7].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<21>
+    SLICE_X14Y26.C1      net (fanout=2)        1.155   firfilter/b<8><11>
+    SLICE_X14Y26.CMUX    Topcc                 0.413   firfilter/stage[8].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<21>
+    SLICE_X16Y32.C5      net (fanout=2)        0.813   firfilter/b<9><11>
+    SLICE_X16Y32.CMUX    Topcc                 0.392   firfilter/stage[9].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<21>
+    SLICE_X14Y39.C3      net (fanout=2)        0.959   firfilter/b<10><11>
+    SLICE_X14Y39.CMUX    Topcc                 0.413   firfilter/stage[10].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<21>
+    SLICE_X12Y46.C6      net (fanout=2)        0.931   firfilter/b<11><11>
+    SLICE_X12Y46.CMUX    Topcc                 0.392   firfilter/stage[11].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<21>
+    SLICE_X12Y54.C3      net (fanout=2)        0.947   firfilter/b<12><11>
+    SLICE_X12Y54.CMUX    Topcc                 0.392   firfilter/stage[12].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<21>
+    SLICE_X12Y64.C3      net (fanout=2)        1.268   firfilter/b<13><11>
+    SLICE_X12Y64.CMUX    Topcc                 0.392   firfilter/stage[13].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<21>
+    SLICE_X12Y74.C3      net (fanout=2)        1.139   firfilter/b<14><11>
+    SLICE_X12Y74.CMUX    Topcc                 0.392   firfilter/stage[14].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<21>
+    SLICE_X12Y83.C6      net (fanout=2)        1.015   firfilter/b<15><11>
+    SLICE_X12Y83.CMUX    Topcc                 0.392   firfilter/stage[15].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<21>
+    SLICE_X16Y92.C5      net (fanout=2)        1.027   firfilter/b<16><11>
+    SLICE_X16Y92.CMUX    Topcc                 0.392   firfilter/stage[16].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<21>
+    SLICE_X22Y98.C3      net (fanout=2)        1.078   firfilter/b<17><11>
+    SLICE_X22Y98.CMUX    Topcc                 0.413   firfilter/stage[17].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<21>
+    SLICE_X28Y99.C3      net (fanout=2)        0.788   firfilter/b<18><11>
+    SLICE_X28Y99.CMUX    Topcc                 0.392   firfilter/stage[18].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<21>
+    SLICE_X30Y99.C6      net (fanout=2)        0.539   firfilter/b<19><11>
+    SLICE_X30Y99.CMUX    Topcc                 0.413   firfilter/stage[19].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[19].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<21>
+    SLICE_X32Y98.C3      net (fanout=2)        0.557   firfilter/b<20><11>
+    SLICE_X32Y98.CMUX    Topcc                 0.392   firfilter/stage[20].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[20].comp/Madd_b_out_cy<21>
+    SLICE_X40Y92.C3      net (fanout=2)        1.012   firfilter/b<21><11>
+    SLICE_X40Y92.DMUX    Topcd                 0.411   firfilter/stage[21].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[21].comp/Madd_b_out_cy<21>
+    SLICE_X44Y90.DX      net (fanout=2)        0.995   firfilter/b<22><10>
+    SLICE_X44Y90.COUT    Tdxcy                 0.087   firfilter/stage[22].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<21>
+    SLICE_X44Y91.CIN     net (fanout=1)        0.003   firfilter/stage[22].comp/Madd_b_out_cy<21>
+    SLICE_X44Y91.AMUX    Tcina                 0.202   firfilter/stage[22].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<25>
+    SLICE_X46Y82.A4      net (fanout=2)        1.082   firfilter/b<23><9>
+    SLICE_X46Y82.AMUX    Topaa                 0.377   firfilter/stage[23].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[23].comp/Madd_b_out_cy<25>
+    SLICE_X44Y76.A5      net (fanout=2)        0.854   firfilter/b<24><9>
+    SLICE_X44Y76.AMUX    Topaa                 0.370   firfilter/stage[24].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[24].comp/Madd_b_out_cy<25>
+    SLICE_X46Y70.A4      net (fanout=2)        0.877   firfilter/b<25><9>
+    SLICE_X46Y70.AMUX    Topaa                 0.377   firfilter/stage[25].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[25].comp/Madd_b_out_cy<25>
+    SLICE_X42Y63.AX      net (fanout=2)        1.130   firfilter/b<26><9>
+    SLICE_X42Y63.BMUX    Taxb                  0.250   firfilter/stage[26].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<25>
+    SLICE_X44Y57.B4      net (fanout=2)        0.946   firfilter/b<27><8>
+    SLICE_X44Y57.BMUX    Topbb                 0.376   firfilter/stage[27].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[27].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[27].comp/Madd_b_out_cy<25>
+    SLICE_X44Y49.B3      net (fanout=2)        1.001   firfilter/b<28><8>
+    SLICE_X44Y49.CMUX    Topbc                 0.526   firfilter/stage[28].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[28].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<25>
+    SLICE_X46Y44.C3      net (fanout=2)        0.778   firfilter/b<29><7>
+    SLICE_X46Y44.CMUX    Topcc                 0.392   firfilter/stage[29].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<25>
+    SLICE_X44Y39.CX      net (fanout=2)        1.077   firfilter/b<30><7>
+    SLICE_X44Y39.COUT    Tcxcy                 0.093   firfilter/stage[30].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<25>
+    SLICE_X44Y40.CIN     net (fanout=1)        0.082   firfilter/stage[30].comp/Madd_b_out_cy<25>
+    SLICE_X44Y40.BMUX    Tcinb                 0.292   firfilter/stage[30].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<29>
+    SLICE_X42Y38.B3      net (fanout=2)        0.770   firfilter/b<31><4>
+    SLICE_X42Y38.BMUX    Topbb                 0.368   firfilter/stage[31].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<29>
+    SLICE_X46Y38.BX      net (fanout=1)        0.640   firfilter/b<32><4>
+    SLICE_X46Y38.CLK     Tdick                 0.136   b_out_4_OBUF
+                                                       firfilter/b_out_reg_4
+    -------------------------------------------------  ---------------------------
+    Total                                     52.234ns (18.739ns logic, 33.495ns route)
+                                                       (35.9% logic, 64.1% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     52.317ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_4 (FF)
+  Data Path Delay:      52.229ns (Levels of Logic = 43)
+  Clock Path Skew:      -0.053ns (0.449 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M0        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y6.A5       net (fanout=3)        1.027   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<0>
+    SLICE_X48Y6.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<0>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+    SLICE_X46Y7.C1       net (fanout=1)        0.679   firfilter/stage[0].comp/Mmult_n0014_Madd_2
+    SLICE_X46Y7.COUT     Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<2>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.CIN      net (fanout=1)        0.082   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+    SLICE_X40Y8.D3       net (fanout=4)        0.878   firfilter/stage[0].comp/n0014<5>
+    SLICE_X40Y8.COUT     Topcyd                0.260   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X40Y9.CIN      net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X40Y9.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<11>
+    SLICE_X52Y10.A3      net (fanout=1)        1.113   firfilter/stage[0].comp/Mmult_n0015_Madd_9
+    SLICE_X52Y10.AMUX    Topaa                 0.370   firfilter/b<1><22>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_9_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<9>
+    SLICE_X44Y10.D4      net (fanout=2)        0.771   firfilter/b<1><22>
+    SLICE_X44Y10.COUT    Topcyd                0.261   firfilter/stage[1].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X44Y11.CIN     net (fanout=1)        0.003   firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X44Y11.BMUX    Tcinb                 0.292   firfilter/stage[1].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<13>
+    SLICE_X38Y9.B5       net (fanout=2)        0.904   firfilter/b<2><20>
+    SLICE_X38Y9.COUT     Topcyb                0.380   firfilter/stage[2].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<11>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<13>
+    SLICE_X38Y10.CIN     net (fanout=1)        0.003   firfilter/stage[2].comp/Madd_b_out_cy<13>
+    SLICE_X38Y10.BMUX    Tcinb                 0.292   firfilter/stage[2].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<17>
+    SLICE_X36Y9.B4       net (fanout=2)        0.658   firfilter/b<3><16>
+    SLICE_X36Y9.DMUX     Topbd                 0.537   firfilter/stage[3].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<15>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<17>
+    SLICE_X26Y9.D5       net (fanout=2)        0.791   firfilter/b<4><14>
+    SLICE_X26Y9.COUT     Topcyd                0.261   firfilter/stage[4].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[4].comp/Madd_b_out_lut<17>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<17>
+    SLICE_X26Y10.CIN     net (fanout=1)        0.003   firfilter/stage[4].comp/Madd_b_out_cy<17>
+    SLICE_X26Y10.BMUX    Tcinb                 0.292   firfilter/stage[4].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<21>
+    SLICE_X20Y14.B5      net (fanout=2)        0.837   firfilter/b<5><12>
+    SLICE_X20Y14.BMUX    Topbb                 0.368   firfilter/stage[5].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<21>
+    SLICE_X16Y16.B5      net (fanout=2)        0.723   firfilter/b<6><12>
+    SLICE_X16Y16.BMUX    Topbb                 0.368   firfilter/stage[6].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<21>
+    SLICE_X12Y19.B5      net (fanout=2)        0.843   firfilter/b<7><12>
+    SLICE_X12Y19.CMUX    Topbc                 0.514   firfilter/stage[7].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<21>
+    SLICE_X14Y26.C1      net (fanout=2)        1.155   firfilter/b<8><11>
+    SLICE_X14Y26.CMUX    Topcc                 0.413   firfilter/stage[8].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<21>
+    SLICE_X16Y32.C5      net (fanout=2)        0.813   firfilter/b<9><11>
+    SLICE_X16Y32.CMUX    Topcc                 0.392   firfilter/stage[9].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<21>
+    SLICE_X14Y39.C3      net (fanout=2)        0.959   firfilter/b<10><11>
+    SLICE_X14Y39.CMUX    Topcc                 0.413   firfilter/stage[10].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<21>
+    SLICE_X12Y46.C6      net (fanout=2)        0.931   firfilter/b<11><11>
+    SLICE_X12Y46.CMUX    Topcc                 0.392   firfilter/stage[11].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<21>
+    SLICE_X12Y54.C3      net (fanout=2)        0.947   firfilter/b<12><11>
+    SLICE_X12Y54.CMUX    Topcc                 0.392   firfilter/stage[12].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<21>
+    SLICE_X12Y64.C3      net (fanout=2)        1.268   firfilter/b<13><11>
+    SLICE_X12Y64.CMUX    Topcc                 0.392   firfilter/stage[13].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<21>
+    SLICE_X12Y74.C3      net (fanout=2)        1.139   firfilter/b<14><11>
+    SLICE_X12Y74.CMUX    Topcc                 0.392   firfilter/stage[14].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<21>
+    SLICE_X12Y83.C6      net (fanout=2)        1.015   firfilter/b<15><11>
+    SLICE_X12Y83.CMUX    Topcc                 0.392   firfilter/stage[15].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<21>
+    SLICE_X16Y92.C5      net (fanout=2)        1.027   firfilter/b<16><11>
+    SLICE_X16Y92.CMUX    Topcc                 0.392   firfilter/stage[16].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<21>
+    SLICE_X22Y98.C3      net (fanout=2)        1.078   firfilter/b<17><11>
+    SLICE_X22Y98.CMUX    Topcc                 0.413   firfilter/stage[17].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<21>
+    SLICE_X28Y99.C3      net (fanout=2)        0.788   firfilter/b<18><11>
+    SLICE_X28Y99.CMUX    Topcc                 0.392   firfilter/stage[18].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<21>
+    SLICE_X30Y99.C6      net (fanout=2)        0.539   firfilter/b<19><11>
+    SLICE_X30Y99.CMUX    Topcc                 0.413   firfilter/stage[19].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[19].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<21>
+    SLICE_X32Y98.C3      net (fanout=2)        0.557   firfilter/b<20><11>
+    SLICE_X32Y98.CMUX    Topcc                 0.392   firfilter/stage[20].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[20].comp/Madd_b_out_cy<21>
+    SLICE_X40Y92.C3      net (fanout=2)        1.012   firfilter/b<21><11>
+    SLICE_X40Y92.DMUX    Topcd                 0.411   firfilter/stage[21].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[21].comp/Madd_b_out_cy<21>
+    SLICE_X44Y90.DX      net (fanout=2)        0.995   firfilter/b<22><10>
+    SLICE_X44Y90.COUT    Tdxcy                 0.087   firfilter/stage[22].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<21>
+    SLICE_X44Y91.CIN     net (fanout=1)        0.003   firfilter/stage[22].comp/Madd_b_out_cy<21>
+    SLICE_X44Y91.AMUX    Tcina                 0.202   firfilter/stage[22].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<25>
+    SLICE_X46Y82.A4      net (fanout=2)        1.082   firfilter/b<23><9>
+    SLICE_X46Y82.AMUX    Topaa                 0.377   firfilter/stage[23].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[23].comp/Madd_b_out_cy<25>
+    SLICE_X44Y76.A5      net (fanout=2)        0.854   firfilter/b<24><9>
+    SLICE_X44Y76.AMUX    Topaa                 0.370   firfilter/stage[24].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[24].comp/Madd_b_out_cy<25>
+    SLICE_X46Y70.A4      net (fanout=2)        0.877   firfilter/b<25><9>
+    SLICE_X46Y70.AMUX    Topaa                 0.377   firfilter/stage[25].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[25].comp/Madd_b_out_cy<25>
+    SLICE_X42Y63.AX      net (fanout=2)        1.130   firfilter/b<26><9>
+    SLICE_X42Y63.BMUX    Taxb                  0.250   firfilter/stage[26].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<25>
+    SLICE_X44Y57.B4      net (fanout=2)        0.946   firfilter/b<27><8>
+    SLICE_X44Y57.CMUX    Topbc                 0.526   firfilter/stage[27].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[27].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[27].comp/Madd_b_out_cy<25>
+    SLICE_X44Y49.C3      net (fanout=2)        0.959   firfilter/b<28><7>
+    SLICE_X44Y49.CMUX    Topcc                 0.413   firfilter/stage[28].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[28].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<25>
+    SLICE_X46Y44.C3      net (fanout=2)        0.778   firfilter/b<29><7>
+    SLICE_X46Y44.CMUX    Topcc                 0.392   firfilter/stage[29].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<25>
+    SLICE_X44Y39.CX      net (fanout=2)        1.077   firfilter/b<30><7>
+    SLICE_X44Y39.COUT    Tcxcy                 0.093   firfilter/stage[30].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<25>
+    SLICE_X44Y40.CIN     net (fanout=1)        0.082   firfilter/stage[30].comp/Madd_b_out_cy<25>
+    SLICE_X44Y40.BMUX    Tcinb                 0.292   firfilter/stage[30].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<29>
+    SLICE_X42Y38.B3      net (fanout=2)        0.770   firfilter/b<31><4>
+    SLICE_X42Y38.BMUX    Topbb                 0.368   firfilter/stage[31].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<29>
+    SLICE_X46Y38.BX      net (fanout=1)        0.640   firfilter/b<32><4>
+    SLICE_X46Y38.CLK     Tdick                 0.136   b_out_4_OBUF
+                                                       firfilter/b_out_reg_4
+    -------------------------------------------------  ---------------------------
+    Total                                     52.229ns (18.776ns logic, 33.453ns route)
+                                                       (35.9% logic, 64.1% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     52.311ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/a_in_reg_8 (FF)
+  Destination:          firfilter/b_out_reg_4 (FF)
+  Data Path Delay:      52.223ns (Levels of Logic = 43)
+  Clock Path Skew:      -0.053ns (0.449 - 0.502)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/a_in_reg_8 to firfilter/b_out_reg_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y8.CQ       Tcko                  0.391   firfilter/a_in_reg<11>
+                                                       firfilter/a_in_reg_8
+    DSP48_X1Y2.B7        net (fanout=2)        0.714   firfilter/a_in_reg<8>
+    DSP48_X1Y2.M0        Tdspdo_B_M            3.364   firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+                                                       firfilter/stage[0].comp/Mmult_a_in[0]_h_in[0]_MuLt_1_OUT
+    SLICE_X48Y6.A5       net (fanout=3)        1.027   firfilter/stage[0].comp/a_in[0]_h_in[0]_MuLt_1_OUT<0>
+    SLICE_X48Y6.CMUX     Topac                 0.537   firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_lut<0>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd_cy<3>
+    SLICE_X46Y7.C1       net (fanout=1)        0.679   firfilter/stage[0].comp/Mmult_n0014_Madd_2
+    SLICE_X46Y7.COUT     Topcyc                0.295   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_lut<2>_INV_0
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.CIN      net (fanout=1)        0.082   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<3>
+    SLICE_X46Y8.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0014_Madd1_cy<7>
+    SLICE_X40Y8.D3       net (fanout=4)        0.878   firfilter/stage[0].comp/n0014<5>
+    SLICE_X40Y8.COUT     Topcyd                0.260   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_lut<7>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X40Y9.CIN      net (fanout=1)        0.003   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<7>
+    SLICE_X40Y9.BMUX     Tcinb                 0.260   firfilter/stage[0].comp/Mmult_n0015_Madd_cy<11>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_cy<11>
+    SLICE_X52Y10.A3      net (fanout=1)        1.113   firfilter/stage[0].comp/Mmult_n0015_Madd_9
+    SLICE_X52Y10.AMUX    Topaa                 0.370   firfilter/b<1><22>
+                                                       firfilter/stage[0].comp/Mmult_n0015_Madd_9_rt
+                                                       firfilter/stage[0].comp/Madd_b_out_xor<9>
+    SLICE_X44Y10.D4      net (fanout=2)        0.771   firfilter/b<1><22>
+    SLICE_X44Y10.COUT    Topcyd                0.261   firfilter/stage[1].comp/Madd_b_out_cy<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_lut<9>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X44Y11.CIN     net (fanout=1)        0.003   firfilter/stage[1].comp/Madd_b_out_cy<9>
+    SLICE_X44Y11.BMUX    Tcinb                 0.292   firfilter/stage[1].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[1].comp/Madd_b_out_cy<13>
+    SLICE_X38Y9.B5       net (fanout=2)        0.904   firfilter/b<2><20>
+    SLICE_X38Y9.COUT     Topcyb                0.380   firfilter/stage[2].comp/Madd_b_out_cy<13>
+                                                       firfilter/stage[2].comp/Madd_b_out_lut<11>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<13>
+    SLICE_X38Y10.CIN     net (fanout=1)        0.003   firfilter/stage[2].comp/Madd_b_out_cy<13>
+    SLICE_X38Y10.BMUX    Tcinb                 0.292   firfilter/stage[2].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[2].comp/Madd_b_out_cy<17>
+    SLICE_X36Y9.B4       net (fanout=2)        0.658   firfilter/b<3><16>
+    SLICE_X36Y9.CMUX     Topbc                 0.514   firfilter/stage[3].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[3].comp/Madd_b_out_lut<15>
+                                                       firfilter/stage[3].comp/Madd_b_out_cy<17>
+    SLICE_X26Y9.CX       net (fanout=2)        0.948   firfilter/b<4><15>
+    SLICE_X26Y9.DMUX     Tcxd                  0.288   firfilter/stage[4].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[4].comp/Madd_b_out_cy<17>
+    SLICE_X20Y13.D6      net (fanout=2)        0.786   firfilter/b<5><14>
+    SLICE_X20Y13.DMUX    Topdd                 0.374   firfilter/stage[5].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[5].comp/Madd_b_out_lut<17>
+                                                       firfilter/stage[5].comp/Madd_b_out_cy<17>
+    SLICE_X16Y15.D5      net (fanout=2)        0.736   firfilter/b<6><14>
+    SLICE_X16Y15.COUT    Topcyd                0.260   firfilter/stage[6].comp/Madd_b_out_cy<17>
+                                                       firfilter/stage[6].comp/Madd_b_out_lut<17>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<17>
+    SLICE_X16Y16.CIN     net (fanout=1)        0.003   firfilter/stage[6].comp/Madd_b_out_cy<17>
+    SLICE_X16Y16.BMUX    Tcinb                 0.260   firfilter/stage[6].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[6].comp/Madd_b_out_cy<21>
+    SLICE_X12Y19.B5      net (fanout=2)        0.843   firfilter/b<7><12>
+    SLICE_X12Y19.CMUX    Topbc                 0.514   firfilter/stage[7].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[7].comp/Madd_b_out_lut<19>
+                                                       firfilter/stage[7].comp/Madd_b_out_cy<21>
+    SLICE_X14Y26.C1      net (fanout=2)        1.155   firfilter/b<8><11>
+    SLICE_X14Y26.CMUX    Topcc                 0.413   firfilter/stage[8].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[8].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[8].comp/Madd_b_out_cy<21>
+    SLICE_X16Y32.C5      net (fanout=2)        0.813   firfilter/b<9><11>
+    SLICE_X16Y32.CMUX    Topcc                 0.392   firfilter/stage[9].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[9].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[9].comp/Madd_b_out_cy<21>
+    SLICE_X14Y39.C3      net (fanout=2)        0.959   firfilter/b<10><11>
+    SLICE_X14Y39.CMUX    Topcc                 0.413   firfilter/stage[10].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[10].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[10].comp/Madd_b_out_cy<21>
+    SLICE_X12Y46.C6      net (fanout=2)        0.931   firfilter/b<11><11>
+    SLICE_X12Y46.CMUX    Topcc                 0.392   firfilter/stage[11].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[11].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[11].comp/Madd_b_out_cy<21>
+    SLICE_X12Y54.C3      net (fanout=2)        0.947   firfilter/b<12><11>
+    SLICE_X12Y54.CMUX    Topcc                 0.392   firfilter/stage[12].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[12].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[12].comp/Madd_b_out_cy<21>
+    SLICE_X12Y64.C3      net (fanout=2)        1.268   firfilter/b<13><11>
+    SLICE_X12Y64.CMUX    Topcc                 0.392   firfilter/stage[13].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[13].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[13].comp/Madd_b_out_cy<21>
+    SLICE_X12Y74.C3      net (fanout=2)        1.139   firfilter/b<14><11>
+    SLICE_X12Y74.CMUX    Topcc                 0.392   firfilter/stage[14].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[14].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[14].comp/Madd_b_out_cy<21>
+    SLICE_X12Y83.C6      net (fanout=2)        1.015   firfilter/b<15><11>
+    SLICE_X12Y83.CMUX    Topcc                 0.392   firfilter/stage[15].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[15].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[15].comp/Madd_b_out_cy<21>
+    SLICE_X16Y92.C5      net (fanout=2)        1.027   firfilter/b<16><11>
+    SLICE_X16Y92.CMUX    Topcc                 0.392   firfilter/stage[16].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[16].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[16].comp/Madd_b_out_cy<21>
+    SLICE_X22Y98.C3      net (fanout=2)        1.078   firfilter/b<17><11>
+    SLICE_X22Y98.CMUX    Topcc                 0.413   firfilter/stage[17].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[17].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[17].comp/Madd_b_out_cy<21>
+    SLICE_X28Y99.C3      net (fanout=2)        0.788   firfilter/b<18><11>
+    SLICE_X28Y99.CMUX    Topcc                 0.392   firfilter/stage[18].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[18].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[18].comp/Madd_b_out_cy<21>
+    SLICE_X30Y99.C6      net (fanout=2)        0.539   firfilter/b<19><11>
+    SLICE_X30Y99.CMUX    Topcc                 0.413   firfilter/stage[19].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[19].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[19].comp/Madd_b_out_cy<21>
+    SLICE_X32Y98.C3      net (fanout=2)        0.557   firfilter/b<20><11>
+    SLICE_X32Y98.CMUX    Topcc                 0.392   firfilter/stage[20].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[20].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[20].comp/Madd_b_out_cy<21>
+    SLICE_X40Y92.C3      net (fanout=2)        1.012   firfilter/b<21><11>
+    SLICE_X40Y92.DMUX    Topcd                 0.411   firfilter/stage[21].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[21].comp/Madd_b_out_lut<20>
+                                                       firfilter/stage[21].comp/Madd_b_out_cy<21>
+    SLICE_X44Y90.DX      net (fanout=2)        0.995   firfilter/b<22><10>
+    SLICE_X44Y90.COUT    Tdxcy                 0.087   firfilter/stage[22].comp/Madd_b_out_cy<21>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<21>
+    SLICE_X44Y91.CIN     net (fanout=1)        0.003   firfilter/stage[22].comp/Madd_b_out_cy<21>
+    SLICE_X44Y91.AMUX    Tcina                 0.202   firfilter/stage[22].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[22].comp/Madd_b_out_cy<25>
+    SLICE_X46Y82.A4      net (fanout=2)        1.082   firfilter/b<23><9>
+    SLICE_X46Y82.AMUX    Topaa                 0.377   firfilter/stage[23].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[23].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[23].comp/Madd_b_out_cy<25>
+    SLICE_X44Y76.A5      net (fanout=2)        0.854   firfilter/b<24><9>
+    SLICE_X44Y76.AMUX    Topaa                 0.370   firfilter/stage[24].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[24].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[24].comp/Madd_b_out_cy<25>
+    SLICE_X46Y70.A4      net (fanout=2)        0.877   firfilter/b<25><9>
+    SLICE_X46Y70.AMUX    Topaa                 0.377   firfilter/stage[25].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[25].comp/Madd_b_out_lut<22>
+                                                       firfilter/stage[25].comp/Madd_b_out_cy<25>
+    SLICE_X42Y63.AX      net (fanout=2)        1.130   firfilter/b<26><9>
+    SLICE_X42Y63.BMUX    Taxb                  0.250   firfilter/stage[26].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[26].comp/Madd_b_out_cy<25>
+    SLICE_X44Y57.B4      net (fanout=2)        0.946   firfilter/b<27><8>
+    SLICE_X44Y57.BMUX    Topbb                 0.376   firfilter/stage[27].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[27].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[27].comp/Madd_b_out_cy<25>
+    SLICE_X44Y49.B3      net (fanout=2)        1.001   firfilter/b<28><8>
+    SLICE_X44Y49.CMUX    Topbc                 0.526   firfilter/stage[28].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[28].comp/Madd_b_out_lut<23>
+                                                       firfilter/stage[28].comp/Madd_b_out_cy<25>
+    SLICE_X46Y44.C3      net (fanout=2)        0.778   firfilter/b<29><7>
+    SLICE_X46Y44.CMUX    Topcc                 0.392   firfilter/stage[29].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[29].comp/Madd_b_out_lut<24>
+                                                       firfilter/stage[29].comp/Madd_b_out_cy<25>
+    SLICE_X44Y39.CX      net (fanout=2)        1.077   firfilter/b<30><7>
+    SLICE_X44Y39.COUT    Tcxcy                 0.093   firfilter/stage[30].comp/Madd_b_out_cy<25>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<25>
+    SLICE_X44Y40.CIN     net (fanout=1)        0.082   firfilter/stage[30].comp/Madd_b_out_cy<25>
+    SLICE_X44Y40.BMUX    Tcinb                 0.292   firfilter/stage[30].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[30].comp/Madd_b_out_cy<29>
+    SLICE_X42Y38.B3      net (fanout=2)        0.770   firfilter/b<31><4>
+    SLICE_X42Y38.BMUX    Topbb                 0.368   firfilter/stage[31].comp/Madd_b_out_cy<29>
+                                                       firfilter/stage[31].comp/Madd_b_out_lut<27>
+                                                       firfilter/stage[31].comp/Madd_b_out_cy<29>
+    SLICE_X46Y38.BX      net (fanout=1)        0.640   firfilter/b<32><4>
+    SLICE_X46Y38.CLK     Tdick                 0.136   b_out_4_OBUF
+                                                       firfilter/b_out_reg_4
+    -------------------------------------------------  ---------------------------
+    Total                                     52.223ns (18.609ns logic, 33.614ns route)
+                                                       (35.6% logic, 64.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: Default period analysis for net "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_346 (SLICE_X4Y40.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.386ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_330 (FF)
+  Destination:          h_in_346 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.386ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_330 to h_in_346
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y40.CQ       Tcko                  0.200   h_in_331
+                                                       h_in_330
+    SLICE_X4Y40.C5       net (fanout=2)        0.065   h_in_330
+    SLICE_X4Y40.CLK      Tah         (-Th)    -0.121   h_in_331
+                                                       h_in_330_rt
+                                                       h_in_346
+    -------------------------------------------------  ---------------------------
+    Total                                      0.386ns (0.321ns logic, 0.065ns route)
+                                                       (83.2% logic, 16.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_342 (SLICE_X4Y43.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.387ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_326 (FF)
+  Destination:          h_in_342 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.387ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_326 to h_in_342
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y43.CQ       Tcko                  0.200   h_in_327
+                                                       h_in_326
+    SLICE_X4Y43.C5       net (fanout=2)        0.066   h_in_326
+    SLICE_X4Y43.CLK      Tah         (-Th)    -0.121   h_in_327
+                                                       h_in_326_rt
+                                                       h_in_342
+    -------------------------------------------------  ---------------------------
+    Total                                      0.387ns (0.321ns logic, 0.066ns route)
+                                                       (82.9% logic, 17.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_438 (SLICE_X24Y13.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.387ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_422 (FF)
+  Destination:          h_in_438 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.387ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_422 to h_in_438
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y13.CQ      Tcko                  0.200   h_in_423
+                                                       h_in_422
+    SLICE_X24Y13.C5      net (fanout=2)        0.066   h_in_422
+    SLICE_X24Y13.CLK     Tah         (-Th)    -0.121   h_in_423
+                                                       h_in_422_rt
+                                                       h_in_438
+    -------------------------------------------------  ---------------------------
+    Total                                      0.387ns (0.321ns logic, 0.066ns route)
+                                                       (82.9% logic, 17.1% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default OFFSET IN BEFORE analysis for clock "clk_BUFGP" 
+
+ 545 paths analyzed, 545 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+ Minimum allowable offset is  12.943ns.
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_243 (SLICE_X23Y107.CE), 1 path
+--------------------------------------------------------------------------------
+Offset (setup paths):   12.943ns (data path - clock path + uncertainty)
+  Source:               h_enabled (PAD)
+  Destination:          h_in_243 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      15.757ns (Levels of Logic = 1)
+  Clock Path Delay:     2.839ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_enabled to h_in_243
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N8.I                 Tiopi                 0.790   h_enabled
+                                                       h_enabled
+                                                       h_enabled_IBUF
+                                                       ProtoComp12.IMUX.1
+    SLICE_X23Y107.CE     net (fanout=64)      14.604   h_enabled_IBUF
+    SLICE_X23Y107.CLK    Tceck                 0.363   h_in_227
+                                                       h_in_243
+    -------------------------------------------------  ---------------------------
+    Total                                     15.757ns (1.153ns logic, 14.604ns route)
+                                                       (7.3% logic, 92.7% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to h_in_243
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X23Y107.CLK    net (fanout=302)      1.172   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.839ns (0.881ns logic, 1.958ns route)
+                                                       (31.0% logic, 69.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_241 (SLICE_X23Y107.CE), 1 path
+--------------------------------------------------------------------------------
+Offset (setup paths):   12.942ns (data path - clock path + uncertainty)
+  Source:               h_enabled (PAD)
+  Destination:          h_in_241 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      15.756ns (Levels of Logic = 1)
+  Clock Path Delay:     2.839ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_enabled to h_in_241
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N8.I                 Tiopi                 0.790   h_enabled
+                                                       h_enabled
+                                                       h_enabled_IBUF
+                                                       ProtoComp12.IMUX.1
+    SLICE_X23Y107.CE     net (fanout=64)      14.604   h_enabled_IBUF
+    SLICE_X23Y107.CLK    Tceck                 0.362   h_in_227
+                                                       h_in_241
+    -------------------------------------------------  ---------------------------
+    Total                                     15.756ns (1.152ns logic, 14.604ns route)
+                                                       (7.3% logic, 92.7% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to h_in_241
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X23Y107.CLK    net (fanout=302)      1.172   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.839ns (0.881ns logic, 1.958ns route)
+                                                       (31.0% logic, 69.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_242 (SLICE_X23Y107.CE), 1 path
+--------------------------------------------------------------------------------
+Offset (setup paths):   12.941ns (data path - clock path + uncertainty)
+  Source:               h_enabled (PAD)
+  Destination:          h_in_242 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      15.755ns (Levels of Logic = 1)
+  Clock Path Delay:     2.839ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_enabled to h_in_242
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N8.I                 Tiopi                 0.790   h_enabled
+                                                       h_enabled
+                                                       h_enabled_IBUF
+                                                       ProtoComp12.IMUX.1
+    SLICE_X23Y107.CE     net (fanout=64)      14.604   h_enabled_IBUF
+    SLICE_X23Y107.CLK    Tceck                 0.361   h_in_227
+                                                       h_in_242
+    -------------------------------------------------  ---------------------------
+    Total                                     15.755ns (1.151ns logic, 14.604ns route)
+                                                       (7.3% logic, 92.7% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to h_in_242
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X23Y107.CLK    net (fanout=302)      1.172   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.839ns (0.881ns logic, 1.958ns route)
+                                                       (31.0% logic, 69.0% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: Default OFFSET IN BEFORE analysis for clock "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point enabled_reg (SLICE_X13Y1.AX), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.708ns (data path - clock path + uncertainty)
+  Source:               enabled (PAD)
+  Destination:          enabled_reg (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.425ns (Levels of Logic = 1)
+  Clock Path Delay:     3.109ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: enabled to enabled_reg
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    T5.I                 Tiopi                 0.684   enabled
+                                                       enabled
+                                                       enabled_IBUF
+                                                       ProtoComp12.IMUX.22
+    SLICE_X13Y1.AX       net (fanout=1)        1.693   enabled_IBUF
+    SLICE_X13Y1.CLK      Tckdi       (-Th)    -0.048   enabled_reg
+                                                       enabled_reg
+    -------------------------------------------------  ---------------------------
+    Total                                      2.425ns (0.732ns logic, 1.693ns route)
+                                                       (30.2% logic, 69.8% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to enabled_reg
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X13Y1.CLK      net (fanout=302)      1.275   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.109ns (0.999ns logic, 2.110ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/a_in_reg_0 (SLICE_X51Y9.AX), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.309ns (data path - clock path + uncertainty)
+  Source:               a_in<0> (PAD)
+  Destination:          firfilter/a_in_reg_0 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.793ns (Levels of Logic = 1)
+  Clock Path Delay:     3.078ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: a_in<0> to firfilter/a_in_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    R11.I                Tiopi                 0.684   a_in<0>
+                                                       a_in<0>
+                                                       a_in_0_IBUF
+                                                       ProtoComp12.IMUX.12
+    SLICE_X51Y9.AX       net (fanout=1)        2.061   a_in_0_IBUF
+    SLICE_X51Y9.CLK      Tckdi       (-Th)    -0.048   firfilter/a_in_reg<3>
+                                                       firfilter/a_in_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.793ns (0.732ns logic, 2.061ns route)
+                                                       (26.2% logic, 73.8% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/a_in_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X51Y9.CLK      net (fanout=302)      1.244   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.078ns (0.999ns logic, 2.079ns route)
+                                                       (32.5% logic, 67.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_421 (SLICE_X24Y13.CE), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.290ns (data path - clock path + uncertainty)
+  Source:               h_enabled (PAD)
+  Destination:          h_in_421 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.844ns (Levels of Logic = 1)
+  Clock Path Delay:     3.110ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: h_enabled to h_in_421
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N8.I                 Tiopi                 0.684   h_enabled
+                                                       h_enabled
+                                                       h_enabled_IBUF
+                                                       ProtoComp12.IMUX.1
+    SLICE_X24Y13.CE      net (fanout=64)       2.349   h_enabled_IBUF
+    SLICE_X24Y13.CLK     Tckce       (-Th)     0.189   h_in_423
+                                                       h_in_421
+    -------------------------------------------------  ---------------------------
+    Total                                      2.844ns (0.495ns logic, 2.349ns route)
+                                                       (17.4% logic, 82.6% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to h_in_421
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X24Y13.CLK     net (fanout=302)      1.276   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.110ns (0.999ns logic, 2.111ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default OFFSET OUT AFTER analysis for clock "clk_BUFGP" 
+
+ 16 paths analyzed, 16 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+ Maximum allowable offset is  10.165ns.
+--------------------------------------------------------------------------------
+
+Paths for end point b_out<4> (V8.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 10.165ns (clock path + data path + uncertainty)
+  Source:               firfilter/b_out_reg_4 (FF)
+  Destination:          b_out<4> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      7.092ns (Levels of Logic = 1)
+  Clock Path Delay:     3.048ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/b_out_reg_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X46Y38.CLK     net (fanout=302)      1.214   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.048ns (0.999ns logic, 2.049ns route)
+                                                       (32.8% logic, 67.2% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/b_out_reg_4 to b_out<4>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y38.BQ      Tcko                  0.408   b_out_4_OBUF
+                                                       firfilter/b_out_reg_4
+    V8.O                 net (fanout=1)        4.683   b_out_4_OBUF
+    V8.PAD               Tioop                 2.001   b_out<4>
+                                                       b_out_4_OBUF
+                                                       b_out<4>
+    -------------------------------------------------  ---------------------------
+    Total                                      7.092ns (2.409ns logic, 4.683ns route)
+                                                       (34.0% logic, 66.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point b_out<2> (T8.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 10.061ns (clock path + data path + uncertainty)
+  Source:               firfilter/b_out_reg_2 (FF)
+  Destination:          b_out<2> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      6.988ns (Levels of Logic = 1)
+  Clock Path Delay:     3.048ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/b_out_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X45Y38.CLK     net (fanout=302)      1.214   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.048ns (0.999ns logic, 2.049ns route)
+                                                       (32.8% logic, 67.2% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/b_out_reg_2 to b_out<2>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y38.AQ      Tcko                  0.391   b_out_2_OBUF
+                                                       firfilter/b_out_reg_2
+    T8.O                 net (fanout=1)        4.596   b_out_2_OBUF
+    T8.PAD               Tioop                 2.001   b_out<2>
+                                                       b_out_2_OBUF
+                                                       b_out<2>
+    -------------------------------------------------  ---------------------------
+    Total                                      6.988ns (2.392ns logic, 4.596ns route)
+                                                       (34.2% logic, 65.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point b_out<6> (V7.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 10.037ns (clock path + data path + uncertainty)
+  Source:               firfilter/b_out_reg_6 (FF)
+  Destination:          b_out<6> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      6.962ns (Levels of Logic = 1)
+  Clock Path Delay:     3.050ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/b_out_reg_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X45Y37.CLK     net (fanout=302)      1.216   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.050ns (0.999ns logic, 2.051ns route)
+                                                       (32.8% logic, 67.2% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/b_out_reg_6 to b_out<6>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y37.CQ      Tcko                  0.391   b_out_6_OBUF
+                                                       firfilter/b_out_reg_6
+    V7.O                 net (fanout=1)        4.570   b_out_6_OBUF
+    V7.PAD               Tioop                 2.001   b_out<6>
+                                                       b_out_6_OBUF
+                                                       b_out<6>
+    -------------------------------------------------  ---------------------------
+    Total                                      6.962ns (2.392ns logic, 4.570ns route)
+                                                       (34.4% logic, 65.6% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: Default OFFSET OUT AFTER analysis for clock "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point b_out<7> (N7.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 5.092ns (clock path + data path - uncertainty)
+  Source:               firfilter/b_out_reg_7 (FF)
+  Destination:          b_out<7> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      3.707ns (Levels of Logic = 1)
+  Clock Path Delay:     1.410ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/b_out_reg_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X35Y36.CLK     net (fanout=302)      0.674   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.410ns (0.380ns logic, 1.030ns route)
+                                                       (27.0% logic, 73.0% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/b_out_reg_7 to b_out<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X35Y36.AQ      Tcko                  0.198   b_out_7_OBUF
+                                                       firfilter/b_out_reg_7
+    N7.O                 net (fanout=1)        2.471   b_out_7_OBUF
+    N7.PAD               Tioop                 1.038   b_out<7>
+                                                       b_out_7_OBUF
+                                                       b_out<7>
+    -------------------------------------------------  ---------------------------
+    Total                                      3.707ns (1.236ns logic, 2.471ns route)
+                                                       (33.3% logic, 66.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point b_out<12> (T7.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 5.140ns (clock path + data path - uncertainty)
+  Source:               firfilter/b_out_reg_12 (FF)
+  Destination:          b_out<12> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      3.755ns (Levels of Logic = 1)
+  Clock Path Delay:     1.410ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/b_out_reg_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X33Y36.CLK     net (fanout=302)      0.674   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.410ns (0.380ns logic, 1.030ns route)
+                                                       (27.0% logic, 73.0% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/b_out_reg_12 to b_out<12>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X33Y36.AQ      Tcko                  0.198   b_out_12_OBUF
+                                                       firfilter/b_out_reg_12
+    T7.O                 net (fanout=1)        2.519   b_out_12_OBUF
+    T7.PAD               Tioop                 1.038   b_out<12>
+                                                       b_out_12_OBUF
+                                                       b_out<12>
+    -------------------------------------------------  ---------------------------
+    Total                                      3.755ns (1.236ns logic, 2.519ns route)
+                                                       (32.9% logic, 67.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point b_out<10> (V6.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 5.211ns (clock path + data path - uncertainty)
+  Source:               firfilter/b_out_reg_10 (FF)
+  Destination:          b_out<10> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      3.824ns (Levels of Logic = 1)
+  Clock Path Delay:     1.412ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/b_out_reg_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp12.IMUX
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X35Y35.CLK     net (fanout=302)      0.676   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.412ns (0.380ns logic, 1.032ns route)
+                                                       (26.9% logic, 73.1% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/b_out_reg_10 to b_out<10>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X35Y35.AQ      Tcko                  0.198   b_out_10_OBUF
+                                                       firfilter/b_out_reg_10
+    V6.O                 net (fanout=1)        2.588   b_out_10_OBUF
+    V6.PAD               Tioop                 1.038   b_out<10>
+                                                       b_out_10_OBUF
+                                                       b_out<10>
+    -------------------------------------------------  ---------------------------
+    Total                                      3.824ns (1.236ns logic, 2.588ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+a_in<0>     |    0.470(R)|      FAST  |    0.310(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<1>     |    0.535(R)|      FAST  |    0.216(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<2>     |    1.021(R)|      FAST  |   -0.425(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<3>     |    0.690(R)|      FAST  |   -0.010(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<4>     |    1.053(R)|      FAST  |   -0.456(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<5>     |    0.990(R)|      FAST  |   -0.391(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<6>     |    1.090(R)|      FAST  |   -0.504(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<7>     |    0.975(R)|      FAST  |   -0.409(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<8>     |    0.977(R)|      FAST  |   -0.376(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<9>     |    1.043(R)|      FAST  |   -0.409(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<10>    |    1.052(R)|      FAST  |   -0.460(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<11>    |    0.899(R)|      FAST  |   -0.244(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<12>    |    0.972(R)|      FAST  |   -0.351(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<13>    |    0.970(R)|      FAST  |   -0.362(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<14>    |    1.078(R)|      FAST  |   -0.429(R)|      SLOW  |clk_BUFGP         |   0.000|
+a_in<15>    |    1.075(R)|      FAST  |   -0.477(R)|      SLOW  |clk_BUFGP         |   0.000|
+enabled     |    0.179(R)|      FAST  |    0.709(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_enabled   |   12.943(R)|      SLOW  |    0.291(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<0>   |    1.393(R)|      SLOW  |   -0.796(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<1>   |    1.339(R)|      SLOW  |   -0.745(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<2>   |    1.501(R)|      SLOW  |   -0.894(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<3>   |    1.407(R)|      SLOW  |   -0.806(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<4>   |    1.800(R)|      SLOW  |   -1.175(R)|      FAST  |clk_BUFGP         |   0.000|
+h_in_w<5>   |    1.793(R)|      SLOW  |   -1.166(R)|      FAST  |clk_BUFGP         |   0.000|
+h_in_w<6>   |    1.492(R)|      SLOW  |   -0.897(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<7>   |    1.278(R)|      SLOW  |   -0.697(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<8>   |    1.572(R)|      SLOW  |   -0.982(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<9>   |    1.427(R)|      SLOW  |   -0.847(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<10>  |    1.542(R)|      SLOW  |   -0.958(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<11>  |    1.308(R)|      SLOW  |   -0.737(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<12>  |    1.090(R)|      SLOW  |   -0.528(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<13>  |    1.199(R)|      SLOW  |   -0.631(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<14>  |    1.722(R)|      SLOW  |   -1.128(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_in_w<15>  |    1.521(R)|      SLOW  |   -0.940(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+b_out<0>    |         9.564(R)|      SLOW  |         5.231(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<1>    |         9.876(R)|      SLOW  |         5.457(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<2>    |        10.061(R)|      SLOW  |         5.587(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<3>    |         9.918(R)|      SLOW  |         5.496(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<4>    |        10.165(R)|      SLOW  |         5.637(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<5>    |        10.034(R)|      SLOW  |         5.567(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<6>    |        10.037(R)|      SLOW  |         5.572(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<7>    |         9.343(R)|      SLOW  |         5.092(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<8>    |         9.705(R)|      SLOW  |         5.332(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<9>    |         9.792(R)|      SLOW  |         5.352(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<10>   |         9.508(R)|      SLOW  |         5.211(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<11>   |         9.552(R)|      SLOW  |         5.228(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<12>   |         9.389(R)|      SLOW  |         5.140(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<13>   |         9.883(R)|      SLOW  |         5.439(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<14>   |         9.637(R)|      SLOW  |         5.297(R)|      FAST  |clk_BUFGP         |   0.000|
+b_out<15>   |         9.480(R)|      SLOW  |         5.229(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   52.780|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 8690487872531283000000000 paths, 0 nets, and 13371 connections
+
+Design statistics:
+   Minimum period:  52.780ns{1}   (Maximum frequency:  18.947MHz)
+   Minimum input required time before clock:  12.943ns
+   Maximum output delay after clock:  10.165ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue May 26 16:48:38 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 247 MB
+
+
+

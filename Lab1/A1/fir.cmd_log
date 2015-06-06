@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/OneDrive/Documents/TUe/2IN35/fir.xst" -ofn "D:/OneDrive/Documents/TUe/2IN35/fir.syr" 
+xst -intstyle ise -ifn "D:/OneDrive/Documents/TUe/2IN35/fir.xst" -ofn "D:/OneDrive/Documents/TUe/2IN35/fir.syr" 

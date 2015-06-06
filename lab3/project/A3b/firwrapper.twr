@@ -1,0 +1,1929 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -a -s
+3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr
+firwrapper.pcf
+
+Design file:              firwrapper.ncd
+Physical constraint file: firwrapper.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2700 - Timing constraints ignored because advanced analysis with 
+   offsets was specified.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: Default period analysis for net "clk_BUFGP" 
+
+ 533413201 paths analyzed, 20252 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Minimum period is  28.767ns.
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/sum_7 (SLICE_X48Y12.C6), 2852032 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     28.767ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_7 (FF)
+  Data Path Delay:      28.689ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.486 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X31Y62.C6      net (fanout=12)       0.870   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X31Y62.C       Tilo                  0.259   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17_1
+    SLICE_X29Y62.B5      net (fanout=8)        0.613   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A16       net (fanout=3)        3.094   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X58Y11.A4      net (fanout=124)      5.216   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X58Y11.A       Tilo                  0.205   firfilter/b_buf[0][0]_b_buf[0][0]_mux_136_OUT<808>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_168_OUT311
+    SLICE_X59Y10.B1      net (fanout=1)        0.581   firfilter/b_buf[0][0]_i[0]_mux_168_OUT<8>
+    SLICE_X59Y10.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C2       net (fanout=1)        0.835   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.C6      net (fanout=1)        1.177   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     28.689ns (7.685ns logic, 21.004ns route)
+                                                       (26.8% logic, 73.2% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     28.755ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_7 (FF)
+  Data Path Delay:      28.677ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.486 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X31Y62.C6      net (fanout=12)       0.870   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X31Y62.C       Tilo                  0.259   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17_1
+    SLICE_X29Y62.B5      net (fanout=8)        0.613   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A15       net (fanout=3)        3.082   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X58Y11.A4      net (fanout=124)      5.216   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X58Y11.A       Tilo                  0.205   firfilter/b_buf[0][0]_b_buf[0][0]_mux_136_OUT<808>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_168_OUT311
+    SLICE_X59Y10.B1      net (fanout=1)        0.581   firfilter/b_buf[0][0]_i[0]_mux_168_OUT<8>
+    SLICE_X59Y10.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C2       net (fanout=1)        0.835   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.C6      net (fanout=1)        1.177   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     28.677ns (7.685ns logic, 20.992ns route)
+                                                       (26.8% logic, 73.2% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     28.744ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_7 (FF)
+  Data Path Delay:      28.666ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.486 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X28Y62.B6      net (fanout=12)       0.698   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X28Y62.B       Tilo                  0.205   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41_1
+    SLICE_X29Y62.B1      net (fanout=5)        0.816   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A16       net (fanout=3)        3.094   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X58Y11.A4      net (fanout=124)      5.216   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X58Y11.A       Tilo                  0.205   firfilter/b_buf[0][0]_b_buf[0][0]_mux_136_OUT<808>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_168_OUT311
+    SLICE_X59Y10.B1      net (fanout=1)        0.581   firfilter/b_buf[0][0]_i[0]_mux_168_OUT<8>
+    SLICE_X59Y10.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C2       net (fanout=1)        0.835   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.C6      net (fanout=1)        1.177   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     28.666ns (7.631ns logic, 21.035ns route)
+                                                       (26.6% logic, 73.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/sum_10 (SLICE_X37Y17.A1), 2852032 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     28.619ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_10 (FF)
+  Data Path Delay:      28.518ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.066ns (0.463 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X31Y62.C6      net (fanout=12)       0.870   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X31Y62.C       Tilo                  0.259   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17_1
+    SLICE_X29Y62.B5      net (fanout=8)        0.613   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A16       net (fanout=3)        3.094   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P5        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X31Y6.A2       net (fanout=124)      4.638   firfilter/i[0]_comp_ptr[0]_add_143_OUT<5>
+    SLICE_X31Y6.A        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_163_OUT281
+    SLICE_X31Y6.B1       net (fanout=1)        0.673   firfilter/b_buf[0][0]_i[0]_mux_163_OUT<5>
+    SLICE_X31Y6.B        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C2       net (fanout=1)        0.755   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11431
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.A1      net (fanout=1)        1.485   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.CLK     Tas                   0.322   firfilter/sum<11>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1111
+                                                       firfilter/sum_10
+    -------------------------------------------------  ---------------------------
+    Total                                     28.518ns (7.772ns logic, 20.746ns route)
+                                                       (27.3% logic, 72.7% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     28.607ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_10 (FF)
+  Data Path Delay:      28.506ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.066ns (0.463 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X31Y62.C6      net (fanout=12)       0.870   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X31Y62.C       Tilo                  0.259   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17_1
+    SLICE_X29Y62.B5      net (fanout=8)        0.613   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A15       net (fanout=3)        3.082   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P5        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X31Y6.A2       net (fanout=124)      4.638   firfilter/i[0]_comp_ptr[0]_add_143_OUT<5>
+    SLICE_X31Y6.A        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_163_OUT281
+    SLICE_X31Y6.B1       net (fanout=1)        0.673   firfilter/b_buf[0][0]_i[0]_mux_163_OUT<5>
+    SLICE_X31Y6.B        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C2       net (fanout=1)        0.755   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11431
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.A1      net (fanout=1)        1.485   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.CLK     Tas                   0.322   firfilter/sum<11>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1111
+                                                       firfilter/sum_10
+    -------------------------------------------------  ---------------------------
+    Total                                     28.506ns (7.772ns logic, 20.734ns route)
+                                                       (27.3% logic, 72.7% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     28.596ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_10 (FF)
+  Data Path Delay:      28.495ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.066ns (0.463 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X28Y62.B6      net (fanout=12)       0.698   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X28Y62.B       Tilo                  0.205   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41_1
+    SLICE_X29Y62.B1      net (fanout=5)        0.816   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A16       net (fanout=3)        3.094   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P5        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X31Y6.A2       net (fanout=124)      4.638   firfilter/i[0]_comp_ptr[0]_add_143_OUT<5>
+    SLICE_X31Y6.A        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_163_OUT281
+    SLICE_X31Y6.B1       net (fanout=1)        0.673   firfilter/b_buf[0][0]_i[0]_mux_163_OUT<5>
+    SLICE_X31Y6.B        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C2       net (fanout=1)        0.755   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11431
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.A1      net (fanout=1)        1.485   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.CLK     Tas                   0.322   firfilter/sum<11>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1111
+                                                       firfilter/sum_10
+    -------------------------------------------------  ---------------------------
+    Total                                     28.495ns (7.718ns logic, 20.777ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/sum_7 (SLICE_X48Y12.C1), 2320887 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     28.604ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_7 (FF)
+  Data Path Delay:      28.526ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.486 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X31Y62.C6      net (fanout=12)       0.870   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X31Y62.C       Tilo                  0.259   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17_1
+    SLICE_X29Y62.B5      net (fanout=8)        0.613   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A16       net (fanout=3)        3.094   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X32Y4.A4       net (fanout=124)      5.259   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X32Y4.A        Tilo                  0.205   firfilter/b_buf[0][0]_i[0]_mux_154_OUT<7>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_152_OUT311
+    SLICE_X33Y5.B6       net (fanout=1)        0.279   firfilter/b_buf[0][0]_i[0]_mux_152_OUT<8>
+    SLICE_X33Y5.B        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C4       net (fanout=1)        1.084   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12831
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.C1      net (fanout=1)        1.024   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     28.526ns (7.685ns logic, 20.841ns route)
+                                                       (26.9% logic, 73.1% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     28.592ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_7 (FF)
+  Data Path Delay:      28.514ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.486 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X31Y62.C6      net (fanout=12)       0.870   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X31Y62.C       Tilo                  0.259   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17_1
+    SLICE_X29Y62.B5      net (fanout=8)        0.613   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT17
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A15       net (fanout=3)        3.082   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X32Y4.A4       net (fanout=124)      5.259   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X32Y4.A        Tilo                  0.205   firfilter/b_buf[0][0]_i[0]_mux_154_OUT<7>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_152_OUT311
+    SLICE_X33Y5.B6       net (fanout=1)        0.279   firfilter/b_buf[0][0]_i[0]_mux_152_OUT<8>
+    SLICE_X33Y5.B        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C4       net (fanout=1)        1.084   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12831
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.C1      net (fanout=1)        1.024   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     28.514ns (7.685ns logic, 20.829ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     28.581ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/input_buf_ptr_5_1 (FF)
+  Destination:          firfilter/sum_7 (FF)
+  Data Path Delay:      28.503ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.486 - 0.529)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/input_buf_ptr_5_1 to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y59.DQ      Tcko                  0.408   firfilter/input_buf_ptr_5_1
+                                                       firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C2      net (fanout=2)        0.578   firfilter/input_buf_ptr_5_1
+    SLICE_X28Y58.C       Tilo                  0.205   firfilter/input_buf_ptr_4_1
+                                                       firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o11
+    SLICE_X28Y62.B6      net (fanout=12)       0.698   firfilter/BUS_0001_PWR_2_o_mod_3/BUS_0010_INV_112_o
+    SLICE_X28Y62.B       Tilo                  0.205   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41
+                                                       firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41_1
+    SLICE_X29Y62.B1      net (fanout=5)        0.816   firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT41
+    SLICE_X29Y62.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+                                                       firfilter/Madd_n0484_xor<4>11
+    SLICE_X40Y74.B1      net (fanout=25)       2.491   firfilter/BUS_0002_PWR_2_o_mod_138/Madd_GND_3_o_b[5]_add_11_OUT_Madd_Madd_cy<4>
+    SLICE_X40Y74.B       Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1231
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_10
+    SLICE_X45Y95.C4      net (fanout=12)       2.472   firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o119
+    SLICE_X45Y95.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_144
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A6      net (fanout=1)        0.650   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1322
+    SLICE_X45Y96.A       Tilo                  0.259   firfilter/input_buf_62<143>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A5      net (fanout=1)        2.427   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_85
+    SLICE_X37Y65.A       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_65
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61
+    DSP48_X0Y9.A16       net (fanout=3)        3.094   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X32Y4.A4       net (fanout=124)      5.259   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X32Y4.A        Tilo                  0.205   firfilter/b_buf[0][0]_i[0]_mux_154_OUT<7>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_152_OUT311
+    SLICE_X33Y5.B6       net (fanout=1)        0.279   firfilter/b_buf[0][0]_i[0]_mux_152_OUT<8>
+    SLICE_X33Y5.B        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C4       net (fanout=1)        1.084   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12831
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.C1      net (fanout=1)        1.024   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     28.503ns (7.631ns logic, 20.872ns route)
+                                                       (26.8% logic, 73.2% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: Default period analysis for net "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_219 (SLICE_X8Y64.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.379ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_218 (FF)
+  Destination:          h_in_219 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_218 to h_in_219
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y64.CQ       Tcko                  0.200   h_in_219
+                                                       h_in_218
+    SLICE_X8Y64.DX       net (fanout=2)        0.131   h_in_218
+    SLICE_X8Y64.CLK      Tckdi       (-Th)    -0.048   h_in_219
+                                                       h_in_219
+    -------------------------------------------------  ---------------------------
+    Total                                      0.379ns (0.248ns logic, 0.131ns route)
+                                                       (65.4% logic, 34.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_771 (SLICE_X8Y86.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.379ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_770 (FF)
+  Destination:          h_in_771 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_770 to h_in_771
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y86.CQ       Tcko                  0.200   h_in_771
+                                                       h_in_770
+    SLICE_X8Y86.DX       net (fanout=2)        0.131   h_in_770
+    SLICE_X8Y86.CLK      Tckdi       (-Th)    -0.048   h_in_771
+                                                       h_in_771
+    -------------------------------------------------  ---------------------------
+    Total                                      0.379ns (0.248ns logic, 0.131ns route)
+                                                       (65.4% logic, 34.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_263 (SLICE_X24Y70.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.379ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_262 (FF)
+  Destination:          h_in_263 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_262 to h_in_263
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y70.CQ      Tcko                  0.200   h_in_263
+                                                       h_in_262
+    SLICE_X24Y70.DX      net (fanout=2)        0.131   h_in_262
+    SLICE_X24Y70.CLK     Tckdi       (-Th)    -0.048   h_in_263
+                                                       h_in_263
+    -------------------------------------------------  ---------------------------
+    Total                                      0.379ns (0.248ns logic, 0.131ns route)
+                                                       (65.4% logic, 34.6% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default OFFSET IN BEFORE analysis for clock "clk_BUFGP" 
+
+ 58118013 paths analyzed, 14383 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+ Minimum allowable offset is  40.117ns.
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/sum_7 (SLICE_X48Y12.C6), 310704 paths
+--------------------------------------------------------------------------------
+Offset (setup paths):   40.117ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_7 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.954ns (Levels of Logic = 11)
+  Clock Path Delay:     2.862ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X58Y11.A4      net (fanout=124)      5.216   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X58Y11.A       Tilo                  0.205   firfilter/b_buf[0][0]_b_buf[0][0]_mux_136_OUT<808>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_168_OUT311
+    SLICE_X59Y10.B1      net (fanout=1)        0.581   firfilter/b_buf[0][0]_i[0]_mux_168_OUT<8>
+    SLICE_X59Y10.B       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C2       net (fanout=1)        0.835   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12811
+    SLICE_X57Y6.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.C6      net (fanout=1)        1.177   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     42.954ns (7.657ns logic, 35.297ns route)
+                                                       (17.8% logic, 82.2% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X48Y12.CLK     net (fanout=1315)     1.195   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.862ns (0.881ns logic, 1.981ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.794ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_7 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.631ns (Levels of Logic = 11)
+  Clock Path Delay:     2.862ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X58Y6.A1       net (fanout=124)      5.235   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X58Y6.A        Tilo                  0.205   firfilter/b_buf[0][0]_i[0]_mux_172_OUT<8>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_175_OUT311
+    SLICE_X57Y6.D2       net (fanout=1)        0.612   firfilter/b_buf[0][0]_i[0]_mux_175_OUT<8>
+    SLICE_X57Y6.D        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+    SLICE_X57Y6.C4       net (fanout=1)        0.462   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+    SLICE_X57Y6.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.C6      net (fanout=1)        1.177   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     42.631ns (7.657ns logic, 34.974ns route)
+                                                       (18.0% logic, 82.0% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X48Y12.CLK     net (fanout=1315)     1.195   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.862ns (0.881ns logic, 1.981ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.735ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_7 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.572ns (Levels of Logic = 11)
+  Clock Path Delay:     2.862ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X47Y11.C1      net (fanout=124)      4.498   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X47Y11.C       Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_161_OUT<8>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_161_OUT311
+    SLICE_X46Y8.B4       net (fanout=1)        0.628   firfilter/b_buf[0][0]_i[0]_mux_161_OUT<8>
+    SLICE_X46Y8.B        Tilo                  0.205   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13531
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13531
+    SLICE_X57Y6.C3       net (fanout=1)        1.124   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13531
+    SLICE_X57Y6.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11551
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.C6      net (fanout=1)        1.177   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7271
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     42.572ns (7.657ns logic, 34.915ns route)
+                                                       (18.0% logic, 82.0% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X48Y12.CLK     net (fanout=1315)     1.195   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.862ns (0.881ns logic, 1.981ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/sum_10 (SLICE_X37Y17.A1), 310704 paths
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.969ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_10 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.783ns (Levels of Logic = 11)
+  Clock Path Delay:     2.839ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P5        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X31Y6.A2       net (fanout=124)      4.638   firfilter/i[0]_comp_ptr[0]_add_143_OUT<5>
+    SLICE_X31Y6.A        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_163_OUT281
+    SLICE_X31Y6.B1       net (fanout=1)        0.673   firfilter/b_buf[0][0]_i[0]_mux_163_OUT<5>
+    SLICE_X31Y6.B        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C2       net (fanout=1)        0.755   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11431
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.A1      net (fanout=1)        1.485   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.CLK     Tas                   0.322   firfilter/sum<11>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1111
+                                                       firfilter/sum_10
+    -------------------------------------------------  ---------------------------
+    Total                                     42.783ns (7.744ns logic, 35.039ns route)
+                                                       (18.1% logic, 81.9% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X37Y17.CLK     net (fanout=1315)     1.172   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.839ns (0.881ns logic, 1.958ns route)
+                                                       (31.0% logic, 69.0% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.688ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_10 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.502ns (Levels of Logic = 11)
+  Clock Path Delay:     2.839ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P5        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X34Y6.A4       net (fanout=124)      4.741   firfilter/i[0]_comp_ptr[0]_add_143_OUT<5>
+    SLICE_X34Y6.A        Tilo                  0.203   firfilter/b_buf[0][0]_i[0]_mux_160_OUT<5>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_160_OUT281
+    SLICE_X31Y6.B6       net (fanout=1)        0.345   firfilter/b_buf[0][0]_i[0]_mux_160_OUT<5>
+    SLICE_X31Y6.B        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_206_OUT<14>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C2       net (fanout=1)        0.755   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13411
+    SLICE_X31Y5.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11431
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.A1      net (fanout=1)        1.485   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.CLK     Tas                   0.322   firfilter/sum<11>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1111
+                                                       firfilter/sum_10
+    -------------------------------------------------  ---------------------------
+    Total                                     42.502ns (7.688ns logic, 34.814ns route)
+                                                       (18.1% logic, 81.9% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X37Y17.CLK     net (fanout=1315)     1.172   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.839ns (0.881ns logic, 1.958ns route)
+                                                       (31.0% logic, 69.0% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.668ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_10 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.482ns (Levels of Logic = 11)
+  Clock Path Delay:     2.839ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P5        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X25Y6.A1       net (fanout=124)      3.751   firfilter/i[0]_comp_ptr[0]_add_143_OUT<5>
+    SLICE_X25Y6.A        Tilo                  0.259   firfilter/b_buf[0][0]_i[0]_mux_170_OUT<5>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_170_OUT281
+    SLICE_X25Y7.D1       net (fanout=1)        0.790   firfilter/b_buf[0][0]_i[0]_mux_170_OUT<5>
+    SLICE_X25Y7.D        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12631
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12631
+    SLICE_X31Y5.C3       net (fanout=1)        1.224   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12631
+    SLICE_X31Y5.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_11431
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.A1      net (fanout=1)        1.485   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7211
+    SLICE_X37Y17.CLK     Tas                   0.322   firfilter/sum<11>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1111
+                                                       firfilter/sum_10
+    -------------------------------------------------  ---------------------------
+    Total                                     42.482ns (7.744ns logic, 34.738ns route)
+                                                       (18.2% logic, 81.8% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X37Y17.CLK     net (fanout=1315)     1.172   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.839ns (0.881ns logic, 1.958ns route)
+                                                       (31.0% logic, 69.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/sum_7 (SLICE_X48Y12.C1), 252850 paths
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.954ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_7 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.791ns (Levels of Logic = 11)
+  Clock Path Delay:     2.862ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X32Y4.A4       net (fanout=124)      5.259   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X32Y4.A        Tilo                  0.205   firfilter/b_buf[0][0]_i[0]_mux_154_OUT<7>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_152_OUT311
+    SLICE_X33Y5.B6       net (fanout=1)        0.279   firfilter/b_buf[0][0]_i[0]_mux_152_OUT<8>
+    SLICE_X33Y5.B        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C4       net (fanout=1)        1.084   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12831
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.C1      net (fanout=1)        1.024   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     42.791ns (7.657ns logic, 35.134ns route)
+                                                       (17.9% logic, 82.1% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X48Y12.CLK     net (fanout=1315)     1.195   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.862ns (0.881ns logic, 1.981ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.840ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_7 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      42.677ns (Levels of Logic = 11)
+  Clock Path Delay:     2.862ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X29Y106.B6     net (fanout=2716)    19.912   ack_in_IBUF
+    SLICE_X29Y106.B      Tilo                  0.259   N146
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1_SW0
+    SLICE_X29Y105.B4     net (fanout=1)        0.488   N146
+    SLICE_X29Y105.B      Tilo                  0.259   firfilter/input_buf_62<33>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>1
+    SLICE_X31Y102.D2     net (fanout=1)        1.111   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<33>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X32Y6.A4       net (fanout=124)      5.072   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X32Y6.A        Tilo                  0.205   firfilter/b_buf[0][0]_b_buf[0][0]_mux_136_OUT<1840>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_153_OUT311
+    SLICE_X33Y5.B5       net (fanout=1)        0.352   firfilter/b_buf[0][0]_i[0]_mux_153_OUT<8>
+    SLICE_X33Y5.B        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C4       net (fanout=1)        1.084   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12831
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.C1      net (fanout=1)        1.024   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     42.677ns (7.657ns logic, 35.020ns route)
+                                                       (17.9% logic, 82.1% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X48Y12.CLK     net (fanout=1315)     1.195   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.862ns (0.881ns logic, 1.981ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   39.159ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/sum_7 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      41.996ns (Levels of Logic = 11)
+  Clock Path Delay:     2.862ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N11.I                Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp136.IMUX.21
+    SLICE_X26Y102.A3     net (fanout=2716)    19.270   ack_in_IBUF
+    SLICE_X26Y102.A      Tilo                  0.203   firfilter/input_buf_62<18>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<17>1_SW0
+    SLICE_X26Y102.B2     net (fanout=1)        0.871   N114
+    SLICE_X26Y102.B      Tilo                  0.203   firfilter/input_buf_62<18>
+                                                       firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<17>1
+    SLICE_X31Y102.D6     net (fanout=1)        0.687   firfilter/input_buf[0][0]_input_buf[0][0]_mux_135_OUT<17>
+    SLICE_X31Y102.D      Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C2     net (fanout=1)        0.588   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_146
+    SLICE_X31Y101.C      Tilo                  0.259   h_in_651
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C1      net (fanout=1)        2.923   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_86
+    SLICE_X21Y67.C       Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_66
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>71
+    DSP48_X0Y9.A1        net (fanout=1)        2.466   firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<1>
+    DSP48_X0Y9.P8        Tdspdo_A_P            4.560   firfilter/Maddsub_n0492
+                                                       firfilter/Maddsub_n0492
+    SLICE_X32Y4.A4       net (fanout=124)      5.259   firfilter/i[0]_comp_ptr[0]_add_143_OUT<8>
+    SLICE_X32Y4.A        Tilo                  0.205   firfilter/b_buf[0][0]_i[0]_mux_154_OUT<7>
+                                                       firfilter/Mmux_b_buf[0][0]_i[0]_mux_152_OUT311
+    SLICE_X33Y5.B6       net (fanout=1)        0.279   firfilter/b_buf[0][0]_i[0]_mux_152_OUT<8>
+    SLICE_X33Y5.B        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C4       net (fanout=1)        1.084   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_13541
+    SLICE_X45Y8.C        Tilo                  0.259   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12831
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.C1      net (fanout=1)        1.024   firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_8131
+    SLICE_X48Y12.CLK     Tas                   0.289   firfilter/sum<7>
+                                                       firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>1411
+                                                       firfilter/sum_7
+    -------------------------------------------------  ---------------------------
+    Total                                     41.996ns (7.545ns logic, 34.451ns route)
+                                                       (18.0% logic, 82.0% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/sum_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X48Y12.CLK     net (fanout=1315)     1.195   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.862ns (0.881ns logic, 1.981ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: Default OFFSET IN BEFORE analysis for clock "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/b_buf_62_8 (SLICE_X41Y3.SR), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.861ns (data path - clock path + uncertainty)
+  Source:               rst (PAD)
+  Destination:          firfilter/b_buf_62_8 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.250ns (Levels of Logic = 1)
+  Clock Path Delay:     3.087ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: rst to firfilter/b_buf_62_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    T12.I                Tiopi                 0.684   rst
+                                                       rst
+                                                       rst_IBUF
+                                                       ProtoComp136.IMUX.2
+    SLICE_X41Y3.SR       net (fanout=1085)     1.655   rst_IBUF
+    SLICE_X41Y3.CLK      Tcksr       (-Th)     0.089   firfilter/b_buf[0][0]_b_buf[0][0]_mux_136_OUT<8>
+                                                       firfilter/b_buf_62_8
+    -------------------------------------------------  ---------------------------
+    Total                                      2.250ns (0.595ns logic, 1.655ns route)
+                                                       (26.4% logic, 73.6% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/b_buf_62_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X41Y3.CLK      net (fanout=1315)     1.253   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.087ns (0.999ns logic, 2.088ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/b_buf_62_2001 (SLICE_X40Y4.SR), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.676ns (data path - clock path + uncertainty)
+  Source:               rst (PAD)
+  Destination:          firfilter/b_buf_62_2001 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.433ns (Levels of Logic = 1)
+  Clock Path Delay:     3.085ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: rst to firfilter/b_buf_62_2001
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    T12.I                Tiopi                 0.684   rst
+                                                       rst
+                                                       rst_IBUF
+                                                       ProtoComp136.IMUX.2
+    SLICE_X40Y4.SR       net (fanout=1085)     1.824   rst_IBUF
+    SLICE_X40Y4.CLK      Tcksr       (-Th)     0.075   firfilter/b_buf_62<2001>
+                                                       firfilter/b_buf_62_2001
+    -------------------------------------------------  ---------------------------
+    Total                                      2.433ns (0.609ns logic, 1.824ns route)
+                                                       (25.0% logic, 75.0% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/b_buf_62_2001
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X40Y4.CLK      net (fanout=1315)     1.251   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.085ns (0.999ns logic, 2.086ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/b_buf_62_2000 (SLICE_X40Y4.SR), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.663ns (data path - clock path + uncertainty)
+  Source:               rst (PAD)
+  Destination:          firfilter/b_buf_62_2000 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.446ns (Levels of Logic = 1)
+  Clock Path Delay:     3.085ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: rst to firfilter/b_buf_62_2000
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    T12.I                Tiopi                 0.684   rst
+                                                       rst
+                                                       rst_IBUF
+                                                       ProtoComp136.IMUX.2
+    SLICE_X40Y4.SR       net (fanout=1085)     1.824   rst_IBUF
+    SLICE_X40Y4.CLK      Tcksr       (-Th)     0.062   firfilter/b_buf_62<2001>
+                                                       firfilter/b_buf_62_2000
+    -------------------------------------------------  ---------------------------
+    Total                                      2.446ns (0.622ns logic, 1.824ns route)
+                                                       (25.4% logic, 74.6% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/b_buf_62_2000
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X40Y4.CLK      net (fanout=1315)     1.251   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.085ns (0.999ns logic, 2.086ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default OFFSET OUT AFTER analysis for clock "clk_BUFGP" 
+
+ 18 paths analyzed, 18 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+ Maximum allowable offset is  12.815ns.
+--------------------------------------------------------------------------------
+
+Paths for end point req_in (M11.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 12.815ns (clock path + data path + uncertainty)
+  Source:               firfilter/req_in_buf (FF)
+  Destination:          req_in (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      9.708ns (Levels of Logic = 1)
+  Clock Path Delay:     3.082ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/req_in_buf
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X37Y67.CLK     net (fanout=1315)     1.248   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.082ns (0.999ns logic, 2.083ns route)
+                                                       (32.4% logic, 67.6% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/req_in_buf to req_in
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X37Y67.DQ      Tcko                  0.391   firfilter/req_in_buf
+                                                       firfilter/req_in_buf
+    M11.O                net (fanout=2725)     7.316   firfilter/req_in_buf
+    M11.PAD              Tioop                 2.001   req_in
+                                                       req_in_OBUF
+                                                       req_in
+    -------------------------------------------------  ---------------------------
+    Total                                      9.708ns (2.392ns logic, 7.316ns route)
+                                                       (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point req_out (V12.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 11.217ns (clock path + data path + uncertainty)
+  Source:               firfilter/req_out_buf (FF)
+  Destination:          req_out (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      8.095ns (Levels of Logic = 1)
+  Clock Path Delay:     3.097ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/req_out_buf
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X27Y57.CLK     net (fanout=1315)     1.263   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.097ns (0.999ns logic, 2.098ns route)
+                                                       (32.3% logic, 67.7% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/req_out_buf to req_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y57.AMUX    Tshcko                0.461   firfilter/input_buf_ptr_7_3
+                                                       firfilter/req_out_buf
+    V12.O                net (fanout=10)       5.633   firfilter/req_out_buf
+    V12.PAD              Tioop                 2.001   req_out
+                                                       req_out_OBUF
+                                                       req_out
+    -------------------------------------------------  ---------------------------
+    Total                                      8.095ns (2.462ns logic, 5.633ns route)
+                                                       (30.4% logic, 69.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<5> (V11.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 9.375ns (clock path + data path + uncertainty)
+  Source:               firfilter/sum_5 (FF)
+  Destination:          data_out<5> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      6.287ns (Levels of Logic = 1)
+  Clock Path Delay:     3.063ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/sum_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X41Y31.CLK     net (fanout=1315)     1.229   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.063ns (0.999ns logic, 2.064ns route)
+                                                       (32.6% logic, 67.4% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/sum_5 to data_out<5>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X41Y31.CQ      Tcko                  0.391   firfilter/sum<5>
+                                                       firfilter/sum_5
+    V11.O                net (fanout=1)        3.895   firfilter/sum<5>
+    V11.PAD              Tioop                 2.001   data_out<5>
+                                                       data_out_5_OBUF
+                                                       data_out<5>
+    -------------------------------------------------  ---------------------------
+    Total                                      6.287ns (2.392ns logic, 3.895ns route)
+                                                       (38.0% logic, 62.0% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: Default OFFSET OUT AFTER analysis for clock "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<0> (R8.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 4.035ns (clock path + data path - uncertainty)
+  Source:               firfilter/sum_0 (FF)
+  Destination:          data_out<0> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      2.605ns (Levels of Logic = 1)
+  Clock Path Delay:     1.455ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/sum_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X21Y7.CLK      net (fanout=1315)     0.719   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.455ns (0.380ns logic, 1.075ns route)
+                                                       (26.1% logic, 73.9% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/sum_0 to data_out<0>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y7.AQ       Tcko                  0.198   firfilter/sum<1>
+                                                       firfilter/sum_0
+    R8.O                 net (fanout=1)        1.369   firfilter/sum<0>
+    R8.PAD               Tioop                 1.038   data_out<0>
+                                                       data_out_0_OBUF
+                                                       data_out<0>
+    -------------------------------------------------  ---------------------------
+    Total                                      2.605ns (1.236ns logic, 1.369ns route)
+                                                       (47.4% logic, 52.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<1> (T8.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 4.067ns (clock path + data path - uncertainty)
+  Source:               firfilter/sum_1 (FF)
+  Destination:          data_out<1> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      2.637ns (Levels of Logic = 1)
+  Clock Path Delay:     1.455ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/sum_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X21Y7.CLK      net (fanout=1315)     0.719   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.455ns (0.380ns logic, 1.075ns route)
+                                                       (26.1% logic, 73.9% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/sum_1 to data_out<1>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y7.CQ       Tcko                  0.198   firfilter/sum<1>
+                                                       firfilter/sum_1
+    T8.O                 net (fanout=1)        1.401   firfilter/sum<1>
+    T8.PAD               Tioop                 1.038   data_out<1>
+                                                       data_out_1_OBUF
+                                                       data_out<1>
+    -------------------------------------------------  ---------------------------
+    Total                                      2.637ns (1.236ns logic, 1.401ns route)
+                                                       (46.9% logic, 53.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<11> (T10.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 4.365ns (clock path + data path - uncertainty)
+  Source:               firfilter/sum_11 (FF)
+  Destination:          data_out<11> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      2.973ns (Levels of Logic = 1)
+  Clock Path Delay:     1.417ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/sum_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp136.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X37Y17.CLK     net (fanout=1315)     0.681   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.417ns (0.380ns logic, 1.037ns route)
+                                                       (26.8% logic, 73.2% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/sum_11 to data_out<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X37Y17.CQ      Tcko                  0.198   firfilter/sum<11>
+                                                       firfilter/sum_11
+    T10.O                net (fanout=1)        1.737   firfilter/sum<11>
+    T10.PAD              Tioop                 1.038   data_out<11>
+                                                       data_out_11_OBUF
+                                                       data_out<11>
+    -------------------------------------------------  ---------------------------
+    Total                                      2.973ns (1.236ns logic, 1.737ns route)
+                                                       (41.6% logic, 58.4% route)
+
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+ack_in      |   40.117(R)|      SLOW  |   -1.266(R)|      FAST  |clk_BUFGP         |   0.000|
+ack_out     |   14.480(R)|      SLOW  |   -1.937(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<0>  |   32.724(R)|      SLOW  |   -2.532(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<1>  |   30.958(R)|      SLOW  |   -2.802(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<2>  |   32.249(R)|      SLOW  |   -2.498(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<3>  |   31.030(R)|      SLOW  |   -2.550(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<4>  |   28.171(R)|      SLOW  |   -2.118(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<5>  |   28.190(R)|      SLOW  |   -2.107(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<6>  |   27.541(R)|      SLOW  |   -1.974(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<7>  |   26.859(R)|      SLOW  |   -1.600(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<8>  |   33.895(R)|      SLOW  |   -1.386(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<9>  |   32.995(R)|      SLOW  |   -1.412(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<10> |   29.503(R)|      SLOW  |   -1.637(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<11> |   29.540(R)|      SLOW  |   -1.663(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<12> |   31.795(R)|      SLOW  |   -2.702(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<13> |   31.131(R)|      SLOW  |   -2.448(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<14> |   32.342(R)|      SLOW  |   -2.635(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in<15> |   31.089(R)|      SLOW  |   -2.506(R)|      FAST  |clk_BUFGP         |   0.000|
+h           |    2.554(R)|      SLOW  |   -1.582(R)|      FAST  |clk_BUFGP         |   0.000|
+h_enabled   |   12.536(R)|      SLOW  |   -2.083(R)|      FAST  |clk_BUFGP         |   0.000|
+rst         |   19.646(R)|      SLOW  |    0.862(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+data_out<0> |         7.635(R)|      SLOW  |         4.035(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<1> |         7.690(R)|      SLOW  |         4.067(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<2> |         8.421(R)|      SLOW  |         4.503(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<3> |         8.988(R)|      SLOW  |         4.816(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<4> |         9.224(R)|      SLOW  |         5.005(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<5> |         9.375(R)|      SLOW  |         5.116(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<6> |         8.269(R)|      SLOW  |         4.453(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<7> |         8.273(R)|      SLOW  |         4.455(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<8> |         8.253(R)|      SLOW  |         4.465(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<9> |         8.433(R)|      SLOW  |         4.568(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<10>|         8.443(R)|      SLOW  |         4.498(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<11>|         8.207(R)|      SLOW  |         4.365(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<12>|         8.352(R)|      SLOW  |         4.546(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<13>|         8.185(R)|      SLOW  |         4.411(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<14>|         8.783(R)|      SLOW  |         4.723(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<15>|         9.174(R)|      SLOW  |         4.965(R)|      FAST  |clk_BUFGP         |   0.000|
+req_in      |        12.815(R)|      SLOW  |         7.424(R)|      FAST  |clk_BUFGP         |   0.000|
+req_out     |        11.217(R)|      SLOW  |         6.270(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   28.767|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 591531232 paths, 0 nets, and 48746 connections
+
+Design statistics:
+   Minimum period:  28.767ns{1}   (Maximum frequency:  34.762MHz)
+   Minimum input required time before clock:  40.117ns
+   Maximum output delay after clock:  12.815ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Jun 03 17:19:41 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 475 MB
+
+
+

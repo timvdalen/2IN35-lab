@@ -53,3 +53,26 @@ The filter may produce a finite length interval of start-up noise.
 
 \subsection{Communication protocol}
 \label{sec:analysis:communication}
+
+The filters described above are not always ready to accept new input samples, as they do not operate at the same rate as the input.
+Because of this, communication between the input and the filter becomes more complicated than just putting the input on the input wires of the filter.
+
+We need a protocol between the filter and the environment outside of the filter.
+In this assignment, we use a 4-phase handskake protocol.
+Sending data works as follows.
+
+\begin{enumerate}
+	\item Set the data item, then set the request wire to high.
+	\item Wait until the acknoledge wire becomes high.
+	\item Make the request wire low.
+	\item Wait until the acknowledge wire becomes low, the data item may now change.
+\end{enumerate}
+
+Receiving data works as follows.
+
+\begin{enumerate}
+	\item Make the request wire high.
+	\item Wait until the acknowledge wire becomes high.
+	\item Read the data item, make the request wire low.
+	\item Wait until the acknowledge wire becomes low.
+\end{enumerate}

@@ -8,6 +8,7 @@
 \usepackage{listings}
 \usepackage{DejaVuSansMono}
 \usepackage[T1]{fontenc}
+\usepackage{color}
 
 \geometry{
 	includeheadfoot,
@@ -21,6 +22,8 @@
 	basicstyle=\ttfamily
 }
 
+\graphicspath{{imgs/}}
+
 \title{
 	2IN35 L3 report
 }
@@ -30,6 +33,9 @@
 	Ramon de Vaan (0758873)
 }
 \date{\today}
+
+\newcommand{\seqfilter}{\subsection{Sequential FIR filter}}
+\newcommand{\strengthfilter}{\subsection{Strength-reduced FIR filter}}
 
 \begin{document}
 

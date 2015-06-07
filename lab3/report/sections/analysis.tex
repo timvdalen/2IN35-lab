@@ -6,7 +6,7 @@ The assignment has two main parts:
 	\item Implementing a strength-reduced FIR filter based on the sequential implementation
 \end{enumerate}
 
-\subsection{Sequential FIR filter}
+\seqfilter
 In the previous assignments, we worked with a parallel FIR filter.
 The implementation of that filter used a lot of hardware, since the computations were happening on the hardware in parallel.
 
@@ -29,7 +29,7 @@ Specifically, our filter has the following requirements.
 
 The filter may produce a finite length interval of start-up noise.
 
-\subsection{Strength-reduced FIR filter}
+\strengthfilter
 In this part of the assignment, we want to design a strength reduced FIR filter.
 We will use the sequential FIR filter from the first part of the assignment as a sub-block in this filter.
 

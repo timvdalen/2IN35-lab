@@ -1,1 +1,35 @@
 %Analyze the specifications and requirements.
+
+The assignment has two main parts:
+\begin{enumerate}
+	\item Implementing a sequential FIR filter that uses as little hardware as possible
+	\item Implementing a strength-reduced FIR filter based on the sequential implementation
+\end{enumerate}
+
+\subsection{Sequential FIR filter}
+In the previous assignments, we worked with a parallel FIR filter.
+The implementation of that filter used a lot of hardware, since the computations were happening on the hardware in parallel.
+
+Because the sample rate of the input is much, much lower than the clock speed of the hardware (44kHz versus 100MHz), the hardware is idle most of the time (since the output only needs to be calculated when new input comes, at which point the enabled wire will be high).
+So, we have a situation where we occupy a lot of hardware, which is also idle most of the time.
+
+Because of this, we want to try to trade speed for hardware utilization.
+Obviously, we need to make sure that we are still faster than the input sample rate, so we don't skip any samples.
+This filter will run computations in sequence instead of in parallel, which means we can re-use the same hardware.
+We want to use at most one multiplier.
+
+Specifically, our filter has the following requirements.
+
+\begin{itemize}
+	\item The filter uses as little resources as possible (at most one multiplier may be used) and is maximally sequential.
+	\item The filter confirms to the 4-phase communication protocol that is defined in Subsection~\ref{sec:analysis:communication} for both input and output.
+	\item The filter can run at a clock frequency of 100MHz.
+	\item The filter honors changes in the coefficients.
+\end{itemize}
+
+The filter may produce a finite length interval of start-up noise.
+
+\subsection{Strength-reduced FIR filter}
+
+\subsection{Communication protocol}
+\label{sec:analysis:communication}

@@ -30,6 +30,26 @@ Specifically, our filter has the following requirements.
 The filter may produce a finite length interval of start-up noise.
 
 \subsection{Strength-reduced FIR filter}
+In this part of the assignment, we want to design a strength reduced FIR filter.
+We will use the sequential FIR filter from the first part of the assignment as a sub-block in this filter.
+
+The filter works on two input samples at the same time.
+Because of this, we can double the sample rate of the filter.
+Using the sequential FIR filter from the first assignment as a sub-block, we can again double the sample rate of the filter.
+
+In total, the sample rate will be quadruple that of the sequential implementation.
+
+The filter has the following requirements.
+
+\begin{itemize}
+	\item The filter uses at most 3 multipliers.
+	\item The filter confirms to the 4-phase communication protocol that is defined in Subsection~\ref{sec:analysis:communication} for both input and output.
+	\item The filter can run at a clock frequency of 100MHz.
+	\item The filter honors changes in the coefficients.
+	\item The filter has a sample frequency of about four times the sample frequency of the sequential implementation.
+\end{itemize}
+
+The filter may produce a finite length interval of start-up noise.
 
 \subsection{Communication protocol}
 \label{sec:analysis:communication}

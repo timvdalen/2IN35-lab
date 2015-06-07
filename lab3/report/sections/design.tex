@@ -13,4 +13,30 @@ This diagram is given in Figure~\ref{fig:design:parallelstage}.
 	\label{fig:design:parallelstage}
 \end{figure}
 
+In the sequential implemention, we need the previous 32 $b_{out}$ values to compute the current $b_{out}$.
+
+A key challenge is that we cannot just run the entire computation for a value at once, since that would mean a computation step that takes too long, meaning we wouldn't be able to run at 100MHz.
+To overcome this, we run one of the 32 steps of the computation each cycle.
+Then, in the \th{32} cycle, we write the $b_{out}$ value of the last computation to the \texttt{data\_out} wire.
+
+The coefficients, $h_{in}$ are given as one 512-bit value.
+It is too expensive to extract the proper index from this value each computational step, so we read $h_in$ into a buffer \texttt{h\_in\_buf} that contains the 32 values of $h$.
+This way, we can access them during the computation with just their index, without having to multiply with the number of bits in one of the values.
+
+%TODO: respect changes
+
+We keep a rotating buffer of all current input values ($a$) and $b$ values.
+We rotate these arrays by keeping a pointer (\texttt{i}) to the value we are currently working with, and increasing this pointer when we receive new input.
+When the pointer wraps, we start overwriting old values that we no longer need for the computation.
+We also keep a computational pointer (\texttt{comp\_ptr}), that is initialized at the current input pointer each time we get input.
+
+Each computational step, we first increase the computational pointer, and then perform the basic filter stage computation:
+
+\[
+	b[\texttt{comp\_ptr}] = h[i] * a[\texttt{comp\_ptr}] + b[\texttt{comp\_ptr} - 1]
+\]
+
+After 32 of these steps, the computational pointer is back at the input pointer, meaning we compute the output for the current given input last.
+When this final computation is done, we are ready to put the value of $b$ for the current pointer in the output.
+
 \strengthfilter

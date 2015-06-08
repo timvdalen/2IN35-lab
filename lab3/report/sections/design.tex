@@ -23,8 +23,6 @@ The coefficients, $h_{in}$ are given as one 512-bit value.
 It is too expensive to extract the proper index from this value each computational step, so we read $h_in$ into a buffer \texttt{h\_in\_buf} that contains the 32 values of $h$.
 This way, we can access them during the computation with just their index, without having to multiply with the number of bits in one of the values.
 
-%TODO: respect changes
-
 We keep a rotating buffer of all current input values ($a$) and $b$ values.
 We rotate these arrays by keeping a pointer (\texttt{i}) to the value we are currently working with, and increasing this pointer when we receive new input.
 When the pointer wraps, we start overwriting old values that we no longer need for the computation.
@@ -51,5 +49,14 @@ Figure~\ref{fig:design:compstep} shows a block diagram for a computational step 
 
 As shown, each computational step only uses one multiplier and one adder.
 Since the steps run in sequence instead of in parallel, this means our entire design only uses one multiplier and one added.
+
+In the implementation of this design, to speed things up, we have changed a number of things.
+Most notably, the buffer for $b$ we use holds only two values, since we are actually only using two at a time.
+We have also added an extra delay in the computational step, to make the critical path shorter.
+
+All pointers have been refactored into a single one, \texttt{count}.
+
+Instead of reading the $h$ values into a buffer when we reset, we use the values from the wire directly.
+This means we can adhere to the requirement to honor changes in $h$.
 
 \strengthfilter

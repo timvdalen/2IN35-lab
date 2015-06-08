@@ -7,9 +7,10 @@
 Appendix~\ref{app:source:seq} gives the Verilog implementation for the sequential FIR filter.
 
 \paragraph{}
-Unfortunately, we were not able to get our filter to work at at least 100MHz.
-Our fastest implementation ran at 85MHz.
-The results below are from an implementation that we worked on with the instructor, trying to speed things up.
+It took a lot of versions to get to an implementation of our design that was fast enough to run on the hardware.
+We started at an implementation that ran at 85MHz.
+When we tried to optimize that with the help of the instructor, it ran at 65MHz.
+After a complete re-write (using the same principle design), we were able to achieve 104MHz.
 
 \paragraph{Resource usage}
 Our resource usage, as given by the synthesis report, is as follows.
@@ -17,43 +18,39 @@ Our resource usage, as given by the synthesis report, is as follows.
 \begin{verbatim}
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 4
+# Adders/Subtractors                                   : 2
  32-bit adder                                          : 1
- 7-bit adder                                           : 2
- 8-bit adder                                           : 1
-# Registers                                            : 9
- 1-bit register                                        : 2
- 1008-bit register                                     : 3
- 16-bit register                                       : 1
- 32-bit register                                       : 1
- 7-bit register                                        : 1
- 8-bit register                                        : 1
-# Comparators                                          : 1
- 7-bit comparator lessequal                            : 1
-# Multiplexers                                         : 75
- 16-bit 2-to-1 multiplexer                             : 63
- 16-bit 63-to-1 multiplexer                            : 2
- 32-bit 2-to-1 multiplexer                             : 3
- 7-bit 2-to-1 multiplexer                              : 4
- 8-bit 2-to-1 multiplexer                              : 3
+ 6-bit adder                                           : 1
+# Registers                                            : 1097
+ Flip-Flops                                            : 1097
+# Shift Registers                                      : 16
+ 63-bit dynamic shift register                         : 16
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 6
+ 6-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 1
+ 1008-bit shifter logical left                         : 1
 \end{verbatim}
 
-Though our design respects the limit of one multiplier, we are using a lot of additional hardware.
-The 32-bit adder is the one we use in the main computation step, the 7-bit and 8-bit adders are used for increasing the pointers.
-The $<$ comparator is used in the reset block.
+As intended, we only use one multiplier.
+The 32-bit adder is the one we use in the main computation step, the 6-bit adder is for calculating the \texttt{calc\_buf}.
+The shift registers are used for initializing the \texttt{input\_buf}, as is the logic shifter.
+We would expect to use around 620 registers, with another 64 for the multiplier and adder.
+We are not sure what the other roughly 400 registers are used for.
 
-We think the amount of multiplexers is due to the way we read data from the wires, but we are not sure.
+The multiplexers are due to the way we access the wires.
 
 The synthesis report gives us the following values.
 \begin{description}
-	\item[Minimum period] 12.251ns
-	\item[Maximum frequency] 81.628MHz
+	\item[Minimum period] 8.186ns
+	\item[Maximum frequency] 122.154MHz
 \end{description}
 
 The report after the placement \& routing step gives us the following values.
 \begin{description}
-	\item[Minimum period] 15.590ns
-	\item[Maximum frequency] 64.144MHz
+	\item[Minimum period] 9.591ns
+	\item[Maximum frequency] 104.264MHz
 \end{description}
 
 \strengthfilter

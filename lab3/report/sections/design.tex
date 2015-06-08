@@ -60,3 +60,39 @@ Instead of reading the $h$ values into a buffer when we reset, we use the values
 This means we can adhere to the requirement to honor changes in $h$.
 
 \strengthfilter
+
+To design the strength-reduced filter, we first need to apply a strength-reduction to the formula of the filter, as in assignment T4.
+We start with the filter:
+\begin{align*}
+	y(n) &= \sum_{i=0}^{32} h(i)x(n-i)\\
+	&= \{\textnormal{Separate odd/even terms}\}\\
+	y(n) &= \sum_{j=0}^{16} h(2j)x(n-2j) \\
+	&+ \sum_{j=0}^{16} h(2j+1)x(n-2j-1) \\
+	&= \{\textnormal{Block processing,} L=2, n=2k\}\\
+	y(2k) &= \sum_{j=0}^{16} h(2j)x(2k-2j) \\
+	&+ \sum_{j=0}^{16} h(2j+1)x(2k-2j-1) \\
+	y(2k+1) &= \sum_{j=0}^{16} h(2j)x(2k+1-2j) \\
+	&+ \sum_{j=0}^{16} h(2j+1)x(2k-2j) \\
+	&= \{\textnormal{Rewrite}\}\\
+	y(2k) &= \sum_{j=0}^{16} h(2j)x(2(k-j)) \\
+	&+ \sum_{j=0}^{16} h(2j+1)x(2(k-2j-1)+1) \\
+	y(2k+1) &= \sum_{j=0}^{16} h(2j)x(2(k-j)+1) \\
+	&+ \sum_{j=0}^{16} h(2j+1)x(2(k-j)) \\
+	&= \{\textnormal{Add/substract same terms}\}\\
+	y(2k) &= \sum_{j=0}^{16} (h(2j)+h(2j+1)) x(2(k-j)) \\
+	&+ \sum_{j=0}^{16} h(2j+1) (x(2(k-j-1)+1) - x(2(k-j))) \\
+	y(2k+1) &= \sum_{j=0}^{16} h(2j)(x(2(k-j)+1)-x(2(k-j))) \\
+	&+ \sum_{j=0}^{16} (h(2j)+h(2j+1))x(2(k-j)) \\
+\end{align*}
+
+$y(2k)$ and $y(2k+1)$ are 16-stage FIR filters.
+Since the filters have a term that is the same (the second term of $y(2k)$ is the same as the first term of $y(2k+1)$), we can use these to construct the strength-reduced filter.
+%Figure~\ref{fig:design:strength} shows how this works.
+
+%\begin{figure}[h]
+%	\centering
+%	\def\svgwidth{0.6\textwidth}
+%	\input{imgs/strength.pdf_tex}
+%	\caption{Block diagram showing how the strength-reduced filter works}
+%	\label{fig:design:strength}
+%\end{figure}

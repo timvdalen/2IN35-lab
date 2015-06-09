@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module filter #(parameter NR_STAGES = 32,
+module subfilter #(parameter NR_STAGES = 32,
 				parameter DWIDTH = 16,
 				parameter DDWIDTH = 2*DWIDTH,
 				parameter CWIDTH = NR_STAGES * DWIDTH)

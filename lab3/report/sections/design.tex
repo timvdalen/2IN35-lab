@@ -87,12 +87,11 @@ We start with the filter:
 
 $y(2k)$ and $y(2k+1)$ are 16-stage FIR filters.
 Since the filters have a term that is the same (the second term of $y(2k)$ is the same as the first term of $y(2k+1)$), we can use these to construct the strength-reduced filter.
-%Figure~\ref{fig:design:strength} shows how this works.
+Figure~\ref{fig:design:strength}, from the slides, shows how this works.
 
-%\begin{figure}[h]
-%	\centering
-%	\def\svgwidth{0.6\textwidth}
-%	\input{imgs/strength.pdf_tex}
-%	\caption{Block diagram showing how the strength-reduced filter works}
-%	\label{fig:design:strength}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{strength}
+	\caption{Block diagram showing how the strength-reduced filter works}
+	\label{fig:design:strength}
+\end{figure}

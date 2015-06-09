@@ -56,6 +56,35 @@ The report after the placement \& routing step gives us the following values.
 \strengthfilter
 Appendix~\ref{app:source:strength} gives the Verilog implementation for the strength-reduced FIR filter.
 
+\paragraph{Resource usage}
+Our resource usage, as given by the synthesis report, is as follows.
+
+\begin{verbatim}
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 6-bit adder                                           : 1
+# Registers                                            : 9
+ 1-bit register                                        : 3
+ 1008-bit register                                     : 2
+ 16-bit register                                       : 1
+ 32-bit register                                       : 2
+ 6-bit register                                        : 1
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 2
+ 16-bit 63-to-1 multiplexer                            : 1
+ 32-bit 2-to-1 multiplexer                             : 6
+ 6-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 1
+ 1008-bit shifter logical left                         : 1
+\end{verbatim}
+
+As intended, we only use one multiplier.
+The 32-bit adder is the one we use in the main computation step, the 6-bit adder is for calculating the \texttt{calc\_buf}.
+The shift registers are used for initializing the \texttt{input\_buf}, as is the logic shifter.
+We are not sure why this design uses a different type of registers than before.
+
 The synthesis report gives us the following values.
 \begin{description}
 	\item[Minimum period] 8.186ns

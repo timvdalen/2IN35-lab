@@ -1,0 +1,1532 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+d:\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -a -s 3 -n 3
+-fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf
+
+Design file:              firwrapper.ncd
+Physical constraint file: firwrapper.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2700 - Timing constraints ignored because advanced analysis with 
+   offsets was specified.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: Default period analysis for net "clk_BUFGP" 
+
+ 72900 paths analyzed, 1372 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Minimum period is   9.341ns.
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/last_calc_20 (SLICE_X9Y20.A4), 2124 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     9.341ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/count_0_8 (FF)
+  Destination:          firfilter/last_calc_20 (FF)
+  Data Path Delay:      9.291ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.238 - 0.253)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/count_0_8 to firfilter/last_calc_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.DQ       Tcko                  0.391   firfilter/count_0_8
+                                                       firfilter/count_0_8
+    SLICE_X10Y30.A3      net (fanout=19)       1.505   firfilter/count_0_8
+    SLICE_X10Y30.A       Tilo                  0.203   h_in_631
+                                                       firfilter/Sh50342
+    SLICE_X11Y32.C4      net (fanout=1)        1.000   firfilter/Sh50342
+    SLICE_X11Y32.C       Tilo                  0.259   h_in_311
+                                                       firfilter/Sh50345
+    SLICE_X9Y26.C3       net (fanout=1)        1.054   firfilter/Sh50345
+    SLICE_X9Y26.C        Tilo                  0.259   h_in_591
+                                                       firfilter/Sh503421
+    DSP48_X0Y5.A10       net (fanout=1)        0.614   firfilter/Sh5034
+    DSP48_X0Y5.M11       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X9Y20.A4       net (fanout=1)        0.849   firfilter/count[0]_h_in[0]_MuLt_11_OUT<11>
+    SLICE_X9Y20.CLK      Tas                   0.322   firfilter/last_calc<25>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT33
+                                                       firfilter/last_calc_20
+    -------------------------------------------------  ---------------------------
+    Total                                      9.291ns (4.269ns logic, 5.022ns route)
+                                                       (45.9% logic, 54.1% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     9.300ns (data path - clock path skew + uncertainty)
+  Source:               h_in_794 (FF)
+  Destination:          firfilter/last_calc_20 (FF)
+  Data Path Delay:      9.255ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.010ns (0.238 - 0.248)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_in_794 to firfilter/last_calc_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y25.CQ       Tcko                  0.391   h_in_217
+                                                       h_in_794
+    SLICE_X2Y24.B3       net (fanout=2)        1.872   h_in_794
+    SLICE_X2Y24.B        Tilo                  0.203   h_in_851
+                                                       firfilter/Sh50299
+    SLICE_X4Y23.C3       net (fanout=1)        0.896   firfilter/Sh50299
+    SLICE_X4Y23.C        Tilo                  0.205   h_in_527
+                                                       firfilter/Sh502910
+    SLICE_X9Y25.A1       net (fanout=1)        0.892   firfilter/Sh502910
+    SLICE_X9Y25.A        Tilo                  0.259   firfilter/Sh503820
+                                                       firfilter/Sh502921
+    DSP48_X0Y5.A5        net (fanout=1)        0.531   firfilter/Sh5029
+    DSP48_X0Y5.M11       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X9Y20.A4       net (fanout=1)        0.849   firfilter/count[0]_h_in[0]_MuLt_11_OUT<11>
+    SLICE_X9Y20.CLK      Tas                   0.322   firfilter/last_calc<25>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT33
+                                                       firfilter/last_calc_20
+    -------------------------------------------------  ---------------------------
+    Total                                      9.255ns (4.215ns logic, 5.040ns route)
+                                                       (45.5% logic, 54.5% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     9.264ns (data path - clock path skew + uncertainty)
+  Source:               h_in_91 (FF)
+  Destination:          firfilter/last_calc_20 (FF)
+  Data Path Delay:      9.216ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.013ns (0.238 - 0.251)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_in_91 to firfilter/last_calc_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y21.DQ       Tcko                  0.391   h_in_91
+                                                       h_in_91
+    SLICE_X3Y22.A1       net (fanout=2)        1.804   h_in_91
+    SLICE_X3Y22.A        Tilo                  0.259   h_in_88
+                                                       firfilter/Sh50287
+    SLICE_X3Y23.C2       net (fanout=1)        0.588   firfilter/Sh50287
+    SLICE_X3Y23.C        Tilo                  0.259   h_in_775
+                                                       firfilter/Sh502810
+    SLICE_X9Y27.C6       net (fanout=1)        1.086   firfilter/Sh502810
+    SLICE_X9Y27.C        Tilo                  0.259   h_in_67
+                                                       firfilter/Sh502821
+    DSP48_X0Y5.A4        net (fanout=1)        0.564   firfilter/Sh5028
+    DSP48_X0Y5.M11       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X9Y20.A4       net (fanout=1)        0.849   firfilter/count[0]_h_in[0]_MuLt_11_OUT<11>
+    SLICE_X9Y20.CLK      Tas                   0.322   firfilter/last_calc<25>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT33
+                                                       firfilter/last_calc_20
+    -------------------------------------------------  ---------------------------
+    Total                                      9.216ns (4.325ns logic, 4.891ns route)
+                                                       (46.9% logic, 53.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/last_calc_10 (SLICE_X8Y22.C4), 2124 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     9.277ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/count_0_8 (FF)
+  Destination:          firfilter/last_calc_10 (FF)
+  Data Path Delay:      9.222ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.020ns (0.233 - 0.253)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/count_0_8 to firfilter/last_calc_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.DQ       Tcko                  0.391   firfilter/count_0_8
+                                                       firfilter/count_0_8
+    SLICE_X10Y30.A3      net (fanout=19)       1.505   firfilter/count_0_8
+    SLICE_X10Y30.A       Tilo                  0.203   h_in_631
+                                                       firfilter/Sh50342
+    SLICE_X11Y32.C4      net (fanout=1)        1.000   firfilter/Sh50342
+    SLICE_X11Y32.C       Tilo                  0.259   h_in_311
+                                                       firfilter/Sh50345
+    SLICE_X9Y26.C3       net (fanout=1)        1.054   firfilter/Sh50345
+    SLICE_X9Y26.C        Tilo                  0.259   h_in_591
+                                                       firfilter/Sh503421
+    DSP48_X0Y5.A10       net (fanout=1)        0.614   firfilter/Sh5034
+    DSP48_X0Y5.M21       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X8Y22.C4       net (fanout=1)        0.761   firfilter/count[0]_h_in[0]_MuLt_11_OUT<21>
+    SLICE_X8Y22.CLK      Tas                   0.341   firfilter/last_calc<10>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT141
+                                                       firfilter/last_calc_10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.222ns (4.288ns logic, 4.934ns route)
+                                                       (46.5% logic, 53.5% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     9.236ns (data path - clock path skew + uncertainty)
+  Source:               h_in_794 (FF)
+  Destination:          firfilter/last_calc_10 (FF)
+  Data Path Delay:      9.186ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.233 - 0.248)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_in_794 to firfilter/last_calc_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y25.CQ       Tcko                  0.391   h_in_217
+                                                       h_in_794
+    SLICE_X2Y24.B3       net (fanout=2)        1.872   h_in_794
+    SLICE_X2Y24.B        Tilo                  0.203   h_in_851
+                                                       firfilter/Sh50299
+    SLICE_X4Y23.C3       net (fanout=1)        0.896   firfilter/Sh50299
+    SLICE_X4Y23.C        Tilo                  0.205   h_in_527
+                                                       firfilter/Sh502910
+    SLICE_X9Y25.A1       net (fanout=1)        0.892   firfilter/Sh502910
+    SLICE_X9Y25.A        Tilo                  0.259   firfilter/Sh503820
+                                                       firfilter/Sh502921
+    DSP48_X0Y5.A5        net (fanout=1)        0.531   firfilter/Sh5029
+    DSP48_X0Y5.M21       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X8Y22.C4       net (fanout=1)        0.761   firfilter/count[0]_h_in[0]_MuLt_11_OUT<21>
+    SLICE_X8Y22.CLK      Tas                   0.341   firfilter/last_calc<10>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT141
+                                                       firfilter/last_calc_10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.186ns (4.234ns logic, 4.952ns route)
+                                                       (46.1% logic, 53.9% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     9.200ns (data path - clock path skew + uncertainty)
+  Source:               h_in_91 (FF)
+  Destination:          firfilter/last_calc_10 (FF)
+  Data Path Delay:      9.147ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.018ns (0.233 - 0.251)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_in_91 to firfilter/last_calc_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y21.DQ       Tcko                  0.391   h_in_91
+                                                       h_in_91
+    SLICE_X3Y22.A1       net (fanout=2)        1.804   h_in_91
+    SLICE_X3Y22.A        Tilo                  0.259   h_in_88
+                                                       firfilter/Sh50287
+    SLICE_X3Y23.C2       net (fanout=1)        0.588   firfilter/Sh50287
+    SLICE_X3Y23.C        Tilo                  0.259   h_in_775
+                                                       firfilter/Sh502810
+    SLICE_X9Y27.C6       net (fanout=1)        1.086   firfilter/Sh502810
+    SLICE_X9Y27.C        Tilo                  0.259   h_in_67
+                                                       firfilter/Sh502821
+    DSP48_X0Y5.A4        net (fanout=1)        0.564   firfilter/Sh5028
+    DSP48_X0Y5.M21       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X8Y22.C4       net (fanout=1)        0.761   firfilter/count[0]_h_in[0]_MuLt_11_OUT<21>
+    SLICE_X8Y22.CLK      Tas                   0.341   firfilter/last_calc<10>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT141
+                                                       firfilter/last_calc_10
+    -------------------------------------------------  ---------------------------
+    Total                                      9.147ns (4.344ns logic, 4.803ns route)
+                                                       (47.5% logic, 52.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/last_calc_6 (SLICE_X8Y22.A3), 2124 paths
+--------------------------------------------------------------------------------
+Delay (setup path):     9.229ns (data path - clock path skew + uncertainty)
+  Source:               firfilter/count_0_8 (FF)
+  Destination:          firfilter/last_calc_6 (FF)
+  Data Path Delay:      9.174ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.020ns (0.233 - 0.253)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: firfilter/count_0_8 to firfilter/last_calc_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.DQ       Tcko                  0.391   firfilter/count_0_8
+                                                       firfilter/count_0_8
+    SLICE_X10Y30.A3      net (fanout=19)       1.505   firfilter/count_0_8
+    SLICE_X10Y30.A       Tilo                  0.203   h_in_631
+                                                       firfilter/Sh50342
+    SLICE_X11Y32.C4      net (fanout=1)        1.000   firfilter/Sh50342
+    SLICE_X11Y32.C       Tilo                  0.259   h_in_311
+                                                       firfilter/Sh50345
+    SLICE_X9Y26.C3       net (fanout=1)        1.054   firfilter/Sh50345
+    SLICE_X9Y26.C        Tilo                  0.259   h_in_591
+                                                       firfilter/Sh503421
+    DSP48_X0Y5.A10       net (fanout=1)        0.614   firfilter/Sh5034
+    DSP48_X0Y5.M25       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X8Y22.A3       net (fanout=1)        0.713   firfilter/count[0]_h_in[0]_MuLt_11_OUT<25>
+    SLICE_X8Y22.CLK      Tas                   0.341   firfilter/last_calc<10>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT181
+                                                       firfilter/last_calc_6
+    -------------------------------------------------  ---------------------------
+    Total                                      9.174ns (4.288ns logic, 4.886ns route)
+                                                       (46.7% logic, 53.3% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     9.188ns (data path - clock path skew + uncertainty)
+  Source:               h_in_794 (FF)
+  Destination:          firfilter/last_calc_6 (FF)
+  Data Path Delay:      9.138ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.233 - 0.248)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_in_794 to firfilter/last_calc_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y25.CQ       Tcko                  0.391   h_in_217
+                                                       h_in_794
+    SLICE_X2Y24.B3       net (fanout=2)        1.872   h_in_794
+    SLICE_X2Y24.B        Tilo                  0.203   h_in_851
+                                                       firfilter/Sh50299
+    SLICE_X4Y23.C3       net (fanout=1)        0.896   firfilter/Sh50299
+    SLICE_X4Y23.C        Tilo                  0.205   h_in_527
+                                                       firfilter/Sh502910
+    SLICE_X9Y25.A1       net (fanout=1)        0.892   firfilter/Sh502910
+    SLICE_X9Y25.A        Tilo                  0.259   firfilter/Sh503820
+                                                       firfilter/Sh502921
+    DSP48_X0Y5.A5        net (fanout=1)        0.531   firfilter/Sh5029
+    DSP48_X0Y5.M25       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X8Y22.A3       net (fanout=1)        0.713   firfilter/count[0]_h_in[0]_MuLt_11_OUT<25>
+    SLICE_X8Y22.CLK      Tas                   0.341   firfilter/last_calc<10>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT181
+                                                       firfilter/last_calc_6
+    -------------------------------------------------  ---------------------------
+    Total                                      9.138ns (4.234ns logic, 4.904ns route)
+                                                       (46.3% logic, 53.7% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     9.152ns (data path - clock path skew + uncertainty)
+  Source:               h_in_91 (FF)
+  Destination:          firfilter/last_calc_6 (FF)
+  Data Path Delay:      9.099ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.018ns (0.233 - 0.251)
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: h_in_91 to firfilter/last_calc_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y21.DQ       Tcko                  0.391   h_in_91
+                                                       h_in_91
+    SLICE_X3Y22.A1       net (fanout=2)        1.804   h_in_91
+    SLICE_X3Y22.A        Tilo                  0.259   h_in_88
+                                                       firfilter/Sh50287
+    SLICE_X3Y23.C2       net (fanout=1)        0.588   firfilter/Sh50287
+    SLICE_X3Y23.C        Tilo                  0.259   h_in_775
+                                                       firfilter/Sh502810
+    SLICE_X9Y27.C6       net (fanout=1)        1.086   firfilter/Sh502810
+    SLICE_X9Y27.C        Tilo                  0.259   h_in_67
+                                                       firfilter/Sh502821
+    DSP48_X0Y5.A4        net (fanout=1)        0.564   firfilter/Sh5028
+    DSP48_X0Y5.M25       Tdspdo_A_M            2.835   firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+                                                       firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT
+    SLICE_X8Y22.A3       net (fanout=1)        0.713   firfilter/count[0]_h_in[0]_MuLt_11_OUT<25>
+    SLICE_X8Y22.CLK      Tas                   0.341   firfilter/last_calc<10>
+                                                       firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT181
+                                                       firfilter/last_calc_6
+    -------------------------------------------------  ---------------------------
+    Total                                      9.099ns (4.344ns logic, 4.755ns route)
+                                                       (47.7% logic, 52.3% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: Default period analysis for net "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_763 (SLICE_X4Y30.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.379ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_762 (FF)
+  Destination:          h_in_763 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_762 to h_in_763
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y30.CQ       Tcko                  0.200   h_in_763
+                                                       h_in_762
+    SLICE_X4Y30.DX       net (fanout=2)        0.131   h_in_762
+    SLICE_X4Y30.CLK      Tckdi       (-Th)    -0.048   h_in_763
+                                                       h_in_763
+    -------------------------------------------------  ---------------------------
+    Total                                      0.379ns (0.248ns logic, 0.131ns route)
+                                                       (65.4% logic, 34.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_831 (SLICE_X8Y29.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.379ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_830 (FF)
+  Destination:          h_in_831 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_830 to h_in_831
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y29.CQ       Tcko                  0.200   h_in_831
+                                                       h_in_830
+    SLICE_X8Y29.DX       net (fanout=2)        0.131   h_in_830
+    SLICE_X8Y29.CLK      Tckdi       (-Th)    -0.048   h_in_831
+                                                       h_in_831
+    -------------------------------------------------  ---------------------------
+    Total                                      0.379ns (0.248ns logic, 0.131ns route)
+                                                       (65.4% logic, 34.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_699 (SLICE_X8Y33.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.379ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               h_in_698 (FF)
+  Destination:          h_in_699 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising
+  Destination Clock:    clk_BUFGP rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: h_in_698 to h_in_699
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y33.CQ       Tcko                  0.200   h_in_699
+                                                       h_in_698
+    SLICE_X8Y33.DX       net (fanout=2)        0.131   h_in_698
+    SLICE_X8Y33.CLK      Tckdi       (-Th)    -0.048   h_in_699
+                                                       h_in_699
+    -------------------------------------------------  ---------------------------
+    Total                                      0.379ns (0.248ns logic, 0.131ns route)
+                                                       (65.4% logic, 34.6% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default OFFSET IN BEFORE analysis for clock "clk_BUFGP" 
+
+ 1742 paths analyzed, 1353 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+ Minimum allowable offset is   7.048ns.
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/last_calc_28 (SLICE_X4Y20.CE), 4 paths
+--------------------------------------------------------------------------------
+Offset (setup paths):   7.048ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/last_calc_28 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      9.878ns (Levels of Logic = 3)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/last_calc_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J1.I                 Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp19.IMUX.21
+    SLICE_X9Y21.B2       net (fanout=8)        5.318   ack_in_IBUF
+    SLICE_X9Y21.B        Tilo                  0.259   firfilter/last_calc<22>
+                                                       firfilter/_n0144_inv11
+    SLICE_X6Y28.A4       net (fanout=34)       1.246   firfilter/_n0144_inv1
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.335   firfilter/last_calc<24>
+                                                       firfilter/last_calc_28
+    -------------------------------------------------  ---------------------------
+    Total                                      9.878ns (1.645ns logic, 8.233ns route)
+                                                       (16.7% logic, 83.3% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   5.696ns (data path - clock path + uncertainty)
+  Source:               rst (PAD)
+  Destination:          firfilter/last_calc_28 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      8.526ns (Levels of Logic = 2)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rst to firfilter/last_calc_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    H2.I                 Tiopi                 0.790   rst
+                                                       rst
+                                                       rst_IBUF
+                                                       ProtoComp19.IMUX.2
+    SLICE_X6Y28.A1       net (fanout=22)       5.471   rst_IBUF
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.335   firfilter/last_calc<24>
+                                                       firfilter/last_calc_28
+    -------------------------------------------------  ---------------------------
+    Total                                      8.526ns (1.386ns logic, 7.140ns route)
+                                                       (16.3% logic, 83.7% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   5.655ns (data path - clock path + uncertainty)
+  Source:               ack_out (PAD)
+  Destination:          firfilter/last_calc_28 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      8.485ns (Levels of Logic = 3)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_out to firfilter/last_calc_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    U2.I                 Tiopi                 0.790   ack_out
+                                                       ack_out
+                                                       ack_out_IBUF
+                                                       ProtoComp19.IMUX.4
+    SLICE_X9Y21.B1       net (fanout=7)        3.925   ack_out_IBUF
+    SLICE_X9Y21.B        Tilo                  0.259   firfilter/last_calc<22>
+                                                       firfilter/_n0144_inv11
+    SLICE_X6Y28.A4       net (fanout=34)       1.246   firfilter/_n0144_inv1
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.335   firfilter/last_calc<24>
+                                                       firfilter/last_calc_28
+    -------------------------------------------------  ---------------------------
+    Total                                      8.485ns (1.645ns logic, 6.840ns route)
+                                                       (19.4% logic, 80.6% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/last_calc_24 (SLICE_X4Y20.CE), 4 paths
+--------------------------------------------------------------------------------
+Offset (setup paths):   7.027ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/last_calc_24 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      9.857ns (Levels of Logic = 3)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/last_calc_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J1.I                 Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp19.IMUX.21
+    SLICE_X9Y21.B2       net (fanout=8)        5.318   ack_in_IBUF
+    SLICE_X9Y21.B        Tilo                  0.259   firfilter/last_calc<22>
+                                                       firfilter/_n0144_inv11
+    SLICE_X6Y28.A4       net (fanout=34)       1.246   firfilter/_n0144_inv1
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.314   firfilter/last_calc<24>
+                                                       firfilter/last_calc_24
+    -------------------------------------------------  ---------------------------
+    Total                                      9.857ns (1.624ns logic, 8.233ns route)
+                                                       (16.5% logic, 83.5% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   5.675ns (data path - clock path + uncertainty)
+  Source:               rst (PAD)
+  Destination:          firfilter/last_calc_24 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      8.505ns (Levels of Logic = 2)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rst to firfilter/last_calc_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    H2.I                 Tiopi                 0.790   rst
+                                                       rst
+                                                       rst_IBUF
+                                                       ProtoComp19.IMUX.2
+    SLICE_X6Y28.A1       net (fanout=22)       5.471   rst_IBUF
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.314   firfilter/last_calc<24>
+                                                       firfilter/last_calc_24
+    -------------------------------------------------  ---------------------------
+    Total                                      8.505ns (1.365ns logic, 7.140ns route)
+                                                       (16.0% logic, 84.0% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   5.634ns (data path - clock path + uncertainty)
+  Source:               ack_out (PAD)
+  Destination:          firfilter/last_calc_24 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      8.464ns (Levels of Logic = 3)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_out to firfilter/last_calc_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    U2.I                 Tiopi                 0.790   ack_out
+                                                       ack_out
+                                                       ack_out_IBUF
+                                                       ProtoComp19.IMUX.4
+    SLICE_X9Y21.B1       net (fanout=7)        3.925   ack_out_IBUF
+    SLICE_X9Y21.B        Tilo                  0.259   firfilter/last_calc<22>
+                                                       firfilter/_n0144_inv11
+    SLICE_X6Y28.A4       net (fanout=34)       1.246   firfilter/_n0144_inv1
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.314   firfilter/last_calc<24>
+                                                       firfilter/last_calc_24
+    -------------------------------------------------  ---------------------------
+    Total                                      8.464ns (1.624ns logic, 6.840ns route)
+                                                       (19.2% logic, 80.8% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/last_calc_23 (SLICE_X4Y20.CE), 4 paths
+--------------------------------------------------------------------------------
+Offset (setup paths):   7.009ns (data path - clock path + uncertainty)
+  Source:               ack_in (PAD)
+  Destination:          firfilter/last_calc_23 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      9.839ns (Levels of Logic = 3)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_in to firfilter/last_calc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J1.I                 Tiopi                 0.790   ack_in
+                                                       ack_in
+                                                       ack_in_IBUF
+                                                       ProtoComp19.IMUX.21
+    SLICE_X9Y21.B2       net (fanout=8)        5.318   ack_in_IBUF
+    SLICE_X9Y21.B        Tilo                  0.259   firfilter/last_calc<22>
+                                                       firfilter/_n0144_inv11
+    SLICE_X6Y28.A4       net (fanout=34)       1.246   firfilter/_n0144_inv1
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.296   firfilter/last_calc<24>
+                                                       firfilter/last_calc_23
+    -------------------------------------------------  ---------------------------
+    Total                                      9.839ns (1.606ns logic, 8.233ns route)
+                                                       (16.3% logic, 83.7% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   5.657ns (data path - clock path + uncertainty)
+  Source:               rst (PAD)
+  Destination:          firfilter/last_calc_23 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      8.487ns (Levels of Logic = 2)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: rst to firfilter/last_calc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    H2.I                 Tiopi                 0.790   rst
+                                                       rst
+                                                       rst_IBUF
+                                                       ProtoComp19.IMUX.2
+    SLICE_X6Y28.A1       net (fanout=22)       5.471   rst_IBUF
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.296   firfilter/last_calc<24>
+                                                       firfilter/last_calc_23
+    -------------------------------------------------  ---------------------------
+    Total                                      8.487ns (1.347ns logic, 7.140ns route)
+                                                       (15.9% logic, 84.1% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Offset (setup paths):   5.616ns (data path - clock path + uncertainty)
+  Source:               ack_out (PAD)
+  Destination:          firfilter/last_calc_23 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      8.446ns (Levels of Logic = 3)
+  Clock Path Delay:     2.855ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ack_out to firfilter/last_calc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    U2.I                 Tiopi                 0.790   ack_out
+                                                       ack_out
+                                                       ack_out_IBUF
+                                                       ProtoComp19.IMUX.4
+    SLICE_X9Y21.B1       net (fanout=7)        3.925   ack_out_IBUF
+    SLICE_X9Y21.B        Tilo                  0.259   firfilter/last_calc<22>
+                                                       firfilter/_n0144_inv11
+    SLICE_X6Y28.A4       net (fanout=34)       1.246   firfilter/_n0144_inv1
+    SLICE_X6Y28.AMUX     Tilo                  0.261   firfilter/count_1_12
+                                                       firfilter/_n0144_inv1
+    SLICE_X4Y20.CE       net (fanout=11)       1.669   firfilter/_n0144_inv
+    SLICE_X4Y20.CLK      Tceck                 0.296   firfilter/last_calc<24>
+                                                       firfilter/last_calc_23
+    -------------------------------------------------  ---------------------------
+    Total                                      8.446ns (1.606ns logic, 6.840ns route)
+                                                       (19.0% logic, 81.0% route)
+
+  Minimum Clock Path at Slow Process Corner: clk to firfilter/last_calc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.684   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.786   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.197   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X4Y20.CLK      net (fanout=264)      1.188   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      2.855ns (0.881ns logic, 1.974ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: Default OFFSET IN BEFORE analysis for clock "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_0 (SLICE_X1Y17.CE), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.315ns (data path - clock path + uncertainty)
+  Source:               h_enabled (PAD)
+  Destination:          h_in_0 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.792ns (Levels of Logic = 1)
+  Clock Path Delay:     3.083ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: h_enabled to h_in_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N3.I                 Tiopi                 0.684   h_enabled
+                                                       h_enabled
+                                                       h_enabled_IBUF
+                                                       ProtoComp19.IMUX.3
+    SLICE_X1Y17.CE       net (fanout=213)      2.209   h_enabled_IBUF
+    SLICE_X1Y17.CLK      Tckce       (-Th)     0.101   h_in_3
+                                                       h_in_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.792ns (0.583ns logic, 2.209ns route)
+                                                       (20.9% logic, 79.1% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to h_in_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X1Y17.CLK      net (fanout=264)      1.249   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.083ns (0.999ns logic, 2.084ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point firfilter/Mshreg_count[0]_X_2_o_wide_mux_9_OUT_15_0 (SLICE_X2Y28.BX), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.302ns (data path - clock path + uncertainty)
+  Source:               data_in<16> (PAD)
+  Destination:          firfilter/Mshreg_count[0]_X_2_o_wide_mux_9_OUT_15_0 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.804ns (Levels of Logic = 1)
+  Clock Path Delay:     3.082ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: data_in<16> to firfilter/Mshreg_count[0]_X_2_o_wide_mux_9_OUT_15_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    M5.I                 Tiopi                 0.684   data_in<16>
+                                                       data_in<16>
+                                                       data_in_16_IBUF
+                                                       ProtoComp19.IMUX.12
+    SLICE_X2Y28.BX       net (fanout=1)        2.208   data_in_16_IBUF
+    SLICE_X2Y28.CLK      Tdh         (-Th)     0.088   firfilter/Sh50252
+                                                       firfilter/Mshreg_count[0]_X_2_o_wide_mux_9_OUT_15_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.804ns (0.596ns logic, 2.208ns route)
+                                                       (21.3% logic, 78.7% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/Mshreg_count[0]_X_2_o_wide_mux_9_OUT_15_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X2Y28.CLK      net (fanout=264)      1.248   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.082ns (0.999ns logic, 2.083ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point h_in_3 (SLICE_X1Y17.CE), 1 path
+--------------------------------------------------------------------------------
+Offset (hold paths):    -0.295ns (data path - clock path + uncertainty)
+  Source:               h_enabled (PAD)
+  Destination:          h_in_3 (FF)
+  Destination Clock:    clk_BUFGP rising
+  Data Path Delay:      2.812ns (Levels of Logic = 1)
+  Clock Path Delay:     3.083ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Slow Process Corner: h_enabled to h_in_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    N3.I                 Tiopi                 0.684   h_enabled
+                                                       h_enabled
+                                                       h_enabled_IBUF
+                                                       ProtoComp19.IMUX.3
+    SLICE_X1Y17.CE       net (fanout=213)      2.209   h_enabled_IBUF
+    SLICE_X1Y17.CLK      Tckce       (-Th)     0.081   h_in_3
+                                                       h_in_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.812ns (0.603ns logic, 2.209ns route)
+                                                       (21.4% logic, 78.6% route)
+
+  Maximum Clock Path at Slow Process Corner: clk to h_in_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X1Y17.CLK      net (fanout=264)      1.249   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.083ns (0.999ns logic, 2.084ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default OFFSET OUT AFTER analysis for clock "clk_BUFGP" 
+
+ 18 paths analyzed, 18 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+ Maximum allowable offset is   8.159ns.
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<16> (N6.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 8.159ns (clock path + data path + uncertainty)
+  Source:               firfilter/sum_0 (FF)
+  Destination:          data_out<16> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      5.035ns (Levels of Logic = 1)
+  Clock Path Delay:     3.099ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/sum_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X7Y9.CLK       net (fanout=264)      1.265   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.099ns (0.999ns logic, 2.100ns route)
+                                                       (32.2% logic, 67.8% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/sum_0 to data_out<16>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y9.AQ        Tcko                  0.391   firfilter/sum<3>
+                                                       firfilter/sum_0
+    N6.O                 net (fanout=1)        2.643   firfilter/sum<0>
+    N6.PAD               Tioop                 2.001   data_out<16>
+                                                       data_out_16_OBUF
+                                                       data_out<16>
+    -------------------------------------------------  ---------------------------
+    Total                                      5.035ns (2.392ns logic, 2.643ns route)
+                                                       (47.5% logic, 52.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<17> (P7.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 8.159ns (clock path + data path + uncertainty)
+  Source:               firfilter/sum_1 (FF)
+  Destination:          data_out<17> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      5.035ns (Levels of Logic = 1)
+  Clock Path Delay:     3.099ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/sum_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X7Y9.CLK       net (fanout=264)      1.265   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.099ns (0.999ns logic, 2.100ns route)
+                                                       (32.2% logic, 67.8% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/sum_1 to data_out<17>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y9.BQ        Tcko                  0.391   firfilter/sum<3>
+                                                       firfilter/sum_1
+    P7.O                 net (fanout=1)        2.643   firfilter/sum<1>
+    P7.PAD               Tioop                 2.001   data_out<17>
+                                                       data_out_17_OBUF
+                                                       data_out<17>
+    -------------------------------------------------  ---------------------------
+    Total                                      5.035ns (2.392ns logic, 2.643ns route)
+                                                       (47.5% logic, 52.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<20> (U5.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (slowest paths): 8.144ns (clock path + data path + uncertainty)
+  Source:               firfilter/sum_4 (FF)
+  Destination:          data_out<20> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      5.020ns (Levels of Logic = 1)
+  Clock Path Delay:     3.099ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Clock Path at Slow Process Corner: clk to firfilter/sum_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.790   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.835   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.209   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X6Y9.CLK       net (fanout=264)      1.265   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      3.099ns (0.999ns logic, 2.100ns route)
+                                                       (32.2% logic, 67.8% route)
+
+  Maximum Data Path at Slow Process Corner: firfilter/sum_4 to data_out<20>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y9.AQ        Tcko                  0.447   firfilter/sum<7>
+                                                       firfilter/sum_4
+    U5.O                 net (fanout=1)        2.572   firfilter/sum<4>
+    U5.PAD               Tioop                 2.001   data_out<20>
+                                                       data_out_20_OBUF
+                                                       data_out<20>
+    -------------------------------------------------  ---------------------------
+    Total                                      5.020ns (2.448ns logic, 2.572ns route)
+                                                       (48.8% logic, 51.2% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: Default OFFSET OUT AFTER analysis for clock "clk_BUFGP"
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<30> (N4.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 3.872ns (clock path + data path - uncertainty)
+  Source:               firfilter/sum_14 (FF)
+  Destination:          data_out<30> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      2.439ns (Levels of Logic = 1)
+  Clock Path Delay:     1.458ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/sum_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X2Y10.CLK      net (fanout=264)      0.722   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.458ns (0.380ns logic, 1.078ns route)
+                                                       (26.1% logic, 73.9% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/sum_14 to data_out<30>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y10.CQ       Tcko                  0.234   firfilter/sum<15>
+                                                       firfilter/sum_14
+    N4.O                 net (fanout=1)        1.167   firfilter/sum<14>
+    N4.PAD               Tioop                 1.038   data_out<30>
+                                                       data_out_30_OBUF
+                                                       data_out<30>
+    -------------------------------------------------  ---------------------------
+    Total                                      2.439ns (1.272ns logic, 1.167ns route)
+                                                       (52.2% logic, 47.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point data_out<31> (P4.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 3.881ns (clock path + data path - uncertainty)
+  Source:               firfilter/sum_15 (FF)
+  Destination:          data_out<31> (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      2.448ns (Levels of Logic = 1)
+  Clock Path Delay:     1.458ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/sum_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X2Y10.CLK      net (fanout=264)      0.722   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.458ns (0.380ns logic, 1.078ns route)
+                                                       (26.1% logic, 73.9% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/sum_15 to data_out<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y10.DQ       Tcko                  0.234   firfilter/sum<15>
+                                                       firfilter/sum_15
+    P4.O                 net (fanout=1)        1.176   firfilter/sum<15>
+    P4.PAD               Tioop                 1.038   data_out<31>
+                                                       data_out_31_OBUF
+                                                       data_out<31>
+    -------------------------------------------------  ---------------------------
+    Total                                      2.448ns (1.272ns logic, 1.176ns route)
+                                                       (52.0% logic, 48.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point req_out (L6.PAD), 1 path
+--------------------------------------------------------------------------------
+Offset (fastest paths): 4.017ns (clock path + data path - uncertainty)
+  Source:               firfilter/req_out_buf (FF)
+  Destination:          req_out (PAD)
+  Source Clock:         clk_BUFGP rising
+  Data Path Delay:      2.609ns (Levels of Logic = 1)
+  Clock Path Delay:     1.433ns (Levels of Logic = 2)
+  Clock Uncertainty:    0.025ns
+
+  Clock Uncertainty:          0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.050ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Clock Path at Fast Process Corner: clk to firfilter/req_out_buf
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K3.I                 Tiopi                 0.321   clk
+                                                       clk
+                                                       clk_BUFGP/IBUFG
+                                                       ProtoComp19.IMUX.1
+    BUFGMUX_X3Y13.I0     net (fanout=1)        0.356   clk_BUFGP/IBUFG
+    BUFGMUX_X3Y13.O      Tgi0o                 0.059   clk_BUFGP/BUFG
+                                                       clk_BUFGP/BUFG
+    SLICE_X5Y34.CLK      net (fanout=264)      0.697   clk_BUFGP
+    -------------------------------------------------  ---------------------------
+    Total                                      1.433ns (0.380ns logic, 1.053ns route)
+                                                       (26.5% logic, 73.5% route)
+
+  Minimum Data Path at Fast Process Corner: firfilter/req_out_buf to req_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y34.DQ       Tcko                  0.198   firfilter/req_out_buf
+                                                       firfilter/req_out_buf
+    L6.O                 net (fanout=8)        1.373   firfilter/req_out_buf
+    L6.PAD               Tioop                 1.038   req_out
+                                                       req_out_OBUF
+                                                       req_out
+    -------------------------------------------------  ---------------------------
+    Total                                      2.609ns (1.236ns logic, 1.373ns route)
+                                                       (47.4% logic, 52.6% route)
+
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+ack_in      |    7.048(R)|      SLOW  |   -1.033(R)|      SLOW  |clk_BUFGP         |   0.000|
+ack_out     |    5.655(R)|      SLOW  |    0.223(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<16> |    0.440(R)|      FAST  |    0.303(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<17> |    0.499(R)|      FAST  |    0.210(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<18> |    0.584(R)|      FAST  |    0.103(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<19> |    0.447(R)|      FAST  |    0.274(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<20> |    0.508(R)|      FAST  |    0.183(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<21> |    0.605(R)|      FAST  |    0.055(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<22> |    0.509(R)|      FAST  |    0.186(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<23> |    0.895(R)|      FAST  |   -0.288(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<24> |    0.884(R)|      SLOW  |   -0.338(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<25> |    1.035(R)|      SLOW  |   -0.481(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<26> |    0.779(R)|      FAST  |   -0.220(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<27> |    0.890(R)|      SLOW  |   -0.339(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<28> |    0.604(R)|      FAST  |    0.035(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<29> |    0.767(R)|      FAST  |   -0.184(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<30> |    1.017(R)|      SLOW  |   -0.461(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in<31> |    1.121(R)|      SLOW  |   -0.571(R)|      SLOW  |clk_BUFGP         |   0.000|
+h           |    0.609(R)|      FAST  |    0.120(R)|      SLOW  |clk_BUFGP         |   0.000|
+h_enabled   |    4.454(R)|      SLOW  |    0.316(R)|      SLOW  |clk_BUFGP         |   0.000|
+rst         |    6.193(R)|      SLOW  |   -0.711(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+data_out<16>|         8.159(R)|      SLOW  |         4.350(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<17>|         8.159(R)|      SLOW  |         4.350(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<18>|         7.924(R)|      SLOW  |         4.247(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<19>|         7.927(R)|      SLOW  |         4.240(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<20>|         8.144(R)|      SLOW  |         4.356(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<21>|         8.144(R)|      SLOW  |         4.356(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<22>|         7.935(R)|      SLOW  |         4.251(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<23>|         7.935(R)|      SLOW  |         4.251(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<24>|         7.923(R)|      SLOW  |         4.211(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<25>|         7.923(R)|      SLOW  |         4.211(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<26>|         7.675(R)|      SLOW  |         4.062(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<27>|         7.675(R)|      SLOW  |         4.062(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<28>|         7.715(R)|      SLOW  |         4.092(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<29>|         7.715(R)|      SLOW  |         4.092(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<30>|         7.416(R)|      SLOW  |         3.872(R)|      FAST  |clk_BUFGP         |   0.000|
+data_out<31>|         7.412(R)|      SLOW  |         3.881(R)|      FAST  |clk_BUFGP         |   0.000|
+req_in      |         7.640(R)|      SLOW  |         4.039(R)|      FAST  |clk_BUFGP         |   0.000|
+req_out     |         7.601(R)|      SLOW  |         4.017(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    9.341|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 74660 paths, 0 nets, and 4146 connections
+
+Design statistics:
+   Minimum period:   9.341ns{1}   (Maximum frequency: 107.055MHz)
+   Minimum input required time before clock:   7.048ns
+   Maximum output delay after clock:   8.159ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jun 09 11:13:37 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 310 MB
+
+
+

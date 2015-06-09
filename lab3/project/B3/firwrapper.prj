@@ -1,2 +1,2 @@
-verilog work "filter.v"
+verilog work "subfilter.v"
 verilog work "firwrapper.v"

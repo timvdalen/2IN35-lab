@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.xst" -ofn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.xst" -ofn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.syr" 

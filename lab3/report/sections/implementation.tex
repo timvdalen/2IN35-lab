@@ -80,7 +80,7 @@ Our resource usage, as given by the synthesis report, is as follows.
  1008-bit shifter logical left                         : 1
 \end{verbatim}
 
-As intended, we only use one multiplier.
+We would expect to use 3 multipliers here, as we use three subfilters.
 The 32-bit adder is the one we use in the main computation step, the 6-bit adder is for calculating the \texttt{calc\_buf}.
 The shift registers are used for initializing the \texttt{input\_buf}, as is the logic shifter.
 We are not sure why this design uses a different type of registers than before.

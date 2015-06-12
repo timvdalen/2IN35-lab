@@ -1,1 +1,12 @@
 %Analyze the specifications and requirements.
+
+In this assignment, we will implement a signal scaler.
+A scaler is used to convert between sample rates.
+
+Specifcally, we will implement a scaler that will upscape from a sample rate of 44.1kHz to a sample rate of 48kHz.
+
+Scalers can be implemented in multiple ways.
+First of all, we can implement a scaler directly, which does the entire transformation in one component.
+Another option is to chain together multiple smaller scalers to achieve the same end result.
+
+Inside each scaler, we have a choice between directly implementing the equation for the scaler as a function, or using a composite design that consists of an upscaler, a low-pass filter and a downscaler.

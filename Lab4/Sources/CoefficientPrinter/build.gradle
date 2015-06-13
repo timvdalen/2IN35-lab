@@ -1,0 +1,14 @@
+group 'nl.tue.win.vlsi'
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'nl.tue.win.CoefficientsPrinter'
+    }
+}

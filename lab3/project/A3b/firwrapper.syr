@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.08 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: firwrapper.prj
 
@@ -105,9 +105,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:\OneDrive\Documenten\TUe\2IN35\A3b\filter.v" into library work
+Analyzing Verilog file "D:\Projects\2IN35\lab3\project\A3b\filter.v" into library work
 Parsing module <filter>.
-Analyzing Verilog file "D:\OneDrive\Documenten\TUe\2IN35\A3b\firwrapper.v" into library work
+Analyzing Verilog file "D:\Projects\2IN35\lab3\project\A3b\firwrapper.v" into library work
 Parsing module <firwrapper>.
 
 =========================================================================
@@ -117,14 +117,14 @@ Parsing module <firwrapper>.
 Elaborating module <firwrapper>.
 
 Elaborating module <filter(NR_STAGES=63,DWIDTH=16,DDWIDTH=32,CWIDTH=1008)>.
-WARNING:HDLCompiler:413 - "D:\OneDrive\Documenten\TUe\2IN35\A3b\filter.v" Line 85: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:\Projects\2IN35\lab3\project\A3b\filter.v" Line 77: Result of 7-bit expression is truncated to fit in 6-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <firwrapper>.
-    Related source file is "D:\OneDrive\Documenten\TUe\2IN35\A3b\firwrapper.v".
+    Related source file is "D:\Projects\2IN35\lab3\project\A3b\firwrapper.v".
         NR_STAGES = 63
         DWIDTH = 16
         CWIDTH = 1008
@@ -1142,75 +1142,31 @@ Synthesizing Unit <firwrapper>.
 Unit <firwrapper> synthesized.
 
 Synthesizing Unit <filter>.
-    Related source file is "D:\OneDrive\Documenten\TUe\2IN35\A3b\filter.v".
+    Related source file is "D:\Projects\2IN35\lab3\project\A3b\filter.v".
         NR_STAGES = 63
         DWIDTH = 16
         DDWIDTH = 32
         CWIDTH = 1008
     Found 1-bit register for signal <req_out_buf>.
     Found 16-bit register for signal <sum>.
-    Found 8-bit register for signal <input_buf_ptr>.
-    Found 8-bit register for signal <comp_ptr>.
-    Found 8-bit register for signal <i>.
-    Found 1008-bit register for signal <n0253[1007:0]>.
-    Found 1008-bit register for signal <n0258[1007:0]>.
-    Found 2016-bit register for signal <n0254[2015:0]>.
+    Found 6-bit register for signal <count>.
+    Found 1-bit register for signal <f>.
+    Found 32-bit register for signal <calc_buf>.
+    Found 32-bit register for signal <last_calc>.
+    Found 1008-bit register for signal <n0064[1007:0]>.
     Found 1-bit register for signal <req_in_buf>.
-    Found 9-bit adder for signal <n0479> created at line 61.
-    Found 9-bit adder for signal <n0484> created at line 74.
-    Found 32-bit adder for signal <i[0]_comp_ptr[0]_add_143_OUT> created at line 76.
-    Found 8-bit adder for signal <i[0]_GND_2_o_add_210_OUT> created at line 85.
-    Found 16x16-bit multiplier for signal <n0492> created at line 76.
-    Found 16-bit 63-to-1 multiplexer for signal <i[0]_X_2_o_wide_mux_139_OUT> created at line 76.
-    Found 16-bit 63-to-1 multiplexer for signal <BUS_0002_X_2_o_wide_mux_140_OUT> created at line 76.
-    Found 32-bit 63-to-1 multiplexer for signal <n0493> created at line 76.
-    Found 16-bit 63-to-1 multiplexer for signal <BUS_0002_X_2_o_wide_mux_209_OUT> created at line 79.
-    Found 8-bit comparator equal for signal <GND_2_o_input_buf_ptr[0]_equal_209_o> created at line 78
+    Found 6-bit adder for signal <count[0]_GND_2_o_add_7_OUT> created at line 77.
+    Found 32-bit adder for signal <calc_buf[0]_last_calc[0]_add_8_OUT> created at line 78.
+    Found 1008-bit shifter logical left for signal <n0075> created at line 82
+    Found 16x16-bit multiplier for signal <count[0]_h_in[0]_MuLt_11_OUT> created at line 82.
+    Found 16-bit 63-to-1 multiplexer for signal <count[0]_X_2_o_wide_mux_9_OUT> created at line 82.
     Summary:
 	inferred   1 Multiplier(s).
-	inferred   4 Adder/Subtractor(s).
-	inferred 4074 D-type flip-flop(s).
-	inferred   1 Comparator(s).
-	inferred 199 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 1097 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
 Unit <filter> synthesized.
-
-Synthesizing Unit <mod_9u_6u>.
-    Related source file is "".
-    Found 15-bit adder for signal <n0307> created at line 0.
-    Found 15-bit adder for signal <GND_3_o_b[5]_add_1_OUT> created at line 0.
-    Found 14-bit adder for signal <n0311> created at line 0.
-    Found 14-bit adder for signal <GND_3_o_b[5]_add_3_OUT> created at line 0.
-    Found 13-bit adder for signal <n0315> created at line 0.
-    Found 13-bit adder for signal <GND_3_o_b[5]_add_5_OUT> created at line 0.
-    Found 12-bit adder for signal <n0319> created at line 0.
-    Found 12-bit adder for signal <GND_3_o_b[5]_add_7_OUT> created at line 0.
-    Found 11-bit adder for signal <n0323> created at line 0.
-    Found 11-bit adder for signal <GND_3_o_b[5]_add_9_OUT> created at line 0.
-    Found 10-bit adder for signal <n0327> created at line 0.
-    Found 10-bit adder for signal <GND_3_o_b[5]_add_11_OUT> created at line 0.
-    Found 9-bit adder for signal <n0331> created at line 0.
-    Found 9-bit adder for signal <a[8]_b[5]_add_13_OUT> created at line 0.
-    Found 9-bit adder for signal <n0335> created at line 0.
-    Found 9-bit adder for signal <a[8]_GND_3_o_add_15_OUT> created at line 0.
-    Found 9-bit adder for signal <n0339> created at line 0.
-    Found 9-bit adder for signal <a[8]_GND_3_o_add_17_OUT> created at line 0.
-    Found 9-bit adder for signal <n0343> created at line 0.
-    Found 9-bit adder for signal <a[8]_GND_3_o_add_19_OUT> created at line 0.
-    Found 15-bit comparator lessequal for signal <BUS_0001> created at line 0
-    Found 14-bit comparator lessequal for signal <BUS_0002> created at line 0
-    Found 13-bit comparator lessequal for signal <BUS_0003> created at line 0
-    Found 12-bit comparator lessequal for signal <BUS_0004> created at line 0
-    Found 11-bit comparator lessequal for signal <BUS_0005> created at line 0
-    Found 10-bit comparator lessequal for signal <BUS_0006> created at line 0
-    Found 9-bit comparator lessequal for signal <BUS_0007> created at line 0
-    Found 9-bit comparator lessequal for signal <BUS_0008> created at line 0
-    Found 9-bit comparator lessequal for signal <BUS_0009> created at line 0
-    Found 9-bit comparator lessequal for signal <BUS_0010> created at line 0
-    Summary:
-	inferred  20 Adder/Subtractor(s).
-	inferred  10 Comparator(s).
-	inferred  82 Multiplexer(s).
-Unit <mod_9u_6u> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -1218,39 +1174,22 @@ HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 44
- 10-bit adder                                          : 4
- 11-bit adder                                          : 4
- 12-bit adder                                          : 4
- 13-bit adder                                          : 4
- 14-bit adder                                          : 4
- 15-bit adder                                          : 4
+# Adders/Subtractors                                   : 2
  32-bit adder                                          : 1
- 8-bit adder                                           : 1
- 9-bit adder                                           : 18
-# Registers                                            : 10
- 1-bit register                                        : 2
- 1008-bit register                                     : 3
+ 6-bit adder                                           : 1
+# Registers                                            : 9
+ 1-bit register                                        : 3
+ 1008-bit register                                     : 2
  16-bit register                                       : 1
- 2016-bit register                                     : 1
- 8-bit register                                        : 3
-# Comparators                                          : 21
- 10-bit comparator lessequal                           : 2
- 11-bit comparator lessequal                           : 2
- 12-bit comparator lessequal                           : 2
- 13-bit comparator lessequal                           : 2
- 14-bit comparator lessequal                           : 2
- 15-bit comparator lessequal                           : 2
- 8-bit comparator equal                                : 1
- 9-bit comparator lessequal                            : 8
-# Multiplexers                                         : 363
- 1-bit 2-to-1 multiplexer                              : 162
- 16-bit 2-to-1 multiplexer                             : 63
- 16-bit 63-to-1 multiplexer                            : 3
- 32-bit 2-to-1 multiplexer                             : 126
- 32-bit 63-to-1 multiplexer                            : 1
- 6-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 6
+ 32-bit register                                       : 2
+ 6-bit register                                        : 1
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 2
+ 16-bit 63-to-1 multiplexer                            : 1
+ 32-bit 2-to-1 multiplexer                             : 6
+ 6-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 1
+ 1008-bit shifter logical left                         : 1
 
 =========================================================================
 
@@ -1260,65 +1199,61 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <filter>.
-	Multiplier <Mmult_n0492> in block <filter> and adder/subtractor <Madd_i[0]_comp_ptr[0]_add_143_OUT> in block <filter> are combined into a MAC<Maddsub_n0492>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<0>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<1>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<2>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<3>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<4>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<5>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<6>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<7>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<8>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<9>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<10>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<11>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<12>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<13>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<14>>.
+	Found 63-bit dynamic shift register for signal <count[0]_X_2_o_wide_mux_9_OUT<15>>.
 Unit <filter> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# MACs                                                 : 1
- 16x16-to-32-bit MAC                                   : 1
-# Adders/Subtractors                                   : 23
- 6-bit adder carry in                                  : 2
- 8-bit adder                                           : 1
- 9-bit adder                                           : 2
- 9-bit adder carry in                                  : 18
-# Registers                                            : 5082
- Flip-Flops                                            : 5082
-# Comparators                                          : 21
- 10-bit comparator lessequal                           : 2
- 11-bit comparator lessequal                           : 2
- 12-bit comparator lessequal                           : 2
- 13-bit comparator lessequal                           : 2
- 14-bit comparator lessequal                           : 2
- 15-bit comparator lessequal                           : 2
- 8-bit comparator equal                                : 1
- 9-bit comparator lessequal                            : 8
-# Multiplexers                                         : 1308
- 1-bit 2-to-1 multiplexer                              : 1170
- 16-bit 63-to-1 multiplexer                            : 3
- 32-bit 2-to-1 multiplexer                             : 126
- 32-bit 63-to-1 multiplexer                            : 1
- 6-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 6
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 6-bit adder                                           : 1
+# Registers                                            : 1097
+ Flip-Flops                                            : 1097
+# Shift Registers                                      : 16
+ 63-bit dynamic shift register                         : 16
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 6
+ 6-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 1
+ 1008-bit shifter logical left                         : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <input_buf_ptr_1> (without init value) has a constant value of 0 in block <filter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <input_buf_ptr_0> (without init value) has a constant value of 0 in block <filter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <i_1> of sequential type is unconnected in block <filter>.
-WARNING:Xst:2677 - Node <i_0> of sequential type is unconnected in block <filter>.
 
 Optimizing unit <firwrapper> ...
 
 Optimizing unit <filter> ...
-WARNING:Xst:1710 - FF/Latch <comp_ptr_1> (without init value) has a constant value of 0 in block <filter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <firfilter/comp_ptr_0> (without init value) has a constant value of 0 in block <firwrapper>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block firwrapper, actual ratio is 39.
-FlipFlop firfilter/input_buf_ptr_2 has been replicated 4 time(s)
-FlipFlop firfilter/input_buf_ptr_3 has been replicated 3 time(s)
-FlipFlop firfilter/input_buf_ptr_4 has been replicated 4 time(s)
-FlipFlop firfilter/input_buf_ptr_5 has been replicated 3 time(s)
-FlipFlop firfilter/input_buf_ptr_6 has been replicated 3 time(s)
-FlipFlop firfilter/input_buf_ptr_7 has been replicated 3 time(s)
-FlipFlop firfilter/req_in_buf has been replicated 3 time(s)
+Found area constraint ratio of 100 (+ 5) on block firwrapper, actual ratio is 6.
+FlipFlop firfilter/count_0 has been replicated 14 time(s)
+FlipFlop firfilter/count_1 has been replicated 14 time(s)
+FlipFlop firfilter/count_2 has been replicated 4 time(s)
+FlipFlop firfilter/count_3 has been replicated 4 time(s)
 
 Final Macro Processing ...
 
@@ -1326,8 +1261,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 5099
- Flip-Flops                                            : 5099
+# Registers                                            : 1133
+ Flip-Flops                                            : 1133
 
 =========================================================================
 
@@ -1350,20 +1285,23 @@ Top Level Output File Name         : firwrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 8437
+# BELS                             : 533
 #      GND                         : 1
-#      LUT2                        : 53
-#      LUT3                        : 12
-#      LUT4                        : 1383
-#      LUT5                        : 211
-#      LUT6                        : 6279
-#      MUXF7                       : 497
+#      LUT2                        : 98
+#      LUT3                        : 2
+#      LUT4                        : 3
+#      LUT5                        : 21
+#      LUT6                        : 328
+#      MUXCY                       : 31
+#      MUXF7                       : 16
 #      VCC                         : 1
-# FlipFlops/Latches                : 5099
-#      FDE                         : 2016
-#      FDR                         : 3039
-#      FDRE                        : 16
-#      FDS                         : 28
+#      XORCY                       : 32
+# FlipFlops/Latches                : 1133
+#      FDE                         : 1072
+#      FDR                         : 3
+#      FDRE                        : 58
+# Shift Registers                  : 32
+#      SRLC32E                     : 32
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 39
@@ -1379,16 +1317,18 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            5099  out of  54576     9%  
- Number of Slice LUTs:                 7938  out of  27288    29%  
-    Number used as Logic:              7938  out of  27288    29%  
+ Number of Slice Registers:            1133  out of  54576     2%  
+ Number of Slice LUTs:                  484  out of  27288     1%  
+    Number used as Logic:               452  out of  27288     1%  
+    Number used as Memory:               32  out of   6408     0%  
+       Number used as SRL:               32
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  11004
-   Number with an unused Flip Flop:    5905  out of  11004    53%  
-   Number with an unused LUT:          3066  out of  11004    27%  
-   Number of fully used LUT-FF pairs:  2033  out of  11004    18%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:   1544
+   Number with an unused Flip Flop:     411  out of   1544    26%  
+   Number with an unused LUT:          1060  out of   1544    68%  
+   Number of fully used LUT-FF pairs:    73  out of   1544     4%  
+   Number of unique control sets:         6
 
 IO Utilization: 
  Number of IOs:                          40
@@ -1419,7 +1359,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 5099  |
+clk                                | BUFGP                  | 1165  |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1430,9 +1370,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 19.446ns (Maximum Frequency: 51.423MHz)
-   Minimum input arrival time before clock: 22.306ns
-   Maximum output required time after clock: 5.695ns
+   Minimum period: 8.186ns (Maximum Frequency: 122.154MHz)
+   Minimum input arrival time before clock: 5.859ns
+   Maximum output required time after clock: 3.950ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1441,73 +1381,56 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.446ns (frequency: 51.423MHz)
-  Total number of paths / destination ports: 533413201 / 5114
+  Clock period: 8.186ns (frequency: 122.154MHz)
+  Total number of paths / destination ports: 66148 / 1446
 -------------------------------------------------------------------------
-Delay:               19.446ns (Levels of Logic = 12)
-  Source:            firfilter/input_buf_ptr_4_1 (FF)
-  Destination:       firfilter/sum_0 (FF)
+Delay:               8.186ns (Levels of Logic = 5)
+  Source:            firfilter/count_0_12 (FF)
+  Destination:       firfilter/last_calc_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: firfilter/input_buf_ptr_4_1 to firfilter/sum_0
+  Data Path: firfilter/count_0_12 to firfilter/last_calc_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS:C->Q              4   0.447   1.028  firfilter/input_buf_ptr_4_1 (firfilter/input_buf_ptr_4_1)
-     LUT6:I1->O            1   0.203   0.580  firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT51_G (N3348)
-     LUT3:I2->O           50   0.205   1.548  firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT511 (firfilter/Madd_n0484_lut<4>)
-     LUT5:I4->O           17   0.205   1.256  firfilter/BUS_0002_PWR_2_o_mod_138/Madd_a[8]_GND_3_o_add_17_OUT_Madd_cy<4>11 (firfilter/BUS_0002_PWR_2_o_mod_138/Madd_a[8]_GND_3_o_add_17_OUT_Madd_cy<4>)
-     LUT6:I3->O           14   0.205   0.958  firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_12 (firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o1111)
-     LUT6:I5->O            1   0.205   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1232 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1232)
-     LUT6:I2->O            1   0.203   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_710 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_710)
-     LUT6:I2->O            3   0.203   0.650  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61 (firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>)
-     DSP48A1:A15->P31    124   4.560   1.941  firfilter/Maddsub_n0492 (firfilter/i[0]_comp_ptr[0]_add_143_OUT<31>)
-     LUT6:I5->O            1   0.205   0.827  firfilter/Mmux_b_buf[0][0]_i[0]_mux_181_OUT251 (firfilter/b_buf[0][0]_i[0]_mux_181_OUT<31>)
-     LUT6:I2->O            1   0.203   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12321 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12321)
-     LUT6:I2->O            1   0.203   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7101 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7101)
-     LUT6:I2->O            1   0.203   0.000  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>611 (firfilter/BUS_0002_X_2_o_wide_mux_209_OUT<15>)
-     FDRE:D                    0.102          firfilter/sum_0
+     FDRE:C->Q            19   0.447   1.176  firfilter/count_0_12 (firfilter/count_0_12)
+     LUT6:I4->O            1   0.203   0.827  firfilter/Sh50387 (firfilter/Sh50387)
+     LUT6:I2->O            1   0.203   0.827  firfilter/Sh503810 (firfilter/Sh503810)
+     LUT6:I2->O            1   0.203   0.579  firfilter/Sh503821 (firfilter/Sh5038)
+     DSP48A1:A14->M31      1   2.835   0.580  firfilter/Mmult_count[0]_h_in[0]_MuLt_11_OUT (firfilter/count[0]_h_in[0]_MuLt_11_OUT<31>)
+     LUT2:I1->O            1   0.205   0.000  firfilter/Mmux_last_calc[0]_count[0]_mux_22_OUT251 (firfilter/last_calc[0]_count[0]_mux_22_OUT<31>)
+     FDE:D                     0.102          firfilter/last_calc_0
     ----------------------------------------
-    Total                     19.446ns (7.352ns logic, 12.094ns route)
-                                       (37.8% logic, 62.2% route)
+    Total                      8.186ns (4.198ns logic, 3.988ns route)
+                                       (51.3% logic, 48.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 58118013 / 8199
+  Total number of paths / destination ports: 1742 / 1349
 -------------------------------------------------------------------------
-Offset:              22.306ns (Levels of Logic = 13)
+Offset:              5.859ns (Levels of Logic = 3)
   Source:            ack_in (PAD)
-  Destination:       firfilter/sum_0 (FF)
+  Destination:       firfilter/calc_buf_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: ack_in to firfilter/sum_0
+  Data Path: ack_in to firfilter/calc_buf_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          2954   1.222   2.780  ack_in_IBUF (ack_in_IBUF)
-     LUT2:I0->O            4   0.203   0.912  firfilter/req_in_ack_in_AND_1_o1_1 (firfilter/req_in_ack_in_AND_1_o1)
-     LUT3:I0->O           50   0.205   1.548  firfilter/Mmux_comp_ptr[0]_GND_2_o_mux_134_OUT511 (firfilter/Madd_n0484_lut<4>)
-     LUT5:I4->O           17   0.205   1.256  firfilter/BUS_0002_PWR_2_o_mod_138/Madd_a[8]_GND_3_o_add_17_OUT_Madd_cy<4>11 (firfilter/BUS_0002_PWR_2_o_mod_138/Madd_a[8]_GND_3_o_add_17_OUT_Madd_cy<4>)
-     LUT6:I3->O           14   0.205   0.958  firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o11_12 (firfilter/BUS_0002_PWR_2_o_mod_138/Mmux_o1111)
-     LUT6:I5->O            1   0.205   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1232 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_1232)
-     LUT6:I2->O            1   0.203   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_710 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_710)
-     LUT6:I2->O            3   0.203   0.650  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>61 (firfilter/BUS_0002_X_2_o_wide_mux_140_OUT<15>)
-     DSP48A1:A15->P31    124   4.560   1.941  firfilter/Maddsub_n0492 (firfilter/i[0]_comp_ptr[0]_add_143_OUT<31>)
-     LUT6:I5->O            1   0.205   0.827  firfilter/Mmux_b_buf[0][0]_i[0]_mux_181_OUT251 (firfilter/b_buf[0][0]_i[0]_mux_181_OUT<31>)
-     LUT6:I2->O            1   0.203   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12321 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_12321)
-     LUT6:I2->O            1   0.203   0.827  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7101 (firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>_7101)
-     LUT6:I2->O            1   0.203   0.000  firfilter/BUS_0002_PWR_2_o_mod_138_OUT<5>611 (firfilter/BUS_0002_X_2_o_wide_mux_209_OUT<15>)
-     FDRE:D                    0.102          firfilter/sum_0
+     IBUF:I->O            12   1.222   1.253  ack_in_IBUF (ack_in_IBUF)
+     LUT6:I1->O           37   0.203   1.363  firfilter/_n0126_inv11 (firfilter/_n0126_inv1)
+     LUT4:I3->O           32   0.205   1.291  firfilter/_n0126_inv1 (firfilter/_n0126_inv)
+     FDE:CE                    0.322          firfilter/calc_buf_31
     ----------------------------------------
-    Total                     22.306ns (8.127ns logic, 14.179ns route)
-                                       (36.4% logic, 63.6% route)
+    Total                      5.859ns (1.952ns logic, 3.907ns route)
+                                       (33.3% logic, 66.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 18 / 18
 -------------------------------------------------------------------------
-Offset:              5.695ns (Levels of Logic = 1)
+Offset:              3.950ns (Levels of Logic = 1)
   Source:            firfilter/req_in_buf (FF)
   Destination:       req_in (PAD)
   Source Clock:      clk rising
@@ -1516,11 +1439,11 @@ Offset:              5.695ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q           2960   0.447   2.677  firfilter/req_in_buf (firfilter/req_in_buf)
+     FDR:C->Q             13   0.447   0.932  firfilter/req_in_buf (firfilter/req_in_buf)
      OBUF:I->O                 2.571          req_in_OBUF (req_in)
     ----------------------------------------
-    Total                      5.695ns (3.018ns logic, 2.677ns route)
-                                       (53.0% logic, 47.0% route)
+    Total                      3.950ns (3.018ns logic, 0.932ns route)
+                                       (76.4% logic, 23.6% route)
 
 =========================================================================
 
@@ -1532,20 +1455,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   19.446|         |         |         |
+clk            |    8.186|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 42.00 secs
-Total CPU time to Xst completion: 41.97 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.24 secs
  
 --> 
 
-Total memory usage is 380936 kilobytes
+Total memory usage is 291788 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

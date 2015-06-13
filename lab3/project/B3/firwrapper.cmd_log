@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.xst" -ofn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.xst" -ofn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.syr" 
+xst -intstyle ise -ifn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.xst" -ofn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 
+xst -intstyle ise -ifn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.xst" -ofn "D:/home/tim/school/2IN35-lab/lab3/project/B3/firwrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 firwrapper.ngc firwrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o firwrapper_map.ncd firwrapper.ngd firwrapper.pcf 
+par -w -intstyle ise -ol high -mt off firwrapper_map.ncd firwrapper.ncd firwrapper.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml firwrapper.twx firwrapper.ncd -o firwrapper.twr firwrapper.pcf 

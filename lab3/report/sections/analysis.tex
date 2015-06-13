@@ -1,0 +1,78 @@
+%Analyze the specifications and requirements.
+
+The assignment has two main parts:
+\begin{enumerate}
+	\item Implementing a sequential FIR filter that uses as little hardware as possible
+	\item Implementing a strength-reduced FIR filter based on the sequential implementation
+\end{enumerate}
+
+\seqfilter
+In the previous assignments, we worked with a parallel FIR filter.
+The implementation of that filter used a lot of hardware, since the computations were happening on the hardware in parallel.
+
+Because the sample rate of the input is much, much lower than the clock speed of the hardware (44kHz versus 100MHz), the hardware is idle most of the time (since the output only needs to be calculated when new input comes, at which point the enabled wire will be high).
+So, we have a situation where we occupy a lot of hardware, which is also idle most of the time.
+
+Because of this, we want to try to trade speed for hardware utilization.
+Obviously, we need to make sure that we are still faster than the input sample rate, so we don't skip any samples.
+This filter will run computations in sequence instead of in parallel, which means we can re-use the same hardware.
+We want to use at most one multiplier.
+
+Specifically, our filter has the following requirements.
+
+\begin{itemize}
+	\item The filter uses as little resources as possible (at most one multiplier may be used) and is maximally sequential.
+	\item The filter confirms to the 4-phase communication protocol that is defined in Subsection~\ref{sec:analysis:communication} for both input and output.
+	\item The filter can run at a clock frequency of 100MHz.
+	\item The filter honors changes in the coefficients.
+\end{itemize}
+
+The filter may produce a finite length interval of start-up noise.
+
+\strengthfilter
+In this part of the assignment, we want to design a strength reduced FIR filter.
+We will use the sequential FIR filter from the first part of the assignment as a sub-block in this filter.
+
+The filter works on two input samples at the same time.
+Because of this, we can double the sample rate of the filter.
+Using the sequential FIR filter from the first assignment as a sub-block, we can again double the sample rate of the filter.
+
+In total, the sample rate will be quadruple that of the sequential implementation.
+
+The filter has the following requirements.
+
+\begin{itemize}
+	\item The filter uses at most 3 multipliers.
+	\item The filter confirms to the 4-phase communication protocol that is defined in Subsection~\ref{sec:analysis:communication} for both input and output.
+	\item The filter can run at a clock frequency of 100MHz.
+	\item The filter honors changes in the coefficients.
+	\item The filter has a sample frequency of about four times the sample frequency of the sequential implementation.
+\end{itemize}
+
+The filter may produce a finite length interval of start-up noise.
+
+\subsection{Communication protocol}
+\label{sec:analysis:communication}
+
+The filters described above are not always ready to accept new input samples, as they do not operate at the same rate as the input.
+Because of this, communication between the input and the filter becomes more complicated than just putting the input on the input wires of the filter.
+
+We need a protocol between the filter and the environment outside of the filter.
+In this assignment, we use a 4-phase handskake protocol.
+Sending data works as follows.
+
+\begin{enumerate}
+	\item Set the data item, then set the request wire to high.
+	\item Wait until the acknoledge wire becomes high.
+	\item Make the request wire low.
+	\item Wait until the acknowledge wire becomes low, the data item may now change.
+\end{enumerate}
+
+Receiving data works as follows.
+
+\begin{enumerate}
+	\item Make the request wire high.
+	\item Wait until the acknowledge wire becomes high.
+	\item Read the data item, make the request wire low.
+	\item Wait until the acknowledge wire becomes low.
+\end{enumerate}

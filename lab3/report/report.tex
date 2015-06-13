@@ -6,11 +6,27 @@
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
+\usepackage{DejaVuSansMono}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{float}
+\usepackage{subcaption}
+
+\allowdisplaybreaks
 
 \geometry{
 	includeheadfoot,
 	margin=2.54cm
 }
+
+\lstset{
+	numbers=left,
+	breaklines=true,
+	tabsize=2,
+	basicstyle=\ttfamily
+}
+
+\graphicspath{{imgs/}}
 
 \title{
 	2IN35 L3 report
@@ -21,6 +37,9 @@
 	Ramon de Vaan (0758873)
 }
 \date{\today}
+
+\newcommand{\seqfilter}{\subsection{Sequential FIR filter}}
+\newcommand{\strengthfilter}{\subsection{Strength-reduced FIR filter}}
 
 \begin{document}
 
@@ -38,6 +57,7 @@
 	\section{Simulation}
 	\input{sections/simulation}
 
-	\section{Questions}
-	\input{sections/questions}
+	\appendix
+	\section{Source code}
+	\input{sections/source}
 \end{document}

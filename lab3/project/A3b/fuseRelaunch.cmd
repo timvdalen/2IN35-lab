@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/OneDrive/Documenten/TUe/2IN35/A3b/filtertest_isim_beh.exe" -prj "D:/OneDrive/Documenten/TUe/2IN35/A3b/filtertest_beh.prj" "work.filtertest" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/Projects/2IN35/lab3/project/A3b/filtertest_isim_beh.exe" -prj "D:/Projects/2IN35/lab3/project/A3b/filtertest_beh.prj" "work.filtertest" "work.glbl" 

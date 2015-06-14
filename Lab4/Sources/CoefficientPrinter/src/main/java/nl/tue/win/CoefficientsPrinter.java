@@ -66,20 +66,15 @@ public class CoefficientsPrinter {
 
     public static void main(String[] args) throws IOException {
         if(args.length < 2) {
-            System.err.println("L and number of wires are required input.");
+            System.err.println("L and number of #hex are required.");
             System.exit(1);
         }
         final int L = Integer.parseInt(args[0]);
-        final int num_wires = Integer.parseInt(args[1]);
-        int string_length = 4;
-
-        if(args.length > 2) {
-            string_length = Integer.parseInt(args[2]);
-        }
+        final int num_hex = Integer.parseInt(args[1]);
 
         File file = null;
-        if(args.length > 3) {
-            file = new File(args[3]);
+        if(args.length > 2) {
+            file = new File(args[2]);
             if(file.isDirectory()) {
                 System.err.println("Given output path is not a valid file.");
                 System.exit(1);
@@ -98,7 +93,7 @@ public class CoefficientsPrinter {
             pw = new PrintWriter(file);
         }
 
-        printHex(pw, getCoefs(L, num_wires), string_length);
+        printHex(pw, getCoefs(L, (int) Math.pow(num_hex, 2d)), num_hex);
         pw.flush();
         pw.close();
     }

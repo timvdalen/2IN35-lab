@@ -28,8 +28,6 @@ public class CoefficientsPrinter {
             throw new IllegalArgumentException();
         }
         final int max_val = (int) (Math.pow(2, num_wires - 1) - 1);
-        final int min_val = -1 * max_val;
-        final int diff_val = max_val - min_val;
         final int L4 = 4 * L;
         double[] temp = new double[L4];
         long[] ret = new long[L4];
@@ -45,13 +43,10 @@ public class CoefficientsPrinter {
             t += d;
         }
 
-        //Normalise all values to the range [-2^(num_wires-1), 2^(num_wires-1)]
-        for(int i = 0; i < L4; i++) {
-            temp[i] = (temp[i] - min_val)/diff_val;
-        }
+        final double LdivSum = L / sum;
 
         for(int i = 0; i < L4; i++) {
-            ret[i] = Math.round(temp[i] * max_val);
+            ret[i] = Math.round(temp[i] * LdivSum * max_val);
         }
 
         return ret;

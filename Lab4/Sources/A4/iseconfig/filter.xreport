@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-06-14T15:59:30</DateModified>
+  <DateModified>2015-06-15T21:20:55</DateModified>
   <ModuleName>filter</ModuleName>
-  <SummaryTimeStamp>2015-06-14T15:53:27</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-06-15T10:17:00</SummaryTimeStamp>
   <SavedFilePath>D:/Projects/2IN35/Lab4/Sources/A4/iseconfig/filter.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/Projects/2IN35/Lab4/Sources/A4</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>D:/Projects/2IN35/Lab4/Sources/A4\</ImplementationReportsDirectory>
   <DateInitialized>2015-06-14T00:19:29</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

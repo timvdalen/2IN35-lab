@@ -34,20 +34,20 @@ module filter
 	reg signed [0:DWIDTH-1] input_buf [0:J - 1];
 	reg signed [0:DDWIDTH-1] calc_buf;
 	reg signed [0:DDWIDTH-1] last_calc;
-	reg [0:J_LOG - 1] i;
+	reg [0:J_LOG] i;
 	reg [0:J_LOG] count;
 	reg signed [0:DWIDTH-1] h_in_reg [0:CWIDTH - 1];
 	reg [0:L_LOG - 1] cur_mod;
-	reg [0:L_LOG + 1] count_times_L [0:J-1];
+	reg [0:L_LOG + J_LOG - 1] count_times_L [0:J-1];
 	reg f;
 	
 	//Read coefficients from a file using readmem command
 	initial begin 
 		$readmemh ("coef.txt", h_in_reg);
-		count_times_L [0] = 0;
-		count_times_L [1] = 160;
-		count_times_L [2] = 320;
-		count_times_L [3] = 480;
+		
+		for (i = 0; i < J; i = i + 1) begin
+			count_times_L [i] = i * L;
+		end
 	end
 	
 	always @(posedge clk) begin
@@ -87,8 +87,14 @@ module filter
 					count <= 0;
 				end
 				else if (count == J) begin
-					sum <= calc_buf[0:DWIDTH-1];
-					cur_mod <= (cur_mod + M) % L;
+					sum <= calc_buf[1:DWIDTH];
+					
+					if (cur_mod >= L - M) begin
+						cur_mod <= cur_mod - (L - M);
+					end
+					else begin
+						cur_mod <= cur_mod + M;
+					end
 
 					req_out_buf <= 1;
 					count <= count + 1;

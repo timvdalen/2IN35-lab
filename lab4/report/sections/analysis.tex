@@ -10,3 +10,22 @@ First of all, we can implement a scaler directly, which does the entire transfor
 Another option is to chain together multiple smaller scalers to achieve the same end result.
 
 Inside each scaler, we have a choice between directly implementing the equation for the scaler as a function, or using a composite design that consists of an upscaler, a low-pass filter and a downscaler.
+
+Effectively, we will be scaling with ratio $\frac{160}{147}$.
+In the composite design, that means first upscaling with factor 160, then applying the filter and finally downscaling with factor 147.
+
+The coefficients that the low-pass filter takes as its input are the output of the \texttt{lanczos2} function.
+Since these values are constant, we will pre-compute them.
+When we program the FPGA, we will load the values into ROM.
+
+Specifically, our requirements are:
+
+\begin{itemize}
+	\item The sample rate of the output must be $\frac{160}{147}$ times the sample rate of the input.
+	\item The output must be a resampled version of the input (meaning that they should sound the same).
+	\item The filter must support an input sample rate of at least 44.1kHz.
+	\item To run on the board, we need to make sure that the filter we design is able to run with a clock frequency of at least 100MHz.
+	\item The top-level Verilog module of our implementation must be called \texttt{filter} to work with the rest of the environment.
+\end{itemize}
+
+The filter may produce start-up noise.

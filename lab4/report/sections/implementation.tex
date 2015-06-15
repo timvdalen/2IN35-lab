@@ -2,3 +2,66 @@
 %Explain #clock cycles per sample time Ts. Include waveforms.
 %Report, analyze & explain FPGA-resource usage and utilization {#multipliers, #BRAMS, #LUTs} in relation to your design.
 %Report, analyze & explain (min) sample time Ts and (max) sample frequency fs, both after synthesis and after placement & routing.
+Appendix~\ref{app:source:filter} gives the Verilog implementation for the FIR filter.
+
+\paragraph{}
+To speed up our design, we made a few implementation choices that affect readability.
+Most notably, we unwrapped the modulo operation into a code branch.
+This allows us to get rid of some specialized hardware, which is relatively slow.
+
+Furthermore, we split up the calculation step into two parts, as we did last project.
+
+\paragraph{Resource usage}
+Our resource usage, as given by the synthesis report, is as follows.
+
+\begin{verbatim}
+# RAMs                                                 : 2
+ 4x10-bit single-port Read Only RAM                    : 1
+ 640x16-bit single-port Read Only RAM                  : 1
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 4
+ 10-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 1
+ 8-bit addsub                                          : 1
+# Registers                                            : 9
+ 1-bit register                                        : 3
+ 16-bit register                                       : 1
+ 3-bit register                                        : 1
+ 32-bit register                                       : 2
+ 64-bit register                                       : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 8-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 18
+ 1-bit 2-to-1 multiplexer                              : 8
+ 16-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 4
+ 8-bit 2-to-1 multiplexer                              : 1
+\end{verbatim}
+
+The synthesis has modelled the ROM storage for the coefficients as read-only RAM.
+We use one multiplier, in the computation step.
+The adders are used in different places throughout the filter, during initialization, modulo calculation and the computation step.
+We use as many registers we expect.
+The comparators are used for the initialization for-loop and the modulo calculation.
+
+The multiplexers are due to the way we access the wires.
+
+The synthesis report gives us the following values.
+\begin{description}
+	\item[Minimum period] 10.411ns
+	\item[Maximum frequency] 96.053MHz
+\end{description}
+
+The report after the placement \& routing step gives us the following values.
+\begin{description}
+	\item[Minimum period] 9.549ns
+	\item[Maximum frequency] 104.723MHz
+\end{description}
+
+We note that in the previous projects, the synthesis report consistently gave us higher values for the maximum frequency than the post placement \& routing report.
+Our explanation for this is that our design triggered some routing optimalizations which allowed for a higher maximum frequency, which were not obvious from just the hardware requirements and critical paths.

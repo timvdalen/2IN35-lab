@@ -110,7 +110,6 @@ module filter #(parameter NR_STAGES = 32,
 			// Input request & acknowledge => take the input & go back to computation a.s.a.p.
 			if (req_in && ack_in) begin
 				if(in_reqs[0] && !in_acks[0] && in_reqs[1] && !in_acks[1] && in_reqs[2] && !in_acks[2]) begin
-					del <= p;
 					p <= a1;
 					in_datas_buf[0] <= a1 - a0;
 					in_datas_buf[1] <= del - a0;
@@ -147,6 +146,7 @@ module filter #(parameter NR_STAGES = 32,
 				
 					req_in_buf <= 1;
 					req_out_buf <= 1;
+					del <= p;
 				end
 			end
 		end

@@ -2,6 +2,9 @@
 
 \begin{enumerate}
 	\item %1. Verify the direct equation for y[n]
+		\[
+			y[n] = \sum_{j=0}^3 h[jL+nM \textbf{mod} L]x[nM \textbf{div} L -j]
+		\]
 	\item %2. The equation for y[n] uses different coefficients for each output y[n], however the pattern of coefficients repeats. What is the period of this pattern?
 		The period of the pattern is $L$.
 	\item %3. Examine for each of the the four possible designs: The number of multiplications performed per output. The total number of coefficients required. The highest sample rate inside the system

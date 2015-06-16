@@ -56,21 +56,12 @@ module filter #(parameter NR_STAGES = 32,
 	subfilter #(.NR_STAGES(NR_STAGES/2), .DWIDTH(DWIDTH), .DDWIDTH(DDWIDTH), .CWIDTH(CWIDTH / 2))
 		filteradded (clk, rst, in_reqs[2], in_acks[2], in_datas[2], out_reqs[2], out_acks[2], out_datas[2], h_in_added
 	);
-//	passivator #(.DWIDTH(DWIDTH))
-//		passiv1 (clk, rst, in_req, in_ack, in_data, out_req, out_ack, out_data, h_in
-//	);
-//	passivator #(.DWIDTH(DWIDTH))
-//		passiv2 (clk, rst, in_req, in_ack, in_data, out_req, out_ack, out_data, h_in
-//	);
-//	passivator #(.DWIDTH(DWIDTH))
-//		passiv3 (clk, rst, in_req, in_ack, in_data, out_req, out_ack, out_data, h_in
-//	);
 
 	generate
 		genvar k;
-		for (k = 0; k < CWIDTH / 2; k = k + 1) begin : wires
-			assign h_in_even[k] = h_in[k * 2];
-			assign h_in_odd[k] = h_in[k * 2 + 1];
+		for (k = 0; k < NR_STAGES / 2; k = k + 1) begin : wires
+			assign h_in_even[k * DWIDTH : (k + 1) * DWIDTH - 1] = h_in[k * 2 * DWIDTH : (k + 1) * 2 * DWIDTH - 1];
+			assign h_in_odd[k * DWIDTH : (k + 1) * DWIDTH - 1] = h_in[(k * 2 + 1) * DWIDTH : (k * 2 + 2) * DWIDTH - 1];
 		end
 	endgenerate
 

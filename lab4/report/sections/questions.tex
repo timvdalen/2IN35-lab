@@ -2,6 +2,37 @@
 
 \begin{enumerate}
 	\item %1. Verify the direct equation for y[n]
+		\[
+			y[n] = \sum_{j=0}^3 h[jL+nM \textbf{mod} L]x[nM \textbf{div} L -j]
+		\]
 	\item %2. The equation for y[n] uses different coefficients for each output y[n], however the pattern of coefficients repeats. What is the period of this pattern?
+		The period of the pattern is $L$.
 	\item %3. Examine for each of the the four possible designs: The number of multiplications performed per output. The total number of coefficients required. The highest sample rate inside the system
+		\begin{description}
+			\item[Direct function]\hfill\\
+				\begin{description}
+					\item[Required coefficients] $4L = 640$
+					\item[Number of multiplications] The filter runs at a frequency of 147 times the output sample frequency. Per output, that means we need $147 \times \#\textnormal{coefficients} = 147*640 = 94080$ multiplications.
+					\item[Highest sample rate] In a sequential FIR implementation, the highest sample rate would be the number of multiplications times the output sample rate, so about $4.5$GHz.
+				\end{description}
+			\item[Direct composite]\hfill\\
+				\begin{description}
+					\item[Required coefficients] For the composite, we have two $L$ parameters, so $4L_1 + 4L_2 = 4*64 + 4*15 = 316$
+					\item[Number of multiplications] The filters combined need to perform $\frac{M_2}{L_2}M_1 * 4L_1 + M_2 * 4L_2 = \frac{14}{15}*63*256+14*30 = 15473$ multiplications.
+					\item[Highest sample rate] The first filter has a sample rate of $420  * 48\textnormal{kHz} = 20.16\textnormal{MHz}$, the second has a sample rate of $\frac{14}{15}*63*256* 48\textnormal{kHz} = 722.5\textnormal{MHz}$.
+				\end{description}
+			\item[Chained function]\hfill\\
+				\begin{description}
+					\item[Required coefficients] $4L = 640$
+					\item[Number of multiplications] When implementing the equation directly, we do not have to compute all multiplications at run-time. For instance, \texttt{jL} can be precomputed since these values will always be the same. We can also ommit the multiplication of \texttt{nM}. Because we are running this sequentially with increasing $n$, we can just add $M$ to the previous version every time we need to.
+					That leaves 4 multiplications, for the 4 terms in the summation.
+					\item[Highest sample rate] In a sequential FIR implementation, the highest sample rate would be the number of multiplications times the output sample rate, so about $192$kHz
+				\end{description}
+			\item[Chained composite]\hfill\\
+				\begin{description}
+					\item[Required coefficients] For the composite, we have two $L$ parameters, so $4L_1 + 4L_2 = 4*64 + 4*15 = 316$
+					\item[Number of multiplications] Both filters only need 4 multiplications, so that would be $\frac{14}{15}4 + 4 = 8$ multiplications per output.
+					\item[Highest sample rate] The first filter runs at $\frac{14}{15}4 * 48\textnormal{kHz} = 179.2\textnormal{kHz}$. The second filter runs at $4 * 48\textnormal{kHz} = 192\textnormal{kHz}$.
+				\end{description}
+		\end{description}
 \end{enumerate}

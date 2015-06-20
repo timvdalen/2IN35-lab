@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{DejaVuSansMono}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{float}
+\usepackage{subcaption}
+
+\allowdisplaybreaks
+
+\geometry{
+	includeheadfoot,
+	margin=2.54cm
+}
+
+\lstset{
+	numbers=left,
+	breaklines=true,
+	tabsize=2,
+	basicstyle=\ttfamily
+}
+
+\graphicspath{{imgs/}}
+
+\title{
+	2IN35 L5 report
+}
+\author{
+	Tim van Dalen (0744839)
+	\and
+	Ramon de Vaan (0758873)
+}
+\date{\today}
+
+\begin{document}
+
+	\maketitle
+
+	\section{Analysis}
+	\input{sections/analysis}
+
+	\section{Design}
+	\input{sections/design}
+
+	\section{Implementation}
+	\input{sections/implementation}
+
+	\section{Simulation}
+	\input{sections/simulation}
+
+	\section{Questions}
+	\input{sections/questions}
+
+	\appendix
+	\input{sections/source}
+\end{document}

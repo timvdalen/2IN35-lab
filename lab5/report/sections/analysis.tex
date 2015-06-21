@@ -1,1 +1,16 @@
 %Analyze the specifications and requirements.
+In this assignment, we will extend our scaler from assignment 4 with the possibility of simultaneously up-sampling a number of different input streams.
+We will scale the input from 44.1kHz to 48kHz.
+
+Our filter should be able to handle as much streams as possible.
+
+Specifically, our requirements are:
+
+\begin{itemize}
+	\item The sample rate of the output must be $\frac{160}{147}$ times the sample rate of the input.
+	\item The output must be a resampled version of the input (meaning that they should sound the same).
+	\item The filter must support an input sample rate of at least 44.1kHz.
+	\item To run on the board, we need to make sure that the filter we design is able to run with a clock frequency of at least 100MHz.
+	\item The top-level Verilog module of our implementation must be called \texttt{filter} to work with the rest of the environment.
+	\item The filter must be scalable: by setting a parameter for the filter, we can vary the number of input streams the filter works with.
+\end{itemize}

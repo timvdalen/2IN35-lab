@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:\Projects\2IN35\Lab4\Sources\A4\filter.v" Line 93: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:\Projects\2IN35\Lab4\Sources\A4\filter.v" Line 96: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:\Projects\2IN35\Lab4\Sources\A4\filter.v" Line 100: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:\Projects\2IN35\Lab4\Sources\A4\filter.v" Line 106: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+</msg>
+
+<msg type="warning" file="Xst" num="2999" delta="new" >Signal &apos;<arg fmt="%s" index="1">h_in_reg</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">filter</arg>&apos;, is tied to its initial value.
+</msg>
+
+<msg type="warning" file="Xst" num="2999" delta="new" >Signal &apos;<arg fmt="%s" index="1">count_times_L</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">filter</arg>&apos;, is tied to its initial value.
+</msg>
+
+<msg type="warning" file="Xst" num="3035" delta="new" >Index value(s) does not match array range for signal &lt;<arg fmt="%s" index="1">h_in_reg</arg>&gt;, simulation mismatch.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_count_times_L</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_h_in_reg</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">calc_buf_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">filter</arg>&gt;.
+</msg>
+
+</messages>
+

@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "D:/Projects/2IN35/Lab4/Sources/A4/filter.xst" -ofn "D:/Projects/2IN35/Lab4/Sources/A4/filter.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 filter.ngc filter.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o filter_map.ncd filter.ngd filter.pcf 
+par -w -intstyle ise -ol high -mt off filter_map.ncd filter.ncd filter.pcf 
+trce -intstyle ise -v 3 -a -s 3 -n 3 -fastpaths -xml filter.twx filter.ncd -o filter.twr filter.pcf 

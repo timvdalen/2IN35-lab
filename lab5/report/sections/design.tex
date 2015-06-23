@@ -10,3 +10,25 @@ Figure~\ref{fig:design:block} gives the block diagram for the design of our scal
 	\caption{Block diagram for the single scaler}
 	\label{fig:design:block}
 \end{figure}
+
+Our design is based on the same formula used in assignment 4.
+However, using a similar implementation would severely limit the amount of streams the program would be able to handle.
+As a result, as described in the assignment, we opted to increase parallel processing power at the cost of resource usage.
+
+We use four block RAMs, each with $n$ entries, to store the last four values for each stream, as they are required by the formula.
+The way the testbench and the program are set up, we need to produce an output every clock cycle. 
+However, calculating the entire output in a single clock cycle would make the program far too slow.
+To solve this, we divide the calculation into two parts.
+
+First, we multiply each of the four values with the corresponding coefficient value in parallel.
+Secondly, the results of these multiplications are added to each other and presented as output.
+
+Note that these steps still occur in the same clock cycle, in parallel.
+This is possible, as they are for different streams.
+The result of the multiplication steps are used for the sum step in the next cycle.
+So at any point, two streams are being calculated at the same time.
+Doing these calculations in parallel makes for a much faster program, as multiplications tend to be expensive.
+
+The downside, however, is that the program will not work for a single stream.
+
+After every 'round`, where the full range of streams has been handled a single time, we compute whether or not we need to request an input value for the next round.

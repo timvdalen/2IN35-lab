@@ -46,7 +46,9 @@ However, the instructor has assured us that this difference is negligible.
 When we simulated our design with a stream index of anything other than 0, we got some weird results.
 Figure~\ref{fig:simulation:spectrum:wrong} gives the spectrum analysis of one of the streams in the output.
 The problem is related to the way we initialize the coefficients.
-We were able to 'flip' the behaviour, that is, have this problem only occur on the first stream, but we were not able to solve it entirely.
+After some investigation, we found that there were always two streams that were completely correct.
+The rest of the streams all exhibit this behaviour (though the number of streams does not seem to impact the severity of the errors).
+We can shift which two streams are correct by modifying some parameters, but we were not able to solve the problem entirely.
 
 \begin{figure}[H]
 	\centering

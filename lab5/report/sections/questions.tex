@@ -2,6 +2,15 @@
 
 \begin{enumerate}
 	\item %1. Assuming a functionally correct system running at a 100 MHz clock, can you derive a theoretical bound for the scalability of the 44.1KHz → 48KHz sampling rate converter?
+		If we could compute a value in one cycle, we would theoretically be able to reach $100MHz/48kHz \approx 2083$ streams.
 	\item %2. What is the maximum scalability achieved by your design? (HINT: This may be different from the five scalability factors you are asked to demonstrate.)
+		Since we need two cycles to compute each value, we can only reach $1041$ streams.
 	\item %3. Justify whether all output streams meet their throughput requirement of 48 KHz
+		We were not able to run our design on the board succesfully.
+		Using the real-time environment, our filter produced only silence.
+		The offline environment did not compile, throwing an unspecified error that said to contact support.
+		Unfortunately, the instructors were not able to find the root of the error, and we did not have enough time to implement a work-around.
+
+		We were able to succesfully simulate 2, 32, 128, 256 and 512 streams.
+		Using our theoretical bound, 1024 streams should also work for our design, but we did not have enough time to complete that simulation.
 \end{enumerate}

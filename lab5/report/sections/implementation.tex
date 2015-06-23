@@ -8,20 +8,44 @@ Appendix~\ref{app:source} gives the Verilog implementation for the filter.
 Our resource usage, as given by the synthesis report, is as follows.
 
 \begin{verbatim}
+# RAMs                                                 : 9
+ 16x16-bit dual-port RAM                               : 7
+ 640x16-bit dual-port Read Only RAM                    : 2
+# Multipliers                                          : 4
+ 16x16-bit multiplier                                  : 4
+# Adders/Subtractors                                   : 10
+ 10-bit adder                                          : 2
+ 32-bit adder                                          : 3
+ 4-bit adder                                           : 3
+ 8-bit addsub                                          : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 22
+ 1-bit register                                        : 2
+ 16-bit register                                       : 11
+ 32-bit register                                       : 5
+ 4-bit register                                        : 3
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 2
+ 1-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
 \end{verbatim}
 
-%TODO: Resource explanation
+It seems like our design is not using the BRAM, even though we followed the guidelines.
+However, since the design is fast enough, that is not much of a problem.
+As expected, we use 4 multipliers for the computation.
 
 The multiplexers are due to the way we access the wires.
 
 The synthesis report gives us the following values.
 \begin{description}
-	\item[Minimum period]
-	\item[Maximum frequency]
+	\item[Minimum period] 8.450ns
+	\item[Maximum frequency] 118.341MHz
 \end{description}
 
 The report after the placement \& routing step gives us the following values.
 \begin{description}
-	\item[Minimum period]
-	\item[Maximum frequency]
+	\item[Minimum period] 9.695ns
+	\item[Maximum frequency] 103.146MHz
 \end{description}
